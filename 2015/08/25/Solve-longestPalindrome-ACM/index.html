@@ -1,0 +1,380 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>ACM解题报告之最长回文子串 | 禹过留声</title>
+
+    
+
+</head>
+
+<body>
+    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+    <a class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+    <!-- 置顶导航栏 -->
+    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    
+                        ACM解题报告之最长回文子串
+                    
+                </a>
+            </div>
+            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+            </form>
+            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/archives/">文章归档</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/skills/">技能图谱</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/reading/">读书</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/about/">关于我</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/links/">友情链接</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="content" class="container">
+        <div class="row">
+            <!--左边导航栏-->
+            <div class="col-md-3" role="complementary">
+                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
+                <div class="introduce">
+    <header id="header" class="inner">
+        <!-- 头像 -->
+        <a href="/" >
+            <img src="/img/avatar.png" class="avatar">
+        </a>
+        <h2><a href="/">David</a></h2>
+
+        
+        <p class="header-subtitle">专注coding一百年</p>
+        
+
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="">
+                    <span class="item-state">64</span>
+                    <span class="item-state">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">3</span>
+                    <span class="item-state">标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">18</span>
+                    <span class="item-state">读书</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 社交图标 -->
+        <ul class="list-inline">
+            
+            <li>
+                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="/sina weibo" title="Weibo" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+        </ul>
+
+        <hr>
+        <!-- 研究涉及领域 -->
+        
+        <section>
+            <div class="tags">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#C" title="C" rel="6">
+                    <span class="tag">C</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Ubuntu" title="Ubuntu" rel="13">
+                    <span class="tag">Ubuntu</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Software" title="Software" rel="5">
+                    <span class="tag">Software</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Batch" title="Batch" rel="8">
+                    <span class="tag">Batch</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Shell" title="Shell" rel="14">
+                    <span class="tag">Shell</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#ACM" title="ACM" rel="8">
+                    <span class="tag">ACM</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Coding" title="Coding" rel="7">
+                    <span class="tag">Coding</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Python" title="Python" rel="11">
+                    <span class="tag">Python</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Google" title="Google" rel="9">
+                    <span class="tag">Google</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Algorithm" title="Algorithm" rel="5">
+                    <span class="tag">Algorithm</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </section>
+
+        <!-- 网站访问 -->
+        <div class="header-subtitle">
+            <span id="busuanzi_container_site_pv">
+                访客数：<span id="busuanzi_value_site_pv"></span>人次
+            </span><br/>
+            <span id="busuanzi_container_site_uv">
+                访问量: <span id="busuanzi_value_site_uv"></span>次
+            </span>
+        </div>
+        
+
+    </header>
+</div>
+
+            </div>
+            </div>
+            <!--主要内容显示-->
+            <div class="col-md-9" role="main">
+            
+            <div class="body-wrap"><head>
+    <title>ACM解题报告之最长回文子串</title>
+</head>
+<body>
+ACM解题报告之最长回文子串
+<hr>
+<p>题目很简单，就是求解一个字符串中最长的回文子串，回文字符串是指颠倒之后的字符串和原来的字符串完全一样。网上很多人的博文，像<a href="http://blog.csdn.net/kangroger/article/details/37742639" target="_blank" rel="external">kangroger</a>,还有把最牛b的Manacher算法说得很清晰的<a href="http://blog.csdn.net/pi9nc/article/details/9251455" target="_blank" rel="external">pi9nc</a>和<a href="http://blog.csdn.net/yzl_rex/article/details/7908259" target="_blank" rel="external">yzl_rex</a>，介绍了四种解法：分别是暴力法（$O(n^3)$），动态规划（$O(n^2)$），中心扩展（$O(n^2)$）和Manache法（$O(n)$）。本博文只是对这四种方法的自我实现。<br><a id="more"></a></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>题目来自HihoCoder上第一周的题目<a href="http://hihocoder.com/contest/hiho1/problem/1" target="_blank" rel="external">最长回文子串</a>，题目大意是：</p>
+<blockquote>
+<p>给定一个字符串，求解这个字符串中最长的回文子串。而回文字符串是指颠倒之后的字符串和原来的字符串完全一样。</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li><p>暴力求解<br>暴力求解的方法分两步，第一步是得到字符串所有的子串（$n\times(n+1)/2$个），第二步是判断每一个子串是否是回文子串（$n/2$比较操作），如果是则记录下长度，不是则舍弃。所以暴力求解方法的时间复杂度为$O(n^3)$。</p>
+</li>
+<li><p>动态优化<br>这里的动态优化说白了就是一种空间换时间的解法。其具体的做法就是在一个二维数组dp中记录下i到j是否是回文，即dp[i][j]=1/0,那么要判断dp[m][n]是否是回文就得看$ dp[m-1][n-1] = 1 \&amp;\&amp; buf[m] = [n] $。由于要填充这样$n^2$的二维数组，所以动态优化解法的时间复杂度$O(n^2)$。</p>
+</li>
+<li><p>中心扩展<br>中心扩展的思路很简单，就是以字符串中某个字符为中心，然后向两边对称扩展，判断最边缘字符是否相等，以此来统计回文子串的长度。不过这里面要注意回文子串的长度可能为偶数，也就是说它以两个字符的中间为对称中心。所以要分两种情况考虑，总的来说，中心扩展方法的时间复杂度为$O(n^2)$。</p>
+</li>
+<li><p>Manacher算法<br>你猜测的没，该算法就是这个叫Manacher的人想出的算法，用于解决最长回文子串问题，其时间复杂度能达到$O(n)$。该算法的核心思想是充分利用回文字符串的对称性，即利用前面已经算得的对称半径减少或直接求取当前要求的对称半径。下个部分将详细解释该算法。</p>
+</li>
+</ol>
+<h2 id="算法说明"><a href="#算法说明" class="headerlink" title="算法说明"></a>算法说明</h2><p>这里主要说明动态规划算法和Manacher算法。重点在Mancher算法，而动态规划算法只是提一下其中二维数组的动态申请。</p>
+<h3 id="动态规划算法"><a href="#动态规划算法" class="headerlink" title="动态规划算法"></a>动态规划算法</h3><ol>
+<li>二维数组的动态申请用c实现的步骤：<ol>
+<li>申请一个长度为len的指针数组(int **)dp，用来存放二维数组每行的首地址。</li>
+<li>给dp[0]申请一个len*len的数组，用于存放具体数据。</li>
+<li>给dp[i]赋上二维数组每行首地址。</li>
+<li>$\cdots$</li>
+<li>释放数组dp[0]</li>
+<li>释放指针数组dp</li>
+</ol>
+</li>
+<li><p>代码演示</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 动态申请二位数组并初始化</span></span><br><span class="line"><span class="keyword">int</span> **dp = (<span class="keyword">int</span> **)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span> *) * len);</span><br><span class="line">dp[<span class="number">0</span>] = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * len * len);</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;len; i++)</span><br><span class="line">    dp[i] = dp[i<span class="number">-1</span>] + len;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 释放申请的二位数组</span></span><br><span class="line"><span class="built_in">free</span>(dp[<span class="number">0</span>]);</span><br><span class="line"><span class="built_in">free</span>(dp);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Mancher算法"><a href="#Mancher算法" class="headerlink" title="Mancher算法"></a>Mancher算法</h3><ol>
+<li>假设<br>为解释清楚Manacher算法，作如下假定：  <ul>
+<li>所有的回文子串的数目都是奇数（通过向字符首尾和字符间插入特殊字符集’#’实现）</li>
+<li>辅助数组radius用来存储对称半径。即radius[i]表示以第i个字符为中心构成的回文子串的半径。像字符串“#a#”的回文半径为1。</li>
+</ul>
+</li>
+<li><p>符号说明<br>如下图所示，我们要根据回文字符串buf和radius[0]～radius[i-1]来求取radius[i]。<br><img src="!--￼5--&gt;/assets/images/manacher.png" alt="manacher"><br>图中符号说明如下：  </p>
+<ul>
+<li>id表示以前i个字符中第id个字符为中心构成的回文子串最右边字符的索引值最大，即$id = argmax(radius[k]+k),k&lt;i$。易知$ id&lt;i $。</li>
+<li>mx表示以第id个字符为中心构成的回文子串最右边字符的索引值，即$mx = radius[id]+id, id&lt;i $。</li>
+<li>j是i关于id的对称点，即$ j = 2 * id - i $。</li>
+</ul>
+</li>
+<li><p>分情况讨论  </p>
+<ol>
+<li><p>==$ mx &lt; i$==<br>此时radius的前i个值不起任何作用，就像初始时根据radius[0]=0求解radius[1]，此时id=0,mx=0。</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(mx&lt;i)&#123;</span><br><span class="line">    k=<span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 以i为中心，回文子串的半径</span></span><br><span class="line">    <span class="keyword">while</span>(newbuf[i-k]==newbuf[i+k]&amp;&amp;i-k&gt;=<span class="number">0</span>&amp;&amp;i+k&lt;len)</span><br><span class="line">        k++;</span><br><span class="line">    radius[i]=k<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>==$ mx &gt; i $==  </p>
+<ol>
+<li><p>==$ mx-i &gt;= radius[j] $==<br>$mx-i$代表i到mx的距离，而radius[j]就是图中绿线的一半距离。如果$mx-i &gt; radius[j]$说明$radius[i]=radius[j]$，因为$[2*id-mx,mx]是关于id对称的，而i和j也是关于id对称的。</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(mx-i &gt;= radius[j])</span><br><span class="line">    radius[i]=radius[j];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>==$ mx-i &lt; radius[j]$==<br>此时我们根据对称性，能够获得$radius[i]&gt;=radius[j]$的。所以我们直接从mx+1开始判断$buf[mx+t]\==buf[2*i-mx-t],t=1,2,\cdots$。</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(mx-i&lt;radius[j])&#123;</span><br><span class="line">    k=mx-i+<span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 以i为中心，回文子串的半径从mx-i+1开始验证</span></span><br><span class="line">    <span class="keyword">while</span>(newbuf[i-k]==newbuf[i+k]&amp;&amp;i-k&gt;=<span class="number">0</span>&amp;&amp;i+k&lt;len)</span><br><span class="line">        k++;</span><br><span class="line">    radius[i]=k<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>情况融合<br>仔细思考一下，发现第二种情况里面的两种情况可以融合，说白点就是取图中i到mx的距离和图中一半绿线距离中的最小值，即$radius[i]=min(radius[j],mx-i)$。然后再进行向外扩展，看radius[i]能否更大。</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">radius[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;len; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(mx&gt;i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(radius[j]&lt;mx-i)</span><br><span class="line">            radius[i]=radius[j];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            radius[i]=mx-i;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        radius[i]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(;newbuf[i+radius[i]]==newbuf[i-radius[i]]&amp;&amp;i+radius[i]&lt;len&amp;&amp;i-radius[i]&gt;=<span class="number">0</span>;radius[i]++);</span><br><span class="line">    <span class="comment">// 更新id，mx</span></span><br><span class="line">    <span class="keyword">if</span>(radius[i]+i&gt;mx)&#123;</span><br><span class="line">        id=i;</span><br><span class="line">        mx=radius[i]+i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="!--￼6--&gt;/assets/attachs/1032.c.txt">完整代码</a></p>
+</li>
+</ol>
+<h2 id="举一反三"><a href="#举一反三" class="headerlink" title="举一反三"></a>举一反三</h2><p>无</p>
+
+</body>
+</div>
+            <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2016 David | Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+        <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+</body>
+</html>

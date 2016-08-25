@@ -1,0 +1,344 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>ACM算法之约数个数原理 | 禹过留声</title>
+
+    
+
+</head>
+
+<body>
+    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+    <a class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+    <!-- 置顶导航栏 -->
+    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    
+                        ACM算法之约数个数原理
+                    
+                </a>
+            </div>
+            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+            </form>
+            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/archives/">文章归档</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/skills/">技能图谱</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/reading/">读书</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/about/">关于我</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/links/">友情链接</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="content" class="container">
+        <div class="row">
+            <!--左边导航栏-->
+            <div class="col-md-3" role="complementary">
+                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
+                <div class="introduce">
+    <header id="header" class="inner">
+        <!-- 头像 -->
+        <a href="/" >
+            <img src="/img/avatar.png" class="avatar">
+        </a>
+        <h2><a href="/">David</a></h2>
+
+        
+        <p class="header-subtitle">专注coding一百年</p>
+        
+
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="">
+                    <span class="item-state">64</span>
+                    <span class="item-state">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">3</span>
+                    <span class="item-state">标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">18</span>
+                    <span class="item-state">读书</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 社交图标 -->
+        <ul class="list-inline">
+            
+            <li>
+                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="/sina weibo" title="Weibo" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+        </ul>
+
+        <hr>
+        <!-- 研究涉及领域 -->
+        
+        <section>
+            <div class="tags">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#C" title="C" rel="6">
+                    <span class="tag">C</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Ubuntu" title="Ubuntu" rel="13">
+                    <span class="tag">Ubuntu</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Software" title="Software" rel="5">
+                    <span class="tag">Software</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Batch" title="Batch" rel="8">
+                    <span class="tag">Batch</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Shell" title="Shell" rel="14">
+                    <span class="tag">Shell</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#ACM" title="ACM" rel="8">
+                    <span class="tag">ACM</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Coding" title="Coding" rel="7">
+                    <span class="tag">Coding</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Python" title="Python" rel="11">
+                    <span class="tag">Python</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Google" title="Google" rel="9">
+                    <span class="tag">Google</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Algorithm" title="Algorithm" rel="5">
+                    <span class="tag">Algorithm</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </section>
+
+        <!-- 网站访问 -->
+        <div class="header-subtitle">
+            <span id="busuanzi_container_site_pv">
+                访客数：<span id="busuanzi_value_site_pv"></span>人次
+            </span><br/>
+            <span id="busuanzi_container_site_uv">
+                访问量: <span id="busuanzi_value_site_uv"></span>次
+            </span>
+        </div>
+        
+
+    </header>
+</div>
+
+            </div>
+            </div>
+            <!--主要内容显示-->
+            <div class="col-md-9" role="main">
+            
+            <div class="body-wrap"><head>
+    <title>ACM算法之约数个数原理</title>
+</head>
+<body>
+ACM算法之约数个数原理
+<hr>
+<p>在数论里面除了老生常谈的素数问题，还有一个就是约数个数问题。对于这个问题的解法可能还停留在用n除以 $1,\cdots,\sqrt n$，然后统计能够整除的个数。其时间复杂度为 $O(\sqrt n)$。本文主要介绍约数个数定理以及它在实际题目中的应用。<br><a id="more"></a></p>
+<h2 id="约数个数原理"><a href="#约数个数原理" class="headerlink" title="约数个数原理"></a>约数个数原理</h2><ul>
+<li><p>原理<br>对于一个大于1的正整数n，n可以因式分解为<br>$$<br>n = \prod _{ i = 1 } ^k p _i ^{ a _i } = p _1 ^{ a _1 } <em> \cdots </em> p _k ^{ a _k }<br>$$,<br>其中$ p _i $是质数，$ a <em>i \in N $，那么n的约数个数就是<br>$$<br>f ( n ) = \prod </em>{ i = 1 } ^k ( a _i + 1) = ( a _i + 1) <em> \cdots </em>( a _k + 1 )<br>$$</p>
+</li>
+<li><p>简证<br>因为$ p _i $都是质数，无法再进行因式分解，所以任意$ p _i $的组合都可以构成一个约数，对于质数$ p _i $有$ (a _i+1) $种可能，分别是 $ 0,1,\cdots,a _i $，那么对于k个$ p <em>i $共有 $ \prod </em>{i=1}^k (a _i +1) $种可能的组合。</p>
+</li>
+</ul>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><ul>
+<li><p>思路<br>要求解一个整数n的约数个数$ f(n) $，其关键就是通过因式分解获取各个质数的指数。不过通常情况下，我们无法获取比n小的质数有哪些（$ 10^{16} $以内的质数有104165820+个，所以数目还是可观的。）这里我们通过n不断除以除数m，$ m \in {2,3,5,7,9,\cdots} $，如果能够整除的话，就更新n为$ n/m $，这样虽然除数里面有9这样的合数，但经过除以2次3后，9将会不被更新后的n整除，所以实际的情况还是除以质数。</p>
+</li>
+<li><p>c++代码  </p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 快速计算n的约数个数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">NumOfFac</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> i,k,count=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> m=n;</span><br><span class="line">	<span class="keyword">while</span>(m!=<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">2</span>; i&lt;=m; i+=<span class="number">2</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(m % i == <span class="number">0</span>)&#123;</span><br><span class="line">				k=<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">while</span>(m % i == <span class="number">0</span>)&#123;</span><br><span class="line">					k++;</span><br><span class="line">					m = m / i;</span><br><span class="line">				&#125;</span><br><span class="line">			count = count*k;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="comment">// 2,3,5,7,11...避开2-&gt;3之间差1</span></span><br><span class="line">		<span class="keyword">if</span>(i == <span class="number">2</span>)</span><br><span class="line">			i--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="解题报告"><a href="#解题报告" class="headerlink" title="解题报告"></a>解题报告</h2><ul>
+<li><p>HihoCoder</p>
+<ol>
+<li><p>divisors: <a href="http://hihocoder.com/contest/mstest2015july1/problem/2" target="_blank" rel="external">divisors</a> | <a href="!--￼1--&gt;/assets/attachs/hiho_divisors.cpp.txt">源码</a> | <a href="!--￼2--&gt;/acm_report/2015/07/23/ACM解题报告之最大约数个数.html">报告细节</a></p>
+<p> 注意点：</p>
+<ol>
+<li>暴力求解(==遍历比n小的数，依次求解每个数的约数个数==)是行不通的。</li>
+<li><p>合理利用约数个数原理，并对其进行优化求解。</p>
+<blockquote>
+<p><strong>TIPS:</strong><br>最终求解的拥有最大约数个数的数一定满足下面的推论：<br>若$p _1 &lt; p _2 &lt;  \cdots &lt; p _k$,则$a _1 &gt; a _2 &gt; \cdots &gt; a _k$</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+
+</body>
+</div>
+            <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2016 David | Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+        <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+</body>
+</html>

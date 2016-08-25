@@ -1,0 +1,381 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>shell运行环境之环境变量 | 禹过留声</title>
+
+    
+
+</head>
+
+<body>
+    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+    <a class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+    <!-- 置顶导航栏 -->
+    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    
+                        shell运行环境之环境变量
+                    
+                </a>
+            </div>
+            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+            </form>
+            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/archives/">文章归档</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/skills/">技能图谱</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/reading/">读书</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/about/">关于我</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/links/">友情链接</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="content" class="container">
+        <div class="row">
+            <!--左边导航栏-->
+            <div class="col-md-3" role="complementary">
+                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
+                <div class="introduce">
+    <header id="header" class="inner">
+        <!-- 头像 -->
+        <a href="/" >
+            <img src="/img/avatar.png" class="avatar">
+        </a>
+        <h2><a href="/">David</a></h2>
+
+        
+        <p class="header-subtitle">专注coding一百年</p>
+        
+
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="">
+                    <span class="item-state">64</span>
+                    <span class="item-state">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">3</span>
+                    <span class="item-state">标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">18</span>
+                    <span class="item-state">读书</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 社交图标 -->
+        <ul class="list-inline">
+            
+            <li>
+                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="/sina weibo" title="Weibo" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+        </ul>
+
+        <hr>
+        <!-- 研究涉及领域 -->
+        
+        <section>
+            <div class="tags">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#C" title="C" rel="6">
+                    <span class="tag">C</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Ubuntu" title="Ubuntu" rel="13">
+                    <span class="tag">Ubuntu</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Software" title="Software" rel="5">
+                    <span class="tag">Software</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Batch" title="Batch" rel="8">
+                    <span class="tag">Batch</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Shell" title="Shell" rel="14">
+                    <span class="tag">Shell</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#ACM" title="ACM" rel="8">
+                    <span class="tag">ACM</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Coding" title="Coding" rel="7">
+                    <span class="tag">Coding</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Python" title="Python" rel="11">
+                    <span class="tag">Python</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Google" title="Google" rel="9">
+                    <span class="tag">Google</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Algorithm" title="Algorithm" rel="5">
+                    <span class="tag">Algorithm</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </section>
+
+        <!-- 网站访问 -->
+        <div class="header-subtitle">
+            <span id="busuanzi_container_site_pv">
+                访客数：<span id="busuanzi_value_site_pv"></span>人次
+            </span><br/>
+            <span id="busuanzi_container_site_uv">
+                访问量: <span id="busuanzi_value_site_uv"></span>次
+            </span>
+        </div>
+        
+
+    </header>
+</div>
+
+            </div>
+            </div>
+            <!--主要内容显示-->
+            <div class="col-md-9" role="main">
+            
+            <div class="body-wrap"><head>
+    <title>shell运行环境之环境变量</title>
+</head>
+<body>
+shell运行环境之环境变量
+<hr>
+<p>在windows系统中，我们经常需要设置环境变量，特别是安装玩JAVA JDk之后。而在linux里面也是需要对一些环境变量进行设置，比如PATH（执行文件的路径），http_proxy（http代理）等。本篇博文主要介绍三种环境变量–临时变量，用户变量和系统变量，并对其作用的先后做一点验证。<br><a id="more"></a></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="http://baike.baidu.com/link?url=3Gg85PddfEhNPdztYJ_eXTlskslQrMUiD3rgR707cgNQtc9TEQhNksaqD-pX-kd0s2xN4nSS4Y6_CVynCguHLK" target="_blank" rel="external">环境变量</a>一般是指在操作系统中用来指定操作系统运行环境的一些参数，如：临时文件夹位置和系统文件夹位置等。它相当于给系统或用户应用程序设置的一些参数，具体起什么作用这和具体的环境变量相关。</p>
+<p>在windows系统里面，经常会遇到<a href="https://www.java.com/zh_CN/download/help/path.xml" target="_blank" rel="external">设置环境变量</a>的问题，特别是安装完Java JDK之后。我们很少在黑漆漆的命令行窗口中执行命令<code>set path=%path%;D:\jdk\bin</code>,因为这样设置的变量是临时环境变量，它只能在这个命令窗口中被识别，知道<code>java</code>命令在D:\jdk\bin目录里，但当重新打开一个命令窗口（shell外壳）后那个窗口将无法识别。也就是说该path只对执行那个命令的shell有效。还有两种方法是设置用户变量或系统变量。二者的区别就在于系统变量对所有用户有效，而用户变量只对当前用户有效。经试验，win8系统中二者都无需重启就可以起作用。</p>
+<h2 id="Linux-环境变量设置"><a href="#Linux-环境变量设置" class="headerlink" title="Linux 环境变量设置"></a>Linux 环境变量设置</h2><p>其实，linux里面对环境变量的设置和windows是共通的。它也有三种方式  </p>
+<ul>
+<li>临时变量<br>在shell外壳中执行命令<code>PATH=$PATH&#39;:/home/hjy/program/jdk/bin&#39;</code>,同样java命令只能在当前窗口中识别，重开一个外壳<code>java</code>命令将无效。</li>
+<li>用户变量<br>Linux里面关于用户变量的设置是在两个文件中，一个是/etc/profile，另一个是~/.profile。profile是配置的意思，是某个用户唯一用来设置环境变量的地方。针对不同的用户习惯，使用不同的shell（像bash，sh，zsh等），针对不同的功能或不同的应用，加载不同的环境变量文件。这部分将在<a href="!--￼3--&gt;/2015/09/09/shell运行环境之环境配置文件.html">shell的运行环境之环境配置文件</a>里详细说明。</li>
+<li>系统变量<br>Linux里面关于系统变量的设置是在/etc/environment文件中。该环境变量的设置不需要加<code>export</code>，直接赋值即可。</li>
+</ul>
+<h2 id="验证作用域"><a href="#验证作用域" class="headerlink" title="验证作用域"></a>验证作用域</h2><p>易知临时变量的作用域只在当前的外壳中，出了当前外壳将失效。而对于用户变量和系统变量，我们这里做两个小的试验，其中一个是<a href="http://andy136566.iteye.com/blog/1025338" target="_blank" rel="external">网上</a>的，关键是讲解中又是疑问又是否定的，没搞明白作者啥意思，所以这里亲自验证一下。</p>
+<ul>
+<li><p>图形界面登录<br>经试验发现，自己的电脑环境和网上博主还是有些区别的。主要在<a href="http://wiki.ubuntu.org.cn/%E4%BF%AE%E6%94%B9locale" target="_blank" rel="external">本地化语言环境设定上的区别</a>，在安装好中文和英文的语言包后，系统的本地语言环境如图：<br><img src="!--￼4--&gt;/assets/images/ori_locale.jpg" alt="ori_locale"><br>但是由这篇博文–<a href="http://my.oschina.net/luan/blog/79875" target="_blank" rel="external">locale的设定中LANG、LC_ALL、LANGUAGE环境变量的区别</a>知道，<code>LC_ALL &gt; LC_* &gt;LANG</code>，所以在本机上配置LANG将会被LC_*所取代，而导致无论怎么设置都是英文环境。所以实际实验是设定LC_ALL变量。   </p>
+<ul>
+<li>试验步骤  <ol>
+<li>将<code>export LC_ALL=zh_CN.UTF-8</code>加入/etc/profile，退出系统重新登录，登录界面和locale变量如下图所示：<br> <img src="!--￼5--&gt;/assets/images/eprofile.jpg" alt="eprofile"><br> <img src="!--￼6--&gt;/assets/images/pro_locale.jpg" alt="pro_locale">  </li>
+<li>删除/etc/profile中的<code>export LC_ALL=zh_CN.UTF-8</code>，并将其加入到/etc/envirionment，退出系统重新登录，登录界面和locale变量如下图所示：<br><img src="!--￼7--&gt;/assets/images/environment.jpg" alt="environment"><br><img src="!--￼8--&gt;/assets/images/env_locale.jpg" alt="env_locale"></li>
+</ol>
+</li>
+<li><p>结论：    </p>
+<ol>
+<li>在登录界面时（还没有用户登录系统），系统执行了/etc/environment，仅此而已。而对于是否执行/etc/profile以及这两个文件谁先谁后的问题无法得出结论。对于这个问题，后面会做一下讨论。</li>
+</ol>
+<blockquote>
+<p><strong>结论：</strong><br>用户登录系统前，即刚进入登录界面，此时/etc/environment已经被执行。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>用户登录后进入shell后  </p>
+<ul>
+<li><p>试验步骤  </p>
+<ol>
+<li><p>在/etc/profile文件中加入如下变量：</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> eprofile=‘I am <span class="keyword">in</span> /etc/profile’</span><br><span class="line"><span class="built_in">export</span> epro_env=‘I am <span class="keyword">in</span> /etc/profile’</span><br><span class="line"><span class="built_in">export</span> epro_pro=‘I am <span class="keyword">in</span> /etc/profile’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在/etc/environment文件中加入如下变量：</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">environment=‘I am <span class="keyword">in</span> /etc/environment’</span><br><span class="line">epro_env=‘I am <span class="keyword">in</span> /etc/environment’</span><br><span class="line">env_pro=‘I am <span class="keyword">in</span> /etc/environment’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在~/.profile文件中加入如下变量：</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> profile=‘I am <span class="keyword">in</span> ~/.profile’</span><br><span class="line"><span class="built_in">export</span> epro_pro=‘I am <span class="keyword">in</span> ~/.profile’</span><br><span class="line"><span class="built_in">export</span> env_pro=‘I am <span class="keyword">in</span> ~/.profile’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启系统后查看profile，environment，homepro，pro_env,pro_env_pro这五个变量的值，结果如下图所示：<br> <img src="!--￼9--&gt;/assets/images/login.jpg" alt="login">  </p>
+</li>
+</ol>
+</li>
+<li><p>结论：  </p>
+<ol>
+<li>三个环境配置文件都被执行了<br>变量environment，eprofile，profile都有值</li>
+<li>/etc/environment 优先于 /etc/profile<br>变量epro_env是/etc/profile里面的值，结合第一个结论，可得/etc/environment 优先于 /etc/profile</li>
+<li>/etc/profile 优先于 ~/.profile<br>变量epro_pro是~/.profile里面的值，结合第一个结论，可得/etc/profile 优先于 ~/.profile</li>
+</ol>
+<blockquote>
+<p><strong>结论：</strong><br>用户登录系统打开shell后，/etc/environment，/etc/profile和~/.profile执行顺序是：<br>/etc/environment =&gt; /etc/profile =&gt; ~/.profile</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="问题讨论"><a href="#问题讨论" class="headerlink" title="问题讨论"></a>问题讨论</h2><ol>
+<li>关于第一个试验中只能得出/etc/environment在登录界面前将被执行，而对于是否执行/etc/profile以及这两个文件谁先谁后的问题无法得出结论。<br>从两幅登录界面发现在/etc/environment设定的LC_ALL起作用了，但是/etc/profile中的不起作用可能是被后面的覆盖掉，也有可能==该文件还没有被执行==，至于后面locale变量的比较，是在我们登录进系统后打开shell后看到的。在下一篇博文<a href="!--￼10--&gt;/2015/09/09/shell运行环境之环境配置文件.html">shell的运行环境之环境配置文件</a>中我们会得出打开shell后会执行/etc/profile和~/.profile文件，所以无法判定在登录界面之前/etc/profile是否被执行，更不谈谁先谁后。<br>个人倾向的解释是登录界面之前只是执行/etc/environment，不会执行/etc/profile，当输入用户和密码后才会以登录模式进入系统，此时/etc/profile和～/.profile才会被执行。</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a href="http://baike.baidu.com/link?url=3Gg85PddfEhNPdztYJ_eXTlskslQrMUiD3rgR707cgNQtc9TEQhNksaqD-pX-kd0s2xN4nSS4Y6_CVynCguHLK" target="_blank" rel="external">环境变量定义</a></li>
+<li><a href="https://www.java.com/zh_CN/download/help/path.xml" target="_blank" rel="external">如何设置或更改PATH系统变量</a></li>
+<li><a href="http://andy136566.iteye.com/blog/1025338" target="_blank" rel="external">etc/profile和/etc/environment的比较</a></li>
+<li><a href="http://my.oschina.net/luan/blog/79875" target="_blank" rel="external">本地化环境变量LANG、LC_ALL、LANGUAGE的区别</a></li>
+<li><a href="http://wiki.ubuntu.org.cn/%E4%BF%AE%E6%94%B9locale" target="_blank" rel="external">wiki locale</a></li>
+</ol>
+
+</body>
+</div>
+            <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2016 David | Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+        <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+</body>
+</html>

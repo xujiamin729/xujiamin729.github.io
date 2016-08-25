@@ -1,0 +1,358 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>shell运行环境之sudo的环境 | 禹过留声</title>
+
+    
+
+</head>
+
+<body>
+    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+    <a class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+    <!-- 置顶导航栏 -->
+    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    
+                        shell运行环境之sudo的环境
+                    
+                </a>
+            </div>
+            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+            </form>
+            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/archives/">文章归档</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/skills/">技能图谱</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/reading/">读书</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/about/">关于我</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/links/">友情链接</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="content" class="container">
+        <div class="row">
+            <!--左边导航栏-->
+            <div class="col-md-3" role="complementary">
+                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
+                <div class="introduce">
+    <header id="header" class="inner">
+        <!-- 头像 -->
+        <a href="/" >
+            <img src="/img/avatar.png" class="avatar">
+        </a>
+        <h2><a href="/">David</a></h2>
+
+        
+        <p class="header-subtitle">专注coding一百年</p>
+        
+
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="">
+                    <span class="item-state">64</span>
+                    <span class="item-state">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">3</span>
+                    <span class="item-state">标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">18</span>
+                    <span class="item-state">读书</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 社交图标 -->
+        <ul class="list-inline">
+            
+            <li>
+                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="/sina weibo" title="Weibo" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+        </ul>
+
+        <hr>
+        <!-- 研究涉及领域 -->
+        
+        <section>
+            <div class="tags">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#C" title="C" rel="6">
+                    <span class="tag">C</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Ubuntu" title="Ubuntu" rel="13">
+                    <span class="tag">Ubuntu</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Software" title="Software" rel="5">
+                    <span class="tag">Software</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Batch" title="Batch" rel="8">
+                    <span class="tag">Batch</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Shell" title="Shell" rel="14">
+                    <span class="tag">Shell</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#ACM" title="ACM" rel="8">
+                    <span class="tag">ACM</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Coding" title="Coding" rel="7">
+                    <span class="tag">Coding</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Python" title="Python" rel="11">
+                    <span class="tag">Python</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Google" title="Google" rel="9">
+                    <span class="tag">Google</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Algorithm" title="Algorithm" rel="5">
+                    <span class="tag">Algorithm</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </section>
+
+        <!-- 网站访问 -->
+        <div class="header-subtitle">
+            <span id="busuanzi_container_site_pv">
+                访客数：<span id="busuanzi_value_site_pv"></span>人次
+            </span><br/>
+            <span id="busuanzi_container_site_uv">
+                访问量: <span id="busuanzi_value_site_uv"></span>次
+            </span>
+        </div>
+        
+
+    </header>
+</div>
+
+            </div>
+            </div>
+            <!--主要内容显示-->
+            <div class="col-md-9" role="main">
+            
+            <div class="body-wrap"><head>
+    <title>shell运行环境之sudo的环境</title>
+</head>
+<body>
+shell运行环境之sudo的环境
+<hr>
+<p>上篇<a href="!--￼1--&gt;/2015/09/09/shell运行环境之环境配置文件.html">博文</a>讲解了shell里面四个配置文件的作用域以及shell的四种常用模式。在此基础上，我们进一步探究一下在用户切换过程中，运行环境的变化。在Ubuntu里，我们通常使用<code>sudo</code>来提权，使用<code>su</code>来切换用户，而这两种操作都会对bash运行环境产生影响。搞明白运行环境的变化，你将明白在公司怎样使用代理。<br><a id="more"></a></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>我们经常在终端中使用<code>sudo</code>来提权–以普通用户的身份去行使管理员的权限（前提是知道管理员用户的密码），这样减少了root用户的登录次数和管理时间，也提高了系统的安全性。不过有时候我们会直接用<code>su</code>切换到管理员进行一系列操作。<code>su</code>和<code>sudo</code>虽然不是具有相似功能的命令，但是它们的目的大部分情况是为了获取root权限。  </p>
+<ul>
+<li>su命令<br>su命令是switch user的简写，是用来切换用户的。当不加任何参数时，它将切换到root用户。它需要你想<strong>切换到的用户</strong>的密码，在输入密码后，你将切换到那个用户的运行环境。</li>
+<li><a href="https://zh.wikipedia.org/zh/Sudo" target="_blank" rel="external">sudo</a>命令<br>该命令是superuser do的简写，能够以root的权限取执行命令，但是它需要的是<strong>当前用户</strong>的密码，而不是像su需要的是想要切换到的用户的密码。这样需要执行一些需要root权限的命令时就不需要频繁输入root用户的密码，当然前提是当前用户的信息是存档在特殊的文件（/etc/sudoers）中。默认情况下，系统将记住当前用户的密码一段时间，以方便用户不用经常输入密码。</li>
+</ul>
+<h2 id="运行环境的变化"><a href="#运行环境的变化" class="headerlink" title="运行环境的变化"></a><a href="http://askubuntu.com/questions/376199/sudo-su-vs-sudo-i-vs-sudo-bin-bash-when-does-it-matter-which-is-used" target="_blank" rel="external">运行环境的变化</a></h2><ul>
+<li>sudo<br>根据man的说明，sudoers提供了两种方法来限制sudo从用户环境中继承的变量。默认是env_reset变量是enabled，此时将会执行一个新的，最小的环境/etc/environment。另一种是设置env_reset变量是disabled，此时env_check和env_delete充当白列表的作用，因此不建议第二种情况。</li>
+<li>sudo su<br>bash将以一个交互非登录模式运行，所以只有两个bashrc文件将被执行。所以当用户切换成root后，我们还在当前的工作的目录，而非/root目录。</li>
+<li>sudo su -<br>bash将以登录模式运行的，此时/etc/profile，~/.profile将会被执行，隐形的/etc/bash.bashrc和~/.bashrc也将会被执行。此时，我们的当前目录是/root。</li>
+<li>sudo -i将<br>-i是–login的简写，所以接近sudo su -的情况</li>
+<li>sudo /bin/bash<br>bash将以非登录模式运行，上面四个文件将不会被执行。</li>
+</ul>
+<h2 id="试验"><a href="#试验" class="headerlink" title="试验"></a>试验</h2><ul>
+<li><p>问题<br>今天在公司准备使用命令行<code>sudo /opt/logstash/bin/plugin install logstash-output-webhdfs</code>给logstash安装logstash-output-webhdfs插件，以实现将logstash收集的日志信息存储到Hadoop文件系统这一目的。但是却一直提示如下错误：</p>
+<blockquote>
+<p>Unable to download data from <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a> - 连接被对端重置 (<a href="https://rubygems.global.ssl.fastly.net/latest_specs.4.8.gz" target="_blank" rel="external">https://rubygems.global.ssl.fastly.net/latest_specs.4.8.gz</a>)<br>ERROR: Installation aborted, verification failed for logstash-output-webhdfs</p>
+</blockquote>
+</li>
+</ul>
+<p>这里公司上网环境是使用了代理。本人在~/.bashrc中添加了<code>export http_proxy=xxx</code>和<code>export https_proxy=xxx</code>。接下来按照网上的解决方法作了如下尝试，均已失败告终。    </p>
+<ol>
+<li>用Google搜索错误提示<a href="http://www.sjsjw.com/kf_jiagou/article/027841ABA028365.asp" target="_blank" rel="external">Unable to download data from https://rubygems.org</a>  </li>
+<li><a href="https://discuss.elastic.co/t/shield-w-logstash-offline-install/25072" target="_blank" rel="external">手动安装插件logstash-output-webhdfs</a>  </li>
+</ol>
+<ul>
+<li>解决方案</li>
+</ul>
+<ol>
+<li><p><a href="https://getpocket.com/a/read/149876899" target="_blank" rel="external">设置sudo的运行环境</a><br>使用<code>sudo visudo</code>对/etc/sudoers文件进行如下修改：</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Defaults env_keep = <span class="string">"http_proxy https_proxy"</span></span><br><span class="line">Defaults        env_reset</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通过保留当前用户的http_proxy和https_proxy变量，使得sudo情况下也能使用代理。具体参考<a href="http://my.oschina.net/alphajay/blog/28811" target="_blank" rel="external">这里</a>。</p>
+<ol>
+<li>进入root用户，并设定http_proxy和https_proxy代理。</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a href="http://www.sjsjw.com/kf_jiagou/article/027841ABA028365.asp" target="_blank" rel="external">如何更换rubygem镜像的源</a></li>
+<li><a href="https://discuss.elastic.co/t/shield-w-logstash-offline-install/25072" target="_blank" rel="external">如何手动安装logstash插件logstash-output-elasticsearch-shield</a></li>
+<li><a href="https://zh.wikipedia.org/zh/Sudo" target="_blank" rel="external">维基百科sudo</a></li>
+<li><a href="http://askubuntu.com/questions/376199/sudo-su-vs-sudo-i-vs-sudo-bin-bash-when-does-it-matter-which-is-used" target="_blank" rel="external">su和sudo对运行环境的影响</a></li>
+<li><a href="https://getpocket.com/a/read/149876899" target="_blank" rel="external">sudo使用代理</a></li>
+<li><a href="http://my.oschina.net/alphajay/blog/28811" target="_blank" rel="external">sudo环境设置</a></li>
+</ol>
+
+</body>
+</div>
+            <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2016 David | Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+        <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+</body>
+</html>

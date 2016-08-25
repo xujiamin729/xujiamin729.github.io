@@ -1,0 +1,372 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>ACM算法之基本并查集 | 禹过留声</title>
+
+    
+
+</head>
+
+<body>
+    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+    <a class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+    <!-- 置顶导航栏 -->
+    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    
+                        ACM算法之基本并查集
+                    
+                </a>
+            </div>
+            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+            </form>
+            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/archives/">文章归档</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/skills/">技能图谱</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/reading/">读书</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/about/">关于我</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/links/">友情链接</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="content" class="container">
+        <div class="row">
+            <!--左边导航栏-->
+            <div class="col-md-3" role="complementary">
+                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
+                <div class="introduce">
+    <header id="header" class="inner">
+        <!-- 头像 -->
+        <a href="/" >
+            <img src="/img/avatar.png" class="avatar">
+        </a>
+        <h2><a href="/">David</a></h2>
+
+        
+        <p class="header-subtitle">专注coding一百年</p>
+        
+
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="">
+                    <span class="item-state">64</span>
+                    <span class="item-state">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">3</span>
+                    <span class="item-state">标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">18</span>
+                    <span class="item-state">读书</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 社交图标 -->
+        <ul class="list-inline">
+            
+            <li>
+                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="/sina weibo" title="Weibo" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+        </ul>
+
+        <hr>
+        <!-- 研究涉及领域 -->
+        
+        <section>
+            <div class="tags">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#C" title="C" rel="6">
+                    <span class="tag">C</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Ubuntu" title="Ubuntu" rel="13">
+                    <span class="tag">Ubuntu</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Software" title="Software" rel="5">
+                    <span class="tag">Software</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Batch" title="Batch" rel="8">
+                    <span class="tag">Batch</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Shell" title="Shell" rel="14">
+                    <span class="tag">Shell</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#ACM" title="ACM" rel="8">
+                    <span class="tag">ACM</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Coding" title="Coding" rel="7">
+                    <span class="tag">Coding</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Python" title="Python" rel="11">
+                    <span class="tag">Python</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Google" title="Google" rel="9">
+                    <span class="tag">Google</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Algorithm" title="Algorithm" rel="5">
+                    <span class="tag">Algorithm</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </section>
+
+        <!-- 网站访问 -->
+        <div class="header-subtitle">
+            <span id="busuanzi_container_site_pv">
+                访客数：<span id="busuanzi_value_site_pv"></span>人次
+            </span><br/>
+            <span id="busuanzi_container_site_uv">
+                访问量: <span id="busuanzi_value_site_uv"></span>次
+            </span>
+        </div>
+        
+
+    </header>
+</div>
+
+            </div>
+            </div>
+            <!--主要内容显示-->
+            <div class="col-md-9" role="main">
+            
+            <div class="body-wrap"><head>
+    <title>ACM算法之基本并查集</title>
+</head>
+<body>
+ACM算法之基本并查集
+<hr>
+<p>并查集是一种用途广泛的数据结构，能够快速地处理集合的合并和查询问题，并且实现起来非常方便，在很多场合中都有着非常巧妙的应用。本文首先介绍并查集的定义、原理及具体实现，然后结合hihocoder以及poj上的题目做一些具体实践。<br><a id="more"></a></p>
+<h2 id="定义和原理"><a href="#定义和原理" class="headerlink" title="定义和原理"></a>定义和原理</h2><p><a href="https://zh.wikipedia.org/wiki/%E5%B9%B6%E6%9F%A5%E9%9B%86" target="_blank" rel="external">并查集</a>(Union-Find Set)是一种树型的数据结构，其保持着用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。有一个联合-查找算法（union-find algorithm）定义了两个操作用于此数据结构：</p>
+<ul>
+<li><code>Find</code>            确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。  </li>
+<li><code>Union</code>    将两个子集合并成同一个集合。  </li>
+</ul>
+<p>因为它支持这两种操作，一个不相交集也常被称为联合-查找数据结构（union-find data structure）或合并-查找集合（merge-find set）。其他的重要方法，<code>MakeSet</code>，用于建立单元素集合。有了这些方法，许多经典的划分问题可以被解决。</p>
+<p>网络上有两篇帮助理解的博文，博主用通俗易懂的语言，图文并茂的方式将并查集生动形象得阐释了。特附上博文链接：   </p>
+<ul>
+<li><a href="http://www.cnblogs.com/ACShiryu/archive/2011/11/24/unionset.html" target="_blank" rel="external">通俗易懂的诠释并查集</a></li>
+<li><a href="http://www.cnblogs.com/cyjb/p/UnionFindSets.html" target="_blank" rel="external">图文并茂的解释并查集</a></li>
+</ul>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><ul>
+<li><p>并查集的数据存储[==O(n)==]</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LENMAX 1000000</span></span><br><span class="line"><span class="keyword">int</span> father[LENMAX]</span><br></pre></td></tr></table></figure>
+<p>  虽然并查集是树型的数据结构，但是实际的存储是用数组，就跟堆排序一样。</p>
+</li>
+<li><p>并查集的初始化<code>MakeSet</code></p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MakeSet</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;LENMAX;i++)&#123;</span><br><span class="line">		father[i]=i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <code>MakeSet</code>是并查集的初始化函数，这里采用<code>father[i]==i</code>来判定该i是否是某个集合的代表。</p>
+</li>
+<li><p>并查集的查找操作[==O(alpha(n)) alpha(n)&lt;n==]</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查找操作--未压缩路径</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x==father[x])</span><br><span class="line">	  <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	  <span class="keyword">return</span> Find(father[x]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查找操作--压缩路径</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x==father[x])</span><br><span class="line">	  <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		father[x]=Find(father[x]);</span><br><span class="line">		<span class="keyword">return</span> father[x];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  压缩路径可以避免重复查找，其实际的意义是将树的深度由n变成1。就是将层层的等级制度变成全部向皇帝/代表负责。</p>
+</li>
+<li><p>并查集的合并操作[==O(alpha(n))  alpha(n)&lt;n==]</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 合并操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fatherX = Find(x);</span><br><span class="line">	<span class="keyword">int</span> fatherY = Find(y);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// fatherY归fatherX管了</span></span><br><span class="line">	<span class="keyword">if</span>(fatherX!=fatherY)</span><br><span class="line">	  father[fatherY]=fatherX;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span><br><span class="line">	// 合并的时候取小的数值</span><br><span class="line">	if(fatherX&lt;fatherY)</span><br><span class="line">		father[fatherY]=fatherX;</span><br><span class="line">	else</span><br><span class="line">		father[fatherX]=fatherY;</span><br><span class="line">	*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="解题报告"><a href="#解题报告" class="headerlink" title="解题报告"></a>解题报告</h2><ul>
+<li><p>HihoCoder</p>
+<ol>
+<li><p>第十四周：<a href="http://hihocoder.com/contest/hiho14/problem/1" target="_blank" rel="external">无间道之并查集</a>    |    <a href="!--￼5--&gt;/assets/attachs/hiho_14_main.cpp.txt">源码</a></p>
+<p> 注意点：</p>
+<ol>
+<li>通过map将名称转化为int标号</li>
+<li>最后一步判定两个名称是否是同一个集合时用<code>Find(mapName[nameX])==Find(mapName[nameY])</code>,不能用<code>father[mapName[nameX]]==father[mapName[nameY]]</code>。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>POJ</p>
+<ol>
+<li><p>1611: <a href="http://poj.org/problem?id=1611" target="_blank" rel="external">The Suspects</a>    |    <a href="!--￼6--&gt;/assets/attachs/poj_1611_main.cpp.txt">源码</a></p>
+<p> 注意点:</p>
+<ol>
+<li>判定i是否和0同一类必须得通过<code>Find</code>找到最高的根节点是相同[代码实现可以添加<code>rank[LENMAX]</code>来记录同集合的元素个数]</li>
+</ol>
+</li>
+<li><p>2524: <a href="http://poj.org/problem?id=2524" target="_blank" rel="external">Ubiquitous Religions</a>    |    <a href="!--￼7--&gt;/assets/attachs/poj_2524_main.cpp.txt">源码</a></p>
+<p> 注意点：</p>
+<ol>
+<li>通过<code>i=father[i]</code>判断是否是根节点,也就是说是否是一个集合</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+
+</body>
+</div>
+            <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2016 David | Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+        <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+</body>
+</html>

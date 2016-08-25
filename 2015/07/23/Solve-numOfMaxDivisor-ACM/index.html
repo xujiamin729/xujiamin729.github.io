@@ -1,0 +1,385 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>ACM解题报告之最大约数个数 | 禹过留声</title>
+
+    
+
+</head>
+
+<body>
+    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+    <a class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+    <!-- 置顶导航栏 -->
+    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    
+                        ACM解题报告之最大约数个数
+                    
+                </a>
+            </div>
+            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+            </form>
+            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/archives/">文章归档</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/skills/">技能图谱</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/reading/">读书</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/about/">关于我</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/links/">友情链接</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="content" class="container">
+        <div class="row">
+            <!--左边导航栏-->
+            <div class="col-md-3" role="complementary">
+                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
+                <div class="introduce">
+    <header id="header" class="inner">
+        <!-- 头像 -->
+        <a href="/" >
+            <img src="/img/avatar.png" class="avatar">
+        </a>
+        <h2><a href="/">David</a></h2>
+
+        
+        <p class="header-subtitle">专注coding一百年</p>
+        
+
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="">
+                    <span class="item-state">64</span>
+                    <span class="item-state">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">3</span>
+                    <span class="item-state">标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">18</span>
+                    <span class="item-state">读书</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 社交图标 -->
+        <ul class="list-inline">
+            
+            <li>
+                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="/sina weibo" title="Weibo" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+        </ul>
+
+        <hr>
+        <!-- 研究涉及领域 -->
+        
+        <section>
+            <div class="tags">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#C" title="C" rel="6">
+                    <span class="tag">C</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Ubuntu" title="Ubuntu" rel="13">
+                    <span class="tag">Ubuntu</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Software" title="Software" rel="5">
+                    <span class="tag">Software</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Batch" title="Batch" rel="8">
+                    <span class="tag">Batch</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Shell" title="Shell" rel="14">
+                    <span class="tag">Shell</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#ACM" title="ACM" rel="8">
+                    <span class="tag">ACM</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Coding" title="Coding" rel="7">
+                    <span class="tag">Coding</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Python" title="Python" rel="11">
+                    <span class="tag">Python</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Google" title="Google" rel="9">
+                    <span class="tag">Google</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Algorithm" title="Algorithm" rel="5">
+                    <span class="tag">Algorithm</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </section>
+
+        <!-- 网站访问 -->
+        <div class="header-subtitle">
+            <span id="busuanzi_container_site_pv">
+                访客数：<span id="busuanzi_value_site_pv"></span>人次
+            </span><br/>
+            <span id="busuanzi_container_site_uv">
+                访问量: <span id="busuanzi_value_site_uv"></span>次
+            </span>
+        </div>
+        
+
+    </header>
+</div>
+
+            </div>
+            </div>
+            <!--主要内容显示-->
+            <div class="col-md-9" role="main">
+            
+            <div class="body-wrap"><head>
+    <title>ACM解题报告之最大约数个数</title>
+</head>
+<body>
+ACM解题报告之最大约数个数
+<hr>
+<p>本题的解法是在<a href="!--￼5--&gt;/acm_algorithm/2015/07/15/ACM算法之约数个数原理.html">约数个数原理</a>的基础上对问题进行优化，从而大大降低算法的时间复杂度。而解题的思路是从结果去想它满足什么样的条件，从而获得优化问题的方法。<br><a id="more"></a></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>题目来自微软2016年校招探星夏令营第二题<a href="http://hihocoder.com/contest/mstest2015july1/problem/2" target="_blank" rel="external">Divisor</a>，并在<a href="http://hihocoder.com" target="_blank" rel="external">HiHocoder</a>上进行编程笔试，题目大意是：</p>
+<blockquote>
+<p>给一个数n，$n &lt; 10^{16}$，输出在$1 \sim n$之间约数最多的数，如果有多个相同最大约数个数的数，就输出最小的数</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
+<li><p>暴力求解<br>根据<a href="!--￼6--&gt;/acm_algorithm/2015/07/15/ACM算法之约数个数原理.html">约数个数原理</a>，我们可以很快的计算出给定的数n的约数个数。不过显然其时间复杂度是很大的。提交的结果是超时。</p>
+</li>
+<li><p>枚举优化<br>假定n以内的所有质数为$ p _1, \cdots , p <em>k $,那么对于n有$$ n = \prod </em>{i=1}^k p _i^{a _i} = p _1^{a _1} <em> \cdots </em> p _k^{a _k} $$,其中$ a <em>i \in [ 0, \lfloor \log </em>{p _i} n \rfloor ] $，这个就是约数个数原理。通过对这k个$ a _i $的自由组合我们能够<strong>枚举</strong>n以内所有的数。<br>而本题要求的是正整数n的约数个数最多并且n尽量小。该目的就是我们<strong>优化</strong>或<strong>剪枝</strong>$ a _i $组合的出发点。</p>
+<ul>
+<li><p>约数个数最多<br>对于正整数n的约数个数$ f(n)= \prod _{i=1}^k (a _i+1) $,而要使$ f(n)$更大，那么$a _i$值要大并且$ a _i == 0 $的数目要少，这样乘积才会更大，当然此时n也会更大，这里$ a _i $是质数$ p _i $的指数。这里的冲突点在于当要给某个$ a _i $增加值时，是给小的$p _i$增加个大值还是给大的$p _i$增加个小值。简单的例子如下：对于4这个整数，乘上19和2^4得到的$f(76)=6,f(64)=7$，而对于8这个整数，乘上19和2^4得到的$f(152)=8,f(128)=8$，再对于16这个整数，乘上19和2^4得到的$f(304)=10,f(256)=9$。该冲突让我们考虑到底要用哪些$p _i$来构成这个约数个数最多的数。经过计算质数$[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]$依次相乘为$1.3 \times 10^{16}$。显然对于正整数$N &lt; 10^{16}$以内约数个数最多的数n一定是由上面的14个质数组成。</p>
+<blockquote>
+<p><strong>剪枝条件1：</strong><br>对于正整数$N &lt; 10^{16}$以内约数个数最多的数n一定是由这[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]14个质数组成。</p>
+<blockquote>
+<p><strong>简要证明</strong><br>假设最终的n中有约数大于43的质数$p _k$，其中$n&lt;N$,那么上面的质数组里必定有一个质数$p _j$的指数为0,不然n一定会超出N。那么此时用$p _j$代替$p _k$一定会获得比n更小的值$n’$，那么n并不是最终的n，这和假设矛盾。  </p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>n尽量小<br>当约数个数相同的时候，会取n最小的那个正整数。这也就意味着此时k个$a _i$的取值已经确定了，但是每个$a _i$对应的质数$p _j$还没有确定（$i,j \in [0,k]$），不同的组合会构成不同的数，但是最小的正整数只能有一种组合，那就是最大的$a _i$对应最小的$p _j$。所以我们获得了另一个剪枝的条件。</p>
+<blockquote>
+<p><strong>剪枝条件2：</strong><br>最终求解的拥有最大约数个数的数n一定满足：<br>若$p _1 &lt; p _2 &lt; \cdots &lt; p _k$，则$a _1 &gt; a _2 &gt; \cdots &gt; a _k$。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="算法说明"><a href="#算法说明" class="headerlink" title="算法说明"></a>算法说明</h2><ol>
+<li><p>剪枝条件1的应用<br>定义静态常量数组，用来存放这14个质数</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> little_prime[] = &#123;</span><br><span class="line"><span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">17</span>,<span class="number">19</span>,<span class="number">23</span>,<span class="number">29</span>,</span><br><span class="line"><span class="number">31</span>,<span class="number">37</span>,<span class="number">41</span>,<span class="number">43</span>&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>递归函数的声明<br>函数功能是当第len位质数加入后，寻找约数个数最多的最小正整数<br>，其参数如下:  </p>
+<ul>
+<li>N    –     输入要寻找的N范围内</li>
+<li>n    –    求解的n</li>
+<li>counts    –    约数的个数</li>
+<li>len    –    第len个质数</li>
+<li><p>maxTimes    –    第len个质数的最大指数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FindMinN</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> N, <span class="keyword">long</span> <span class="keyword">long</span> n, <span class="keyword">int</span> counts, <span class="keyword">int</span> len, <span class="keyword">int</span> maxTimes)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>函数内部解析</p>
+<ul>
+<li>numOfMinN    –    全局变量，用来存储当前所找数中约数最多的值</li>
+<li><p>minN    –    全局变量，用来存储当前所有数中最小的n</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当第len位质数加入后，寻找约数个数最多的最小正整数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FindMinN</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> N, <span class="keyword">long</span> <span class="keyword">long</span> n, <span class="keyword">int</span> counts, <span class="keyword">int</span> len, <span class="keyword">int</span> maxTimes)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 当找到约数个数更多或者约数个数相同但数更小的直接更新</span></span><br><span class="line">	<span class="comment">// update</span></span><br><span class="line">    <span class="keyword">if</span>(counts &gt; numOfMinN || (counts == numOfMinN &amp;&amp; minN &gt; N))&#123;</span><br><span class="line">        numOfMinN = counts;</span><br><span class="line">        minN = n;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// find</span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="comment">// 遍历第len位质数，其指数为1,2，。。。，maxTimes</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=maxTimes; i++)&#123;</span><br><span class="line">		n = n * little_prime[len];</span><br><span class="line">		<span class="keyword">if</span>(ans &gt; N)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="comment">// 遍历第len+1位质数，其指数的最大值为i -- 剪枝条件2</span></span><br><span class="line">		FindMinN(N, n, counts*(i+<span class="number">1</span>), len+<span class="number">1</span>, i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><a href="!--￼7--&gt;/assets/attachs/hiho_divisors.cpp.txt">完整代码</a></p>
+</li>
+</ol>
+<h2 id="举一反三"><a href="#举一反三" class="headerlink" title="举一反三"></a>举一反三</h2><ol>
+<li><p>k维数组的遍历<br>对本题的另一种解读是n维数组的遍历。这里每个$p _i$算一个维度，在每个维度上有$a _i+1$个可能的值。对这k个维度的遍历就是对比N小的正整数的依次判别。  </p>
+<ul>
+<li><p>代码说明  </p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每个维度取值个数</span></span><br><span class="line"><span class="keyword">int</span> varMax[]=&#123;</span><br><span class="line"><span class="number">10</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,</span><br><span class="line"><span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="comment">// 第ind维度取值的情况</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TraversalByRecu</span><span class="params">(<span class="keyword">int</span> dim, <span class="keyword">int</span> ind, <span class="keyword">int</span> max, <span class="keyword">int</span> var[])</span></span>&#123;</span><br><span class="line">	<span class="comment">// 取完dim个维度打印输出</span></span><br><span class="line">	<span class="keyword">if</span>(ind&gt;=dim)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;dim; j++)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\t"</span>,var[j]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;   </span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">	<span class="comment">// 第ind维度取完所有可能的取值</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=max;i++)&#123;</span><br><span class="line">		var[ind]=i;</span><br><span class="line">		<span class="comment">// 取第ind+1维度，并设定第ind+1维度取值个数</span></span><br><span class="line">		TraversalByRecu(dim,ind+<span class="number">1</span>,varMax[ind+<span class="number">1</span>],var);</span><br><span class="line">	&#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="!--￼8--&gt;/assets/attachs/hiho_divisors_travel.cpp.txt">完整代码</a></p>
+</li>
+</ul>
+</li>
+<li><p>区间里约数个数最大的尽量小的数<br>对于这个问题，其实和N以内很类似，唯一的区别可能就是在更新的时候要判断当前的n在不在区间范围内。  </p>
+<ul>
+<li><p>代码说明</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FindMinN</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> low, <span class="keyword">long</span> <span class="keyword">long</span> high, <span class="keyword">long</span> <span class="keyword">long</span> n, <span class="keyword">int</span> counts, <span class="keyword">int</span> len, <span class="keyword">int</span> maxTimes)</span></span>&#123;</span><br><span class="line">    <span class="comment">// update</span></span><br><span class="line">	<span class="keyword">if</span>(n&lt;=high &amp;&amp; n&gt;=low)&#123;</span><br><span class="line">		<span class="keyword">if</span>(counts &gt; numOfMinN || (counts == numOfMinN &amp;&amp; minN &gt; n))&#123;</span><br><span class="line">			numOfMinN = counts;</span><br><span class="line">			minN = n;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;   </span><br><span class="line">    <span class="comment">// find</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=maxTimes; i++)&#123;</span><br><span class="line">	    n = n * little_prime[len];</span><br><span class="line">	    <span class="keyword">if</span>(n &gt; high)</span><br><span class="line">		    <span class="keyword">break</span>;</span><br><span class="line">		    FindMinN(low, high, n, counts*(i+<span class="number">1</span>), len+<span class="number">1</span>, i);</span><br><span class="line">	&#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="!--￼9--&gt;/assets/attachs/hiho_divisors_depart.cpp.txt">完整代码</a></p>
+</li>
+</ul>
+</li>
+</ol>
+
+</body>
+</div>
+            <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2016 David | Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+        <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+</body>
+</html>

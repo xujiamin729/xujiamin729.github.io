@@ -1,0 +1,337 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>ML之线性回归 | 禹过留声</title>
+
+    
+
+</head>
+
+<body>
+    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+    <a class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+    <!-- 置顶导航栏 -->
+    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    
+                        ML之线性回归
+                    
+                </a>
+            </div>
+            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+            </form>
+            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/archives/">文章归档</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/skills/">技能图谱</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/reading/">读书</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/about/">关于我</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/links/">友情链接</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="content" class="container">
+        <div class="row">
+            <!--左边导航栏-->
+            <div class="col-md-3" role="complementary">
+                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
+                <div class="introduce">
+    <header id="header" class="inner">
+        <!-- 头像 -->
+        <a href="/" >
+            <img src="/img/avatar.png" class="avatar">
+        </a>
+        <h2><a href="/">David</a></h2>
+
+        
+        <p class="header-subtitle">专注coding一百年</p>
+        
+
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="">
+                    <span class="item-state">64</span>
+                    <span class="item-state">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">3</span>
+                    <span class="item-state">标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">18</span>
+                    <span class="item-state">读书</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 社交图标 -->
+        <ul class="list-inline">
+            
+            <li>
+                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="/sina weibo" title="Weibo" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+        </ul>
+
+        <hr>
+        <!-- 研究涉及领域 -->
+        
+        <section>
+            <div class="tags">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#C" title="C" rel="6">
+                    <span class="tag">C</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Ubuntu" title="Ubuntu" rel="13">
+                    <span class="tag">Ubuntu</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Software" title="Software" rel="5">
+                    <span class="tag">Software</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Batch" title="Batch" rel="8">
+                    <span class="tag">Batch</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Shell" title="Shell" rel="14">
+                    <span class="tag">Shell</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#ACM" title="ACM" rel="8">
+                    <span class="tag">ACM</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Coding" title="Coding" rel="7">
+                    <span class="tag">Coding</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Python" title="Python" rel="11">
+                    <span class="tag">Python</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Google" title="Google" rel="9">
+                    <span class="tag">Google</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Algorithm" title="Algorithm" rel="5">
+                    <span class="tag">Algorithm</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </section>
+
+        <!-- 网站访问 -->
+        <div class="header-subtitle">
+            <span id="busuanzi_container_site_pv">
+                访客数：<span id="busuanzi_value_site_pv"></span>人次
+            </span><br/>
+            <span id="busuanzi_container_site_uv">
+                访问量: <span id="busuanzi_value_site_uv"></span>次
+            </span>
+        </div>
+        
+
+    </header>
+</div>
+
+            </div>
+            </div>
+            <!--主要内容显示-->
+            <div class="col-md-9" role="main">
+            
+            <div class="body-wrap"><head>
+    <title>ML之线性回归</title>
+</head>
+<body>
+ML之线性回归
+<hr>
+<p>线性回归[Line Regression]估计是我们接触最早的机器学习的算法了，差不过在高中的时候我们就会做一类题：就是给定xy坐标上的一些点（一般是线性的），然后用$y=ax+b$进行拟合，最后求出一个$(a,b)$以及y的预测值$\hat{y}$。其中$y=ax+b$在ML中叫模型，$(a,b)$叫模型参数（回归系数），或者特征x的权重，而y就是结果或标签，求解模型的方法叫最小二乘法[Ordinary Least Square Estimation]。本文将结合sklearning详细介绍一下线性回归方法。<br><a id="more"></a></p>
+<h2 id="概念理解"><a href="#概念理解" class="headerlink" title="概念理解"></a>概念理解</h2><p>线性归是统计学里方法，“回归”一词的由来见下面的Tips。在统计学中，<a href="https://en.wikipedia.org/wiki/Linear_regression" target="_blank" rel="external">线性回归</a>是确定因变量$y$和一个或多个自变量$X$之间线性关系的统计分析方法。当自变量只有一个时叫简单线性回归，当自变量有多个时叫多维/多元线性回归（与多变量线性回归的区别见QA1）。</p>
+<blockquote>
+<p><strong>Tips:回归的由来</strong><br>回归的方法是由达尔文的表兄弟Francis Galton发明的。Galton于这年完成了第一次回归预测，目的是根据上一代豌豆种子（双亲）的尺寸来预测下一代豌豆种子（孩子）的尺寸。他注意到如果双亲的高度比平均高度高，它们的子女也倾向于比平均高度高，但尚不及双亲。孩子的高度向着平均高度回退（回归）。Galton在多项研究上都注意到这个现象，所以尽管这个英文单词跟数值预测没有任何关系，但这种研究方法仍被称为回归。</p>
+</blockquote>
+<h3 id="回归vs分类"><a href="#回归vs分类" class="headerlink" title="回归vs分类"></a>回归vs分类</h3><p>谈及回归，不可避免的谈到分类，这两个概念很相似，只不过分类的结果是1,2,3这样的离散型，而回归的结果却是连续型。二者都可以用来预测。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>给定一个随机样本集$(Y,X), Y=[y <em> 1,\cdots,y </em> n]^T, X=[X <em> 1,\cdots,X </em> n]^T,X <em> i=[1,x </em> {i1},\cdots,x <em> {id}]$,其中ｎ是样本集的个数，ｄ是样本的维度．线性回归模型就是寻找这样的回归系数$W=[w </em> 0,w _ 1,\cdots,w <em>d]^T$，使得代价函数$J(W)$尽可能的小．一般将平方误差作为代价，此时<br>$$<br>J(W)  =  (Y-XW)^T * (Y-XW)<br>      =  \sum </em> {i=1}^n (y <em> i - X </em> i*W)<br>$$</p>
+<p>这里求代价函数$J(W)$最小值，可以通过对$W$求导，得到$X^T*(Y-XW)$，令其等于0，解出$W$如下：<br>$$<br>W=(X^T X)^{-1} X^T Y<br>$$<br>其具体的推导过程见下面的附录－多元线性回归的推导过程．</p>
+<blockquote>
+<p><strong>Tips:</strong><br>上述公式中包含$(X^T X)^{-1}$，也就是说要对矩阵求逆，所以这个方程只在逆矩阵存在的时候适用的。因此必须要在代码中对此作出判断。</p>
+</blockquote>
+<h2 id="kdfjs"><a href="#kdfjs" class="headerlink" title="kdfjs"></a>kdfjs</h2><h2 id="问题-amp-回答"><a href="#问题-amp-回答" class="headerlink" title="问题&amp;回答"></a>问题&amp;回答</h2><ol>
+<li>Q：多维线性回归和多变量线性回归的区别<br>A：该回答参考<a href="http://www.answers.com/Q/What_is_difference_between_multivariate_regression_and_multipal_regression" target="_blank" rel="external">这篇英文博文</a>。  <ul>
+<li>差异性<br>该问题和线性没有关系。多维回归是指回归模型拥有一个因变量和多个自变量，而多变量回归是指回归模型拥有多个因变量和多个自变量。二者的区别是在于因变量的个数。</li>
+<li>联系<br>多变量回归可以由多个多维回归模型构成。</li>
+<li>举例说明<br>多变量回归一般用于解决系数的混合检验问题。比如，你想要知道SAT的各项分数对第一学年和第二学年有什么样的影响。一种方法是运行两个简单回归模型，并且查看系数是否相似;另一种方法是运行一个多变量回归模型，而且这种方式是正规的概率检验方式。虽然系数是一样的，但是后续你可以计算它们的相似度和其他属性等。</li>
+</ul>
+</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a href="https://en.wikipedia.org/wiki/Linear_regression" target="_blank" rel="external">线性回归wiki</a></li>
+<li><a href="http://www.answers.com/Q/What_is_difference_between_multivariate_regression_and_multipal_regression" target="_blank" rel="external">多维线性回归vs多变量线性回归</a></li>
+<li><a href="http://share.weiyun.com/f33d5770eba223764845beddf0d6bc09" target="_blank" rel="external">机器学习实战</a></li>
+</ol>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="多元线性回归的推导过程"><a href="#多元线性回归的推导过程" class="headerlink" title="多元线性回归的推导过程"></a>多元线性回归的推导过程</h3>
+</body>
+</div>
+            <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2016 David | Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+        <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+</body>
+</html>

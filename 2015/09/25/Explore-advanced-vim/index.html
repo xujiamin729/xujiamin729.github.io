@@ -1,0 +1,490 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>Vim配置之进阶篇 | 禹过留声</title>
+
+    
+
+</head>
+
+<body>
+    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+    <a class="sr-only sr-only-focusable" href="#content">
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
+    </a>
+    <!-- 置顶导航栏 -->
+    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    
+                        Vim配置之进阶篇
+                    
+                </a>
+            </div>
+            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+            </form>
+            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    <li>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/archives/">文章归档</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/skills/">技能图谱</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/reading/">读书</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/about/">关于我</a>
+                    </li>
+                    
+                    <li>
+                        <a class="main-nav-link" href="/links/">友情链接</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div id="content" class="container">
+        <div class="row">
+            <!--左边导航栏-->
+            <div class="col-md-3" role="complementary">
+                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
+                <div class="introduce">
+    <header id="header" class="inner">
+        <!-- 头像 -->
+        <a href="/" >
+            <img src="/img/avatar.png" class="avatar">
+        </a>
+        <h2><a href="/">David</a></h2>
+
+        
+        <p class="header-subtitle">专注coding一百年</p>
+        
+
+        <ul class="nav nav-pills nav-justified">
+            <li>
+                <a href="">
+                    <span class="item-state">64</span>
+                    <span class="item-state">文章</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">3</span>
+                    <span class="item-state">标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="item-state">18</span>
+                    <span class="item-state">读书</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 社交图标 -->
+        <ul class="list-inline">
+            
+            <li>
+                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="/sina weibo" title="Weibo" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+            <li>
+                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                </a>
+            
+        </ul>
+
+        <hr>
+        <!-- 研究涉及领域 -->
+        
+        <section>
+            <div class="tags">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#C" title="C" rel="6">
+                    <span class="tag">C</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Ubuntu" title="Ubuntu" rel="13">
+                    <span class="tag">Ubuntu</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Software" title="Software" rel="5">
+                    <span class="tag">Software</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Batch" title="Batch" rel="8">
+                    <span class="tag">Batch</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Shell" title="Shell" rel="14">
+                    <span class="tag">Shell</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#ACM" title="ACM" rel="8">
+                    <span class="tag">ACM</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Coding" title="Coding" rel="7">
+                    <span class="tag">Coding</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Python" title="Python" rel="11">
+                    <span class="tag">Python</span>
+                </a>
+                
+                
+                
+                <a href="/tags/#Google" title="Google" rel="9">
+                    <span class="tag">Google</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                <a href="/tags/#Algorithm" title="Algorithm" rel="5">
+                    <span class="tag">Algorithm</span>
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </section>
+
+        <!-- 网站访问 -->
+        <div class="header-subtitle">
+            <span id="busuanzi_container_site_pv">
+                访客数：<span id="busuanzi_value_site_pv"></span>人次
+            </span><br/>
+            <span id="busuanzi_container_site_uv">
+                访问量: <span id="busuanzi_value_site_uv"></span>次
+            </span>
+        </div>
+        
+
+    </header>
+</div>
+
+            </div>
+            </div>
+            <!--主要内容显示-->
+            <div class="col-md-9" role="main">
+            
+            <div class="body-wrap"><head>
+    <title>Vim配置之进阶篇</title>
+</head>
+<body>
+Vim配置之进阶篇
+<hr>
+<p>在上一篇博文<a href="!--￼22--&gt;/2015/08/31/VIM配置之入门篇.html">Vim配置之入门篇</a>中，只是大略介绍了Vim的基本配置以及几个常用的使用插件，但是在后面的使用中发现该配置的Vim并不是很好用，特别是minibuffer，taglist，fileexplore直接存在冲突，而且它的插件管理也比较麻烦。本篇博文主要就是解决这两个问题以及尝试一些更适合码农的插件。<br><a id="more"></a></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>之前使用Vim的初衷一方面是其插件的强大，更主要的方面是适合装13。但是随着对Vim更多的了解，才发现Vim的强大还是有缘由的，从下面的评价足以看出：</p>
+<blockquote>
+<ul>
+<li>世界上只有三种编辑器，EMACS、VIM和其它  </li>
+<li>VIM is the God of editors, EMACS is God’s editor  </li>
+<li>EMACS is actually an OS which pretends to be an editor</li>
+</ul>
+</blockquote>
+<p>根据上篇博文中的配置在日常使用的出现的问题，在此给出解决方案，对于插件间的冲突问题是用tagbar取代taglist，而插件管理是采用bundle插件。对于vim里面实用方便的插件的确有不少。</p>
+<h2 id="高效插件"><a href="#高效插件" class="headerlink" title="高效插件"></a>高效插件</h2><p>vim的插件很多，而且功能很强大，非常强大。官网的插件地址在<a href="http://vim-scripts.org/vim/scripts.html" target="_blank" rel="external">这里</a>。</p>
+<ul>
+<li><p>vundle<br>vundle是个用来管理vim插件的插件，它高效的利用了git，使得vim插件的安装，更新和卸载都交由vundle管理，从而将使用者从vim安装配置中解放出来。</p>
+<ol>
+<li><p>安装vundle</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用vundle管理vim插件</p>
+<ol>
+<li>在<a href="http://vim-scripts.org/vim/scripts.html" target="_blank" rel="external">Vim Script</a>选好想要使用的插件</li>
+<li>在vim配置文件.vimrc中添加<code>Plugin plugin_name</code></li>
+<li>执行Vundle初始化命令<code>:PluginInstall</code>，插件就安装好了</li>
+<li><p>常用命令  </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更新插件</span></span><br><span class="line">:PluginInstall!</span><br><span class="line"><span class="comment"># 清除不再使用的插件</span></span><br><span class="line">:PluginClean</span><br><span class="line"><span class="comment"># 列出所有插件</span></span><br><span class="line">:PluginList</span><br><span class="line"><span class="comment"># 查找插件</span></span><br><span class="line">:PluginSearch</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>vundle在.vimrc中的配置</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">" 文件类型检测关闭[必须]（/usr/share/vim/vim74/filetype.vim）</span></span><br><span class="line"><span class="keyword">filetype</span> off</span><br><span class="line"><span class="comment">" 设置runtime path包含Vundle的路径并且初始化</span></span><br><span class="line"><span class="keyword">set</span> rtp+=~/.<span class="keyword">vim</span>/bundle/Vundle.<span class="keyword">vim</span></span><br><span class="line"><span class="comment">" 设置plugins安装地址</span></span><br><span class="line"><span class="keyword">call</span> vundle#begin(<span class="string">'~/.vim/bundle/'</span>)</span><br><span class="line"><span class="comment">" 安装Vundle，让其管理插件[必须]</span></span><br><span class="line">Plugin <span class="string">'gmarik/Vundle.vim'</span></span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="comment">" Vundle插件安装样例:</span></span><br><span class="line"><span class="comment">" 插件在github上</span></span><br><span class="line"><span class="comment">" Plugin 'tpope/vim-fugitive'</span></span><br><span class="line"><span class="comment">" 插件来自网页http://vim-scripts.org/vim/scripts.html</span></span><br><span class="line"><span class="comment">" Plugin 'L9'</span></span><br><span class="line"><span class="comment">" Git插件，但插件不在Github上</span></span><br><span class="line"><span class="comment">" Plugin 'git://git.wincent.com/command-t.git'</span></span><br><span class="line"><span class="comment">" 插件在本地机器上 (i.e. when working on your own plugin)</span></span><br><span class="line"><span class="comment">" Plugin 'file:///home/gmarik/path/to/plugin'</span></span><br><span class="line"><span class="comment">" The sparkup vim script is in a subdirectory of this repo called vim.</span></span><br><span class="line"><span class="comment">" Pass the path to set the runtimepath properly.</span></span><br><span class="line"><span class="comment">" Plugin 'rstacruz/sparkup', &#123;'rtp': 'vim/'&#125;</span></span><br><span class="line"><span class="comment">" 使用用户名来避免插件冲突 ie. L9</span></span><br><span class="line"><span class="comment">" Plugin 'user/L9', &#123;'name': 'newL9'&#125;</span></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment">" 所有插件的添加在end之前[必须]</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()            </span><br><span class="line"><span class="comment">" 文件类型对应的插件[必须]（/usr/share/vim/vim74/ftplugin.vim）</span></span><br><span class="line"><span class="keyword">filetype</span> plugin <span class="keyword">on</span></span><br><span class="line"><span class="comment">" 文件类型对应的缩进文件</span></span><br><span class="line"><span class="keyword">filetype</span> <span class="built_in">indent</span> <span class="keyword">on</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>The-NERD-tree<br>NERDTree是Vim最常用的插件之一，可以在Vim运行时显示目录和文件结构，类似TextMate左侧的文件浏览器，但操作起来更为方便，你可以在手不离开键盘的情况下快速浏览文件，并在文件和文件夹之间进行切换。其样例如下图所示：<br><img src="!--￼23--&gt;/assets/images/the-NERD-tree.gif" alt="NERDTree"></p>
+<ol>
+<li><p>在vim中的安装和配置</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">call vundle#begin('~/.vim/bundle')</span><br><span class="line">" 在Vim的编辑窗口中树状显示文件目录[The-NERD-tree]</span><br><span class="line">Plugin 'The-NERD-tree'</span><br><span class="line">call vundle#end()  </span><br><span class="line"></span><br><span class="line">""""""""""""""""""""""""""""""""""</span><br><span class="line">" The-NERD-tree配置</span><br><span class="line">""""""""""""""""""""""""""""""""""</span><br><span class="line">" 不显示缓冲文件，中间文件</span><br><span class="line">let NERDTreeIgnore=[ '.pyc$', '.pyo$', '.obj$', '.o$', '.so$', '.egg$', '^.git$', '^.svn$', '^.hg$' ]</span><br><span class="line">" 只剩一个NERDTree窗口时退出vim</span><br><span class="line">autocmd bufenter * if (winnr("$") == 1 &amp;&amp; exists("b:NERDTreeType") &amp;&amp;b:NERDTreeType == "primary") | q | endif</span><br><span class="line">" &lt;F9&gt;打开/关闭文件管理器</span><br><span class="line">nnoremap &lt;silent&gt; &lt;F9&gt; :NERDTreeToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>The-NERD-Commenter<br>这个插件也是必备的，主要自动注释内容。当你xml自然是xml注释，当你是java自然就是java的注释规则。其样例如下图所示：<br><img src="!--￼24--&gt;/assets/images/nerdcommenter.gif" alt="nerdcommenter"></p>
+<ol>
+<li><p>在vim中的安装和配置</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> vundle#begin(<span class="string">'~/.vim/bundle/'</span>)</span><br><span class="line"><span class="comment">" 快速添加/去除注释</span></span><br><span class="line">Plugin <span class="string">'The-NERD-Commenter'</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()  </span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="comment">" The-NERD-Commenter配置</span></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="comment">" 注释的时候自动加个空格, 强迫症必配</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:NERDSpaceDelims</span>=<span class="number">1</span></span><br><span class="line"><span class="comment">" mm智能判断加上/解开注释</span></span><br><span class="line"><span class="keyword">map</span> mm <span class="symbol">&lt;leader&gt;</span><span class="keyword">c</span><span class="symbol">&lt;space&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>ctrlp<br>这是个文件查找的插件，其功能和NERDTree有点类似，但是还是有点区别吧。其样例如下图所示：<br><img src="!--￼25--&gt;/assets/images/vim-ctrlp.gif" alt="nerdcommenter"></p>
+<ol>
+<li><p>在vim中的安装和配置</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">call vundle#begin('~/.vim/bundle/')</span><br><span class="line">" 文件搜索</span><br><span class="line">Plugin 'kien/ctrlp.vim'</span><br><span class="line">call vundle#end()  </span><br><span class="line"></span><br><span class="line">""""""""""""""""""""""""""""""""""</span><br><span class="line">" ctrlp配置</span><br><span class="line">""""""""""""""""""""""""""""""""""</span><br><span class="line">" 设置CtrlP的本地工作目录，0代表不设置该功能</span><br><span class="line">let g:ctrlp_working_path_mode=0</span><br><span class="line">" ctrlp窗口在底部</span><br><span class="line">let g:ctrlp_match_window_bottom=1</span><br><span class="line">" ctrlp窗口最大高度为15行</span><br><span class="line">let g:ctrlp_max_height=15</span><br><span class="line">" 窗口</span><br><span class="line">let g:ctrlp_match_window_reversed=0</span><br><span class="line">" 最近打开的文件的个数</span><br><span class="line">let g:ctrlp_mruf_max=500</span><br><span class="line">" 记录但去掉重复的软链接</span><br><span class="line">let g:ctrlp_follow_symlinks=1</span><br><span class="line">" &lt;Ctrl-f&gt;启动文件查找</span><br><span class="line">let g:ctrlp_map = '&lt;c-f&gt;'</span><br><span class="line">" Ctrlp启动文件查找</span><br><span class="line">let g:ctrlp_cmd = 'CtrlP'</span><br><span class="line">" 相当于mru功能，show recently opened files</span><br><span class="line">map &lt;c-p&gt; :CtrlPMRU&lt;CR&gt;</span><br><span class="line">" 忽略以下文件类型</span><br><span class="line">set wildignore+=*/tmp/*,*.so,*.swp,*.zip</span><br><span class="line">" 忽略以下文件目录</span><br><span class="line">let g:ctrlp_custom_ignore = &#123;'dir':  '/].(git|hg|svn|rvm)$','file': '(exe|so|dll|zip|tar|tar.gz)$'&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>ctags<br>ctags可以建立源码树的标签索引（标签就是一个标识符被定义的地方，如函数定义），使程序员在编程时能迅速定位函数、变量、宏定义等位置去查看原形。</p>
+<ol>
+<li><p>安装exuberant-ctags工具</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install exuberant-ctags</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建C++代码库索引</p>
+<ol>
+<li>下载<a href="http://www.vim.org/scripts/download_script.php?src_id=9178" target="_blank" rel="external">libstdc++</a>头文件,包含c++中STL，streams等。</li>
+<li><p>解压到~/.vim/tags目录后执行ctags命令</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ cpp_src</span><br><span class="line">mv tags ~/.vim/tags/cpptag</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在.vimrc中设置</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">tags</span>+=~/.<span class="keyword">vim</span>/<span class="keyword">tags</span>/cpptag</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>创建gcc代码库索引</p>
+<ol>
+<li><p>ubuntu中安装完build-essential后，会在/usr/include/c++目录下有C/C++的头文件。</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拷贝/usr/include/c++/4.8里的文件到~/.vim/tags/gcc文件夹里后执行ctags命令</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp -R /usr/include/c++/4.8 ~/.vim/tags/gcc</span><br><span class="line">ctags -R --c++-kinds=+p --fields=+iaS --extra=+q gcc</span><br><span class="line">mv tags ~/.vim/tags/gcctag</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在.vimrc中设置</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> <span class="keyword">tags</span>+=~/.<span class="keyword">vim</span>/<span class="keyword">tags</span>/gcctag</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>tagbar<br>tagbar插件是和taglist功能类似的插件，但是它比taglist更优秀，并且能和NERDTree完美配合。</p>
+<ol>
+<li>tagbar的优势<ul>
+<li>支持头文件的函数列表显示<br>细心的读者可能会发现，tagbar对函数的可见级别也是做了区分的，分别用+ – # 并配合着色来做了区分</li>
+<li>对面向对象的支持更好<br>taglist虽然也会列出类列表，但是整体还是很不直观</li>
+<li>自动根据文件修改时间来重建<br>taglist在这一点上体验就很不好，其实明明可以通过这种时间戳的方式来实现</li>
+</ul>
+</li>
+<li><p>在vim中的安装和配置</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">call vundle#begin('~/.vim/bundle/')</span><br><span class="line">" 替换taglist的插件[tagbar]</span><br><span class="line">Plugin 'majutsushi/tagbar'</span><br><span class="line">call vundle#end()  </span><br><span class="line"></span><br><span class="line">""""""""""""""""""""""""""""""""""</span><br><span class="line">" tagbar配置</span><br><span class="line">""""""""""""""""""""""""""""""""""</span><br><span class="line">" 启动时自动focus</span><br><span class="line">let g:tagbar_autofocus=1</span><br><span class="line">" &lt;F10&gt;打开/关闭Tagbar</span><br><span class="line">nnoremap &lt;silent&gt; &lt;F10&gt; :TagbarToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>rainbow<br>这个插件也是必备的，该插件的主要功能是给配对的(){}[]不同的颜色来区别，非常方便看括号的作用域</p>
+<ol>
+<li><p>在vim中的安装和配置</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> vundle#begin(<span class="string">'~/.vim/bundle/'</span>)</span><br><span class="line"><span class="comment">" 括号显示增强</span></span><br><span class="line">Plugin <span class="string">'luochen1990/rainbow'</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()  </span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="comment">" rainbow配置</span></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="comment">" rainbow激活</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:rainbow_active</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>给rainbow添加自动启动功能</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">exists</span>(<span class="string">'g:rainbow_active'</span>) &amp;&amp; <span class="variable">g:rainbow_active</span>)</span><br><span class="line">	auto <span class="keyword">syntax</span> * <span class="keyword">call</span> rainbow#hook()</span><br><span class="line">	auto <span class="keyword">colorscheme</span> * <span class="keyword">call</span> rainbow#show()</span><br><span class="line">	<span class="comment">" 下面这命令使rainbow在vim启动时被打开</span></span><br><span class="line">	<span class="keyword">autocmd</span> VimEnter * nested <span class="keyword">call</span> rainbow#toggle()</span><br><span class="line"><span class="keyword">endif</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><a href="https://github.com/scrooloose/syntastic/blob/master/doc/syntastic.txt" target="_blank" rel="external">syntastic</a><br>这是一个非常有用的插件，它能够实时的进行语法和编码风格的检查，利用它几乎可以做到编码完成后无编译错误。并且它还集成了静态检查工具：lint，可以让你的代码更加完美。更强大的它支持近百种编程语言，像是一个集大成的实时编译器。出现错误之后，可以非常方便的跳转到出错处。其样例如下图所示：<br><img src="!--￼26--&gt;/assets/images/vim-syntastic.png" alt="nerdcommenter"></p>
+<ol>
+<li><p>在vim中的安装和配置</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> vundle#begin(<span class="string">'~/.vim/bundle/'</span>)</span><br><span class="line"><span class="comment">" 语义高亮</span></span><br><span class="line">Plugin <span class="string">'scrooloose/syntastic'</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()  </span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="comment">" syntastic配置</span></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="comment">" 首次打开和保存时都要进行语义检查</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:syntastic_check_on_open</span> = <span class="number">1</span>  </span><br><span class="line"><span class="comment">" 设置错误提示符'x'</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:syntastic_error_symbol</span> = <span class="string">'x'</span>  </span><br><span class="line"><span class="comment">" 设置警告提示符'!'</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:syntastic_warning_symbol</span> = <span class="string">'!'</span>  </span><br><span class="line"><span class="comment">" 当鼠标放在错误行则显示错误信息</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:syntastic_enable_balloons</span> = <span class="number">1</span>  </span><br><span class="line"><span class="comment">" 保存退出时不用进行语义检测</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:syntastic_check_on_wq</span> = <span class="number">0</span></span><br><span class="line"><span class="comment">" 编译有误则错误窗口显示，否在不显示</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:syntastic_auto_loc_list</span> = <span class="number">1</span></span><br><span class="line"><span class="comment">" 错误总会填充到错误窗口</span></span><br><span class="line"><span class="keyword">let</span> <span class="variable">g:syntastic_always_populate_loc_list</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><a href="http://valloric.github.io/YouCompleteMe/" target="_blank" rel="external">YouCompleteMe</a><br>YouCompleteMe对代码的补全完全达到了编译器级别，绝不弱于Visual Assist。它是基于LLVM/clang，一个Apple公司为了代替GNU/GCC而支持的编译器，正因为YouCompleteMe有了编译器的支持，而不再像以往的插件一样基于文本来进行匹配，所以准确率才如此之高。而且，它是C/S架构，会在本机创建一个服务器端，利用clang来解析代码，然后将结果返回给客户端，所以也就解决了VIM是单线程而造成的各种补全插件速度奇慢的诟病，在使用时，几乎感觉不到任何的延时，体验达到了Visual Assist的级别。<br>YouCompleteMe除了补全以外，还有一个非常重要的作用：代码跳转，同样可以达到编译器级别的准确度，媲美Visual Assist与Source Insight。其样例如下图所示：<br><img src="!--￼27--&gt;/assets/images/youcompleteme.gif" alt="nerdcommenter"></p>
+<ol>
+<li><p>安装必备软件</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install clang llvm cmake python python-dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>手动编译</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.vim/bundle/YouCompleteMe</span><br><span class="line">./install.sh --clang-completer</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在vim中的安装和配置</p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">call vundle#begin('~/.vim/bundle/')</span><br><span class="line">" 自动补全</span><br><span class="line">Plugin 'Valloric/YouCompleteMe'</span><br><span class="line">call vundle#end()  </span><br><span class="line"></span><br><span class="line">""""""""""""""""""""""""""""""""""</span><br><span class="line">" YouCompleteMe配置</span><br><span class="line">""""""""""""""""""""""""""""""""""</span><br><span class="line">" 设置YCM配置文件的路径</span><br><span class="line">let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'</span><br><span class="line">" 开启关键字语法检测</span><br><span class="line">let g:ycm_seed_identifiers_with_syntax = 1</span><br><span class="line">" 自动触发补全</span><br><span class="line">let g:ycm_auto_trigger = 1</span><br><span class="line">" YCM触发的条件</span><br><span class="line">let g:ycm_semantic_triggers = &#123;  </span><br><span class="line">\ 'c' : ['-&gt;' , '.'],</span><br><span class="line">\ 'cpp,objcpp' : ['-&gt;','.','::'],</span><br><span class="line">\ 'java,javascript,python,scala' : ['.'],</span><br><span class="line">\ 'ruby' : ['.','::'],</span><br><span class="line">\&#125;</span><br><span class="line">" 不用每次询问.ycm_extra_conf.py位置</span><br><span class="line">let g:ycm_confirm_extra_conf=0</span><br><span class="line">" YCM也从tags文件中收集标识符</span><br><span class="line">let g:ycm_collect_identifiers_from_tags_files=1</span><br><span class="line">" 当输入注释的时候不用弹出提示</span><br><span class="line">let g:ycm_complete_in_comments=0</span><br><span class="line">" 当输入字符的时候弹出提示</span><br><span class="line">let g:ycm_complete_in_strings=1</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p><strong>TIps:Tab无效</strong><br>如果出现安装YouCompleteMe后，虽然看到YouCompleteMe的提示框，但是无法使用 &lt; Tab &gt; 进行自动补全，只能使用上下方向键+回车来选择时，就要检查一下.vimrc是否打开了粘贴模式，即设置了set paste．该模式会屏蔽所有映射和缩写．（对于ultisnips也有同样的问题）</p>
+</blockquote>
+<ul>
+<li><p><a href="https://github.com/SirVer/ultisnips" target="_blank" rel="external">ultisnips</a><br>这个插件也是必备的，该插件的主要功能是用来快速输入固定的代码块，像文件开头的版权声明，<code>#ifndef... #def... #endif</code>这样宏定义，markdown写jekyll博文的head信息．最关键的是可以按照自己的习惯<a href="http://mednoter.com/UltiSnips.html" target="_blank" rel="external">自定义代码块</a>，这样就不用按照IDE的习惯培养自己了．其动态效果如下所示：<br>  <img src="!--￼28--&gt;/assets/images/ultisnippets-md.gif" alt="ultisnippets">  </p>
+<ol>
+<li><p>在vim中的安装和配置</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> vundle#begin(<span class="string">'~/.vim/bundle/'</span>)</span><br><span class="line"><span class="comment">" ultisnips</span></span><br><span class="line">      Plugin <span class="string">'SirVer/ultisnips'</span></span><br><span class="line">      <span class="comment">" Snippets are separated from the engine</span></span><br><span class="line">      Plugin <span class="string">'honza/vim-snippets'</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()  </span><br><span class="line"></span><br><span class="line">      <span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line">      <span class="comment">" ultisnips配置</span></span><br><span class="line">      <span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line">      <span class="comment">" 如果使用了Valloric/YouCompleteMe,就别设置为&lt;tab&gt;</span></span><br><span class="line">      <span class="keyword">let</span> <span class="variable">g:UltiSnipsExpandTrigger</span>=<span class="string">"&lt;c-j&gt;"</span></span><br><span class="line">      <span class="comment">" 前选片段</span></span><br><span class="line">      <span class="keyword">let</span> <span class="variable">g:UltiSnipsJumpForwardTrigger</span>=<span class="string">"&lt;C-f&gt;"</span></span><br><span class="line">      <span class="comment">" 后选片段</span></span><br><span class="line">      <span class="keyword">let</span> <span class="variable">g:UltiSnipsJumpBackwardTrigger</span>=<span class="string">"&lt;C-b&gt;"</span></span><br><span class="line">      <span class="comment">" 使用:UltiSnipsEdit打开片段定义文件时分屏位置</span></span><br><span class="line">      <span class="keyword">let</span> <span class="variable">g:UltiSnipsEditSplit</span>=<span class="string">"vertical"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义代码块<br>我们注意到安装ultisnips过程中，除了安装自身以外，还安装了honza的vim-snippets，而它的一大作用是提供了大量（目前是80个）的程序片段，像c，python，markdown，make，sh，sql等。而这些snippets都在.vim/bundle/vim-snippets/snippets文件夹中。除此之外，我们还可以自定义自己的代码块，建议是放在.vim/UltiSnippets目录下（和bundle同等级），一方面是.vim/bundle/vim-snippets/snippets下的代码块是别人的git项目。另一方面.vim/UltiSnippets下的文件可以覆盖vim-snippets里的配置，这样更符合DIY的目的。关于如何编写snippets，网上找到的资源不多，给出如下建议：</p>
+<ul>
+<li>查看.vim/bundle/vim-snippets/snippets里的代码</li>
+<li>通过<code>:help snippets</code>查看ultisnips的帮助文档</li>
+<li><p>博文<a href="http://mednoter.com/UltiSnips.html" target="_blank" rel="external">自定义自己的代码块</a>中的样列</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## head Jekyll写博文时插入的头文件信息</span></span><br><span class="line">snippet head <span class="string">"Jekyll post header"</span> b <span class="comment"># b代表begin（snippet should be expanded only at the beginning of a line ）</span></span><br><span class="line">---</span><br><span class="line">layout:       default</span><br><span class="line">title:        <span class="variable">$&#123;1:blog_name&#125;</span></span><br><span class="line">category:     [<span class="variable">$&#123;2:cate1,cate2&#125;</span>]</span><br><span class="line">comments:     <span class="literal">true</span></span><br><span class="line">date:         `!v strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>)`</span><br><span class="line">---</span><br><span class="line"><span class="variable">$&#123;0&#125;</span>        <span class="comment"># 代表tab最终停留的位置</span></span><br><span class="line"></span><br><span class="line">endsnippet</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><a href="https://github.com/godlygeek/tabular" target="_blank" rel="external">tabular</a><br>这是一个处女座或码农必备的插件，因为当你看到代码/文字杂乱的排版–等号，冒号，表格等不能对齐时，应该会抓狂吧。而tabular这个插件能完美的解决这个问题。就像下面的图例一样，只需要输入命令<code>:Tabularize /*</code>（*代表对齐的符号）即可：<br><img src="!--￼29--&gt;/assets/images/vim-tabular.gif" alt="tabular"></p>
+<ol>
+<li><p>在vim中的安装和配置</p>
+ <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">call</span> vundle#begin(<span class="string">'~/.vim/bundle/'</span>)</span><br><span class="line"><span class="comment">" 语义高亮</span></span><br><span class="line">Plugin <span class="string">'godlygeek/tabular'</span></span><br><span class="line"><span class="keyword">call</span> vundle#end()  </span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="comment">" tabular配置</span></span><br><span class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></span><br><span class="line"><span class="comment">" 目前还尚在摸索中</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p><a href="https://github.com/mattn/emmet-vim" target="_blank" rel="external">emmet-vim</a><br>Emmet的前身就叫做Zen Coding，它是个前端插件。官方支持很多软件，像Sublime Text、Notepad++、Dreamweaver、Eclipse、Adobe Brackets等，而Emmet.vim并非Emmet亲生，而是由日本Yasuhiro Matsumoto开发。对于前段开发者而言它是一件神器，能够节省大量的重复coding劳动。鉴于前端开发的少，这里只是mark一下。</p>
+</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a href="http://vim-adventures.com/" target="_blank" rel="external">有趣的vim游戏</a></li>
+<li><a href="http://www.oschina.net/translate/learn-vim-progressively" target="_blank" rel="external">Vim学习指南</a></li>
+<li><a href="http://my.oschina.net/swuly302/blog/156784" target="_blank" rel="external">vim plugin</a></li>
+<li><a href="http://vim-scripts.org/vim/scripts.html" target="_blank" rel="external">Vim Script</a></li>
+<li><a href="http://www.it165.net/pro/html/201404/11505.html" target="_blank" rel="external">Vim配置及说明——IDE编程环境</a></li>
+<li><a href="http://my.oschina.net/swuly302/blog/156784" target="_blank" rel="external">高效vim插件</a></li>
+<li><a href="http://overapi.com/vim/" target="_blank" rel="external">VIM助记图</a></li>
+<li><a href="http://www.vimer.cn/" target="_blank" rel="external">Vimer的程序世界</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb" target="_blank" rel="external">vimium</a></li>
+<li><a href="http://valloric.github.io/YouCompleteMe/" target="_blank" rel="external">youcompleteme</a></li>
+<li><a href="https://github.com/scrooloose/syntastic/blob/master/doc/syntastic.txt" target="_blank" rel="external">syntastic</a></li>
+<li><a href="http://3502990.blog.51cto.com/3492990/985750" target="_blank" rel="external">python IDE</a></li>
+<li><a href="https://github.com/SirVer/ultisnips" target="_blank" rel="external">ultisnips</a></li>
+<li><a href="http://mednoter.com/UltiSnips.html" target="_blank" rel="external">自定义自己的代码块</a></li>
+<li><a href="https://github.com/mattn/emmet-vim" target="_blank" rel="external">前端开发神器Emmet</a></li>
+<li><a href="https://www.zfanw.com/blog/zencoding-vim-tutorial-chinese.html" target="_blank" rel="external">Emmet教程</a></li>
+<li><a href="https://github.com/godlygeek/tabular" target="_blank" rel="external">对齐神器-tabular</a></li>
+</ol>
+
+</body>
+</div>
+            <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2016 David | Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+            </div>
+        </div>
+        <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    </div>
+</body>
+</html>
