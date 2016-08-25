@@ -391,15 +391,15 @@
 
     
         
-<article id="post-Explore-runtime-Shell">  
+<article id="post-Explore-environment-Shell">  
     
     <div class="article-meta">
-        <a href="/2015/09/08/Explore-runtime-Shell/" class="article-data">
+        <a href="/2015/09/08/Explore-environment-Shell/" class="article-data">
       <time datetime="2015-09-07T16:00:00.000Z" itemprop="datePublished">2015-09-08</time>
 </a>
 
 
-<a href="/2015/09/08/Explore-runtime-Shell/" class="article-data">
+<a href="/2015/09/08/Explore-environment-Shell/" class="article-data">
       <time datetime="2015-09-07T16:00:00.000Z" itemprop="datePublished">2015-09-08</time>
 </a>
 
@@ -412,7 +412,7 @@
   
     
     <h2 itemprop="name">
-      <a class="article-title" href="/2015/09/08/Explore-runtime-Shell/">刨根问底之shell里的运行环境</a>
+      <a class="article-title" href="/2015/09/08/Explore-environment-Shell/">shell运行环境之环境变量</a>
     </h2>
   
 
@@ -438,7 +438,7 @@
         
         <div id="article-entry">
             
-                <p>在Ubuntu里，我们经常在终端中使用<code>sudo</code>来提权–以普通用户的身份去行使管理员的权限（前提是知道管理员用户的密码），这样减少了root用户的登录次数和管理时间，也提高了系统的安全性。不过有时候我们会直接用<code>su</code>切换到管理员进行一系列操作。本篇博文就是总结<code>sudo</code>，<code>su</code>对bash运行环境的影响。明白了这点，你将明白在公司里怎样使用代理。<br>
+                <p>在windows系统中，我们经常需要设置环境变量，特别是安装玩JAVA JDk之后。而在linux里面也是需要对一些环境变量进行设置，比如PATH（执行文件的路径），http_proxy（http代理）等。本篇博文主要介绍三种环境变量–临时变量，用户变量和系统变量，并对其作用的先后做一点验证。<br>
             
         </div>
 
