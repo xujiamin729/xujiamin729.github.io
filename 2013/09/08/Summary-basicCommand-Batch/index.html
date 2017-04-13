@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,170 +23,133 @@
     
     <title>简单批处理之内部命令 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        简单批处理之内部命令
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            简单批处理之内部命令
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Summary-basicCommand-Batch">  
+    
+    <div class="article-meta">
+        <a href="/2013/09/08/Summary-basicCommand-Batch/" class="article-data">
+      <time datetime="2013-09-07T16:00:00.000Z" itemprop="datePublished">2013-09-08</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2013/09/08/Summary-basicCommand-Batch/" class="article-data">
+      <time datetime="2013-09-07T16:00:00.000Z" itemprop="datePublished">2013-09-08</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>简单批处理之内部命令</title>
-</head>
-<body>
-简单批处理之内部命令
-<hr>
-<p>批处理(Batch)，也称为批处理脚本。顾名思义，批处理就是对某对象进行批量的处理，通常被认为是一种简化的脚本语言，它应用于DOS和Windows系统中。批处理文件的扩展名为bat 。本文主要介绍批处理比较常用的内部命令.<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      简单批处理之内部命令
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Batch/">Batch</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>批处理(Batch)，也称为批处理脚本。顾名思义，批处理就是对某对象进行批量的处理，通常被认为是一种简化的脚本语言，它应用于DOS和Windows系统中。批处理文件的扩展名为bat 。本文主要介绍批处理比较常用的内部命令.<br><a id="more"></a></p>
 <h2 id="echo-命令"><a href="#echo-命令" class="headerlink" title="echo 命令"></a>echo 命令</h2><p>打开回显或关闭请求回显功能，或显示消息。如果没有任何参数，echo 命令将显示当前回显设置。</p>
 <ul>
 <li><p>Usage：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo [&#123;on　off&#125;] [message]</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo [&#123;on　off&#125;] [message]</div></pre></td></tr></table></figure>
 </li>
 <li><p>Sample：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@echo off / echo hello world</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@echo off / echo hello world</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="rem命令"><a href="#rem命令" class="headerlink" title="rem命令"></a>rem命令</h2><p>注释命令，类似于在C语言中的/*——–*/，它并不会被执行，只是起一个注释的作用，只有在编辑批处理时才会被看到，主要用于方便修改。</p>
 <ul>
 <li><p>Usage：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rem [context]</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rem [context]</div></pre></td></tr></table></figure>
 </li>
 <li><p>Sample:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rem 注释内容</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rem 注释内容</div></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>注意</strong><br>:: 也具有rem的功能，区别如下：<br>当关闭回显时,rem和::都不显示注释内容;<br>当打开回显时,rem会显示注释内容,而::却不显示注释内容</p>
 </blockquote>
@@ -194,56 +158,75 @@
 <h2 id="pause命令"><a href="#pause命令" class="headerlink" title="pause命令"></a>pause命令</h2><p>暂停命令。运行 Pause 命令时，将显示下面的消息：</p>
 <ul>
 <li><p>Usage:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Press any key to continue. . .（或：请按任意键继续. . .)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Press any key to continue. . .（或：请按任意键继续. . .)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="call-命令"><a href="#call-命令" class="headerlink" title="call 命令"></a>call 命令</h2><p><em>从一个批处理程序调用另一个批处理程序，并且不终止父批处理程序</em>.call命令接受用作调用目标的标签。如果在脚本或批处理文件外使用Call，它将不会在命令行起作用。</p>
 <ul>
 <li><p>Usage：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">call [[Drive:][Path] FileName [BatchParameters]]</span><br><span class="line">[:label [arguments]]</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">call [[Drive:][Path] FileName [BatchParameters]]</div><div class="line">[:label [arguments]]</div></pre></td></tr></table></figure>
 </li>
 <li><p>Sample：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call file.bat</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">call file.bat</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="start-命令"><a href="#start-命令" class="headerlink" title="start 命令"></a>start 命令</h2><p>调用外部程序，所有的DOS命令和命令行程序都可以由start命令来调用。</p>
 <ul>
 <li><p>Usage：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start FileName [BatchParameters]</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">start FileName [BatchParameters]</div></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>Parameters:</strong><br>MIN        开始时窗口最小化<br>SEPARATE   在分开的空间内开始 16 位 Windows 程序<br>HIGH       在HIGH 优先级类别开始应用程序<br>REALTIME   在 REALTIME 优先级类别开始应用程序<br>WAIT       启动应用程序并等候它结束</p>
 </blockquote>
 </li>
 <li><p>Sample:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start calc.exe</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">start calc.exe</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="goto命令"><a href="#goto命令" class="headerlink" title="goto命令"></a>goto命令</h2><p>跳转命令。程序指针跳转到指定的标签，从标签后的第一条命令开始继续执行批处理程序。</p>
 <ul>
 <li><p>Usage:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">goto label</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">goto label</div></pre></td></tr></table></figure>
 </li>
 <li><p>Sample:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:label</span><br><span class="line">start a.exe</span><br><span class="line">goto label</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">:label</div><div class="line">start a.exe</div><div class="line">goto label</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="set命令"><a href="#set命令" class="headerlink" title="set命令"></a>set命令</h2><p>显示、设置或删除变量。</p>
 <ul>
 <li><p>Sample:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rem 把变量a定义为hjy。用echo %a%来回显</span><br><span class="line">set a=hjy</span><br><span class="line"></span><br><span class="line">rem 删除变量a</span><br><span class="line">set a=</span><br><span class="line"></span><br><span class="line">rem 显示所有以s开头的变量及其值</span><br><span class="line">set s	 </span><br><span class="line">rem 显示批处理当前已定义的所有变量及其值</span><br><span class="line">set</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">rem 把变量a定义为hjy。用echo %a%来回显</div><div class="line">set a=hjy</div><div class="line"></div><div class="line">rem 删除变量a</div><div class="line">set a=</div><div class="line"></div><div class="line">rem 显示所有以s开头的变量及其值</div><div class="line">set s	 </div><div class="line">rem 显示批处理当前已定义的所有变量及其值</div><div class="line">set</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#echo-命令"><span class="toc-number">1.</span> <span class="toc-text">echo 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rem命令"><span class="toc-number">2.</span> <span class="toc-text">rem命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pause命令"><span class="toc-number">3.</span> <span class="toc-text">pause命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#call-命令"><span class="toc-number">4.</span> <span class="toc-text">call 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#start-命令"><span class="toc-number">5.</span> <span class="toc-text">start 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#goto命令"><span class="toc-number">6.</span> <span class="toc-text">goto命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set命令"><span class="toc-number">7.</span> <span class="toc-text">set命令</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -253,13 +236,33 @@
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

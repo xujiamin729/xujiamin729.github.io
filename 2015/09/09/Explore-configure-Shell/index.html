@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,154 +23,117 @@
     
     <title>shell运行环境之环境配置文件 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        shell运行环境之环境配置文件
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            shell运行环境之环境配置文件
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Explore-configure-Shell">  
+    
+    <div class="article-meta">
+        <a href="/2015/09/09/Explore-configure-Shell/" class="article-data">
+      <time datetime="2015-09-08T16:00:00.000Z" itemprop="datePublished">2015-09-09</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2015/09/09/Explore-configure-Shell/" class="article-data">
+      <time datetime="2015-09-08T16:00:00.000Z" itemprop="datePublished">2015-09-09</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>shell运行环境之环境配置文件</title>
-</head>
-<body>
-shell运行环境之环境配置文件
-<hr>
-<p><a href="!--￼1--&gt;/2015/09/08/shell运行环境之环境变量.html">上一篇博文</a>介绍了shell运行环境中三种不同的环境变量–临时变量，用户变量和系统变量，除此之外还有/etc/environment，/etc/profile和～/.profile作用域。这篇文章将主要围绕bash这个shell来讲解<a href="https://wido.me/sunteya/understand-bashrc-and-profile" target="_blank" rel="external">环境配置文件</a>，并结合shell的四种模式来说明这些配置文件的作用域。<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      shell运行环境之环境配置文件
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p><a href="!--￼1--&gt;/2015/09/08/shell运行环境之环境变量.html">上一篇博文</a>介绍了shell运行环境中三种不同的环境变量–临时变量，用户变量和系统变量，除此之外还有/etc/environment，/etc/profile和～/.profile作用域。这篇文章将主要围绕bash这个shell来讲解<a href="https://wido.me/sunteya/understand-bashrc-and-profile" target="_blank" rel="external">环境配置文件</a>，并结合shell的四种模式来说明这些配置文件的作用域。<br><a id="more"></a></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>我们知道linux系统中有很多shell，像最常用的bash，不常用的sh，zsh等。而对于它们公共的变量我们不可能为每个shell重复设置，所以这些公共变量我们将会保存在profile中，而对于每个shell个性化的配置将会放在各自的配置文件中，像bashrc，shrc和zshrc。而ubuntu默认用的是bash，所以只有bashrc而没有其他吧。</p>
 <h2 id="profile配置文件"><a href="#profile配置文件" class="headerlink" title="profile配置文件"></a>profile配置文件</h2><p>profile是配置的意思，是某个用户唯一用来设置环境变量的地方，而用户可用的shell有多个，像bash，sh，zsh之类的，但像环境变量这种只需要在统一的一个地方初始化就可以了，这就需要profile。在Ubuntu中<a href="!--￼2--&gt;/assets/attachs/etc_profile.txt">/etc/profile</a>将在用户<strong>第一次</strong>登录（可以是图形也可以是终端）时被执行，其只做两件事。  </p>
 <ol>
@@ -213,7 +177,7 @@ shell运行环境之环境配置文件
 </ul>
 <h2 id="试验"><a href="#试验" class="headerlink" title="试验"></a>试验</h2><ul>
 <li><p>验证四种模式中配置文件的作用域<br>当我们在终端中执行bash命令的时候，它其实在终端中又开了一个外壳，所以我们需要<code>exit</code>两次才能退出。所以我们在第一层外壳中设置四个配置文件中变量。设置如下：</p>
-  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/profile</span></span><br><span class="line"><span class="built_in">export</span> epro=<span class="string">'I am in /etc/profile'</span></span><br><span class="line"><span class="built_in">export</span> epro_ebash=<span class="string">'I am in /etc/profile'</span></span><br><span class="line"><span class="built_in">export</span> epro_pro=<span class="string">'I am in /etc/profile'</span></span><br><span class="line"><span class="built_in">export</span> epro_bash=<span class="string">'I am in /etc/profile'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /etc/bash.bashrc</span></span><br><span class="line"><span class="built_in">export</span> ebash=<span class="string">'I am in /etc/bash.bashrc'</span></span><br><span class="line"><span class="built_in">export</span> epro_ebash=<span class="string">'I am in /etc/bash.bashrc'</span></span><br><span class="line"><span class="built_in">export</span> ebash_pro=<span class="string">'I am in /etc/bash.bashrc'</span></span><br><span class="line"><span class="built_in">export</span> ebash_bash=<span class="string">'I am in /etc/bash.bashrc'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ~/.profile</span></span><br><span class="line"><span class="built_in">export</span> pro=<span class="string">'I am in ~/.profile'</span></span><br><span class="line"><span class="built_in">export</span> epro_pro=<span class="string">'I am in ~/.profile'</span></span><br><span class="line"><span class="built_in">export</span> ebash_pro=<span class="string">'I am in ~/.profile'</span></span><br><span class="line"><span class="built_in">export</span> pro_bash=<span class="string">'I am in ~/.profile'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ~/.bashrc</span></span><br><span class="line"><span class="built_in">export</span> bash=<span class="string">'I am in ~/.bashrc'</span></span><br><span class="line"><span class="built_in">export</span> epro_bash=<span class="string">'I am in ~/.bashrc'</span></span><br><span class="line"><span class="built_in">export</span> ebash_bash=<span class="string">'I am in ~/.bashrc'</span></span><br><span class="line"><span class="built_in">export</span> pro_bash=<span class="string">'I am in ~/.bashrc'</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># /etc/profile</span></div><div class="line"><span class="built_in">export</span> epro=<span class="string">'I am in /etc/profile'</span></div><div class="line"><span class="built_in">export</span> epro_ebash=<span class="string">'I am in /etc/profile'</span></div><div class="line"><span class="built_in">export</span> epro_pro=<span class="string">'I am in /etc/profile'</span></div><div class="line"><span class="built_in">export</span> epro_bash=<span class="string">'I am in /etc/profile'</span></div><div class="line"></div><div class="line"><span class="comment"># /etc/bash.bashrc</span></div><div class="line"><span class="built_in">export</span> ebash=<span class="string">'I am in /etc/bash.bashrc'</span></div><div class="line"><span class="built_in">export</span> epro_ebash=<span class="string">'I am in /etc/bash.bashrc'</span></div><div class="line"><span class="built_in">export</span> ebash_pro=<span class="string">'I am in /etc/bash.bashrc'</span></div><div class="line"><span class="built_in">export</span> ebash_bash=<span class="string">'I am in /etc/bash.bashrc'</span></div><div class="line"></div><div class="line"><span class="comment"># ~/.profile</span></div><div class="line"><span class="built_in">export</span> pro=<span class="string">'I am in ~/.profile'</span></div><div class="line"><span class="built_in">export</span> epro_pro=<span class="string">'I am in ~/.profile'</span></div><div class="line"><span class="built_in">export</span> ebash_pro=<span class="string">'I am in ~/.profile'</span></div><div class="line"><span class="built_in">export</span> pro_bash=<span class="string">'I am in ~/.profile'</span></div><div class="line"></div><div class="line"><span class="comment"># ~/.bashrc</span></div><div class="line"><span class="built_in">export</span> bash=<span class="string">'I am in ~/.bashrc'</span></div><div class="line"><span class="built_in">export</span> epro_bash=<span class="string">'I am in ~/.bashrc'</span></div><div class="line"><span class="built_in">export</span> ebash_bash=<span class="string">'I am in ~/.bashrc'</span></div><div class="line"><span class="built_in">export</span> pro_bash=<span class="string">'I am in ~/.bashrc'</span></div></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>Tips:</strong><br>上面的变量声明位置要放在各个配置文件前面，但是要放在判别交互和登录模式之后<br>/etc/profile         最前面<br>/etc/bash.bashrc    前面，但要在判断交互模式之后<br>~/.profile        最前面<br>~/.bashrc            前面，但要在判断交互模式之后</p>
 </blockquote>
@@ -243,16 +207,35 @@ shell运行环境之环境配置文件
 <li><a href="http://superuser.com/questions/789448/choosing-between-bashrc-profile-bash-profile-etc" target="_blank" rel="external">Choosing between .bashrc, .profile, .bash_profile, etc</a></li>
 </ol>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#profile配置文件"><span class="toc-number">2.</span> <span class="toc-text">profile配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bashrc配置文件"><span class="toc-number">3.</span> <span class="toc-text">bashrc配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四种不同的shell模式"><span class="toc-number">4.</span> <span class="toc-text">四种不同的shell模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#试验"><span class="toc-number">5.</span> <span class="toc-text">试验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#待解决的问题"><span class="toc-number">6.</span> <span class="toc-text">待解决的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">7.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -262,13 +245,33 @@ shell运行环境之环境配置文件
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

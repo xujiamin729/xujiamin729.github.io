@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,187 +23,150 @@
     
     <title>python基础篇之实用工具 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        python基础篇之实用工具
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            python基础篇之实用工具
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Study-tool-Python">  
+    
+    <div class="article-meta">
+        <a href="/2014/12/11/Study-tool-Python/" class="article-data">
+      <time datetime="2014-12-10T16:00:00.000Z" itemprop="datePublished">2014-12-11</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2014/12/11/Study-tool-Python/" class="article-data">
+      <time datetime="2014-12-10T16:00:00.000Z" itemprop="datePublished">2014-12-11</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>python基础篇之实用工具</title>
-</head>
-<body>
-python基础篇之实用工具
-<hr>
-<p>个人觉得python越来越实用离不开其强大的模块,框架的支持,像文件模块,命令行模块,django框架,sk-learning工具箱等等.这些都让python能够非常方便的处理不同领域的问题.<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      python基础篇之实用工具
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>个人觉得python越来越实用离不开其强大的模块,框架的支持,像文件模块,命令行模块,django框架,sk-learning工具箱等等.这些都让python能够非常方便的处理不同领域的问题.<br><a id="more"></a></p>
 <h2 id="文件模块"><a href="#文件模块" class="headerlink" title="文件模块"></a>文件模块</h2><ul>
 <li><p>模块支持</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> shutil</div></pre></td></tr></table></figure>
 </li>
 <li><p>常用函数</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取文件列表</span></span><br><span class="line">filenames = os.listdir(dir)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拼接文件路径</span></span><br><span class="line">os.path.join(dir,filename)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取绝对路径</span></span><br><span class="line">os.path.abspath(path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从完整路径中获取目录和文件名</span></span><br><span class="line">os.path.dirname(path)</span><br><span class="line">os.path.basename(path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断完整路径是否存在</span></span><br><span class="line">os.path.exists(path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建目录</span></span><br><span class="line">os.mkdir(dir_path)</span><br><span class="line"><span class="comment"># 创建路径上的所有文件夹</span></span><br><span class="line">os.makedirs(dir_path)   </span><br><span class="line"></span><br><span class="line"><span class="comment"># 拷贝文件</span></span><br><span class="line">shutil.copy(src,dest)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 获取文件列表</span></div><div class="line">filenames = os.listdir(dir)</div><div class="line"></div><div class="line"><span class="comment"># 拼接文件路径</span></div><div class="line">os.path.join(dir,filename)</div><div class="line"></div><div class="line"><span class="comment"># 获取绝对路径</span></div><div class="line">os.path.abspath(path)</div><div class="line"></div><div class="line"><span class="comment"># 从完整路径中获取目录和文件名</span></div><div class="line">os.path.dirname(path)</div><div class="line">os.path.basename(path)</div><div class="line"></div><div class="line"><span class="comment"># 判断完整路径是否存在</span></div><div class="line">os.path.exists(path)</div><div class="line"></div><div class="line"><span class="comment"># 创建目录</span></div><div class="line">os.mkdir(dir_path)</div><div class="line"><span class="comment"># 创建路径上的所有文件夹</span></div><div class="line">os.makedirs(dir_path)   </div><div class="line"></div><div class="line"><span class="comment"># 拷贝文件</span></div><div class="line">shutil.copy(src,dest)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="命令行模块"><a href="#命令行模块" class="headerlink" title="命令行模块"></a>命令行模块</h2><ul>
 <li><p>模块支持</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> commands</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> commands</div></pre></td></tr></table></figure>
 </li>
 <li><p>常用函数</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运行命令，等待结束。返回状态（正常返回是0）和结果。</span></span><br><span class="line">(status, output) = commands.getstatusoutput(cmd)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不返回状态的执行命令</span></span><br><span class="line">output = commands.getoutput(cmd)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不关心结果，只要执行即可</span></span><br><span class="line">os.system(cmd)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 运行命令，等待结束。返回状态（正常返回是0）和结果。</span></div><div class="line">(status, output) = commands.getstatusoutput(cmd)</div><div class="line"></div><div class="line"><span class="comment"># 不返回状态的执行命令</span></div><div class="line">output = commands.getoutput(cmd)</div><div class="line"></div><div class="line"><span class="comment"># 不关心结果，只要执行即可</span></div><div class="line">os.system(cmd)</div></pre></td></tr></table></figure>
 </li>
 <li><p>样例代码</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 给定一个dir路径，运行 'ls -l'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">listdir</span><span class="params">(dir)</span>:</span></span><br><span class="line">	cmd = <span class="string">'ls -l '</span> + dir</span><br><span class="line">	<span class="keyword">print</span> <span class="string">"Command to run:"</span>, cmd   <span class="comment">## 易于调试</span></span><br><span class="line">	(status, output) = commands.getstatusoutput(cmd)</span><br><span class="line">	<span class="keyword">if</span> status:    <span class="comment">## 错误情况，打印错误信息并退出</span></span><br><span class="line">		sys.stderr.write(output)</span><br><span class="line">		sys.exit(<span class="number">1</span>)</span><br><span class="line">	<span class="keyword">print</span> output  <span class="comment">## 否则显示输出结果</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 给定一个dir路径，运行 'ls -l'</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">listdir</span><span class="params">(dir)</span>:</span></div><div class="line">	cmd = <span class="string">'ls -l '</span> + dir</div><div class="line">	<span class="keyword">print</span> <span class="string">"Command to run:"</span>, cmd   <span class="comment">## 易于调试</span></div><div class="line">	(status, output) = commands.getstatusoutput(cmd)</div><div class="line">	<span class="keyword">if</span> status:    <span class="comment">## 错误情况，打印错误信息并退出</span></div><div class="line">		sys.stderr.write(output)</div><div class="line">		sys.exit(<span class="number">1</span>)</div><div class="line">	<span class="keyword">print</span> output  <span class="comment">## 否则显示输出结果</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
 <li><p>样例代码</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment"># 打开文件或读取文件出现问题将抛出 IOError 异常.</span></span><br><span class="line">    f = open(filename, <span class="string">'rU'</span>)</span><br><span class="line">	text = f.read()</span><br><span class="line">	f.close()</span><br><span class="line"><span class="keyword">except</span> IOError:</span><br><span class="line">	<span class="comment"># 处理 IOError 异常.</span></span><br><span class="line">	sys.stderr.write(<span class="string">'problem reading:'</span> + filename)</span><br><span class="line"><span class="comment"># try/except后面的代码将继续执行</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="comment"># 打开文件或读取文件出现问题将抛出 IOError 异常.</span></div><div class="line">    f = open(filename, <span class="string">'rU'</span>)</div><div class="line">	text = f.read()</div><div class="line">	f.close()</div><div class="line"><span class="keyword">except</span> IOError:</div><div class="line">	<span class="comment"># 处理 IOError 异常.</span></div><div class="line">	sys.stderr.write(<span class="string">'problem reading:'</span> + filename)</div><div class="line"><span class="comment"># try/except后面的代码将继续执行</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="网络模块"><a href="#网络模块" class="headerlink" title="网络模块"></a>网络模块</h2><ul>
 <li><p>模块支持</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div></pre></td></tr></table></figure>
 </li>
 <li><p>常用函数</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回一个文件</span></span><br><span class="line">ufile = urllib.urlopen(url)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文件信息</span></span><br><span class="line">text = ufile.read()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取网络文件meta/type 信息</span></span><br><span class="line">info = ufile.info()</span><br><span class="line">type = info.gettype()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取最初始的url（针对重定向）</span></span><br><span class="line">baseurl = ufile.geturl()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载url数据到指定的文件</span></span><br><span class="line">urllib.urlretrieve(url,filename)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取完整url</span></span><br><span class="line">urlparse.urljoin(baseurl,url)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 返回一个文件</span></div><div class="line">ufile = urllib.urlopen(url)</div><div class="line"></div><div class="line"><span class="comment"># 读取文件信息</span></div><div class="line">text = ufile.read()</div><div class="line"></div><div class="line"><span class="comment"># 获取网络文件meta/type 信息</span></div><div class="line">info = ufile.info()</div><div class="line">type = info.gettype()</div><div class="line"></div><div class="line"><span class="comment"># 获取最初始的url（针对重定向）</span></div><div class="line">baseurl = ufile.geturl()</div><div class="line"></div><div class="line"><span class="comment"># 下载url数据到指定的文件</span></div><div class="line">urllib.urlretrieve(url,filename)</div><div class="line"></div><div class="line"><span class="comment"># 获取完整url</span></div><div class="line">urlparse.urljoin(baseurl,url)</div></pre></td></tr></table></figure>
 </li>
 <li><p>样例代码</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 用try/except处理网络异常</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wget</span><span class="params">(url)</span>:</span></span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">		ufile = urllib.urlopen(url)</span><br><span class="line">		<span class="keyword">if</span> ufile.info().gettype() == <span class="string">'text/html'</span>:</span><br><span class="line">			<span class="keyword">print</span> ufile.read()</span><br><span class="line">	<span class="keyword">except</span> IOError:</span><br><span class="line">		<span class="keyword">print</span> <span class="string">'problem reading url:'</span>, url</span><br><span class="line"></span><br><span class="line">wget(<span class="string">'http://www.baidu.com'</span>)  <span class="comment"># 一定要加http://</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 用try/except处理网络异常</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">wget</span><span class="params">(url)</span>:</span></div><div class="line">	<span class="keyword">try</span>:</div><div class="line">		ufile = urllib.urlopen(url)</div><div class="line">		<span class="keyword">if</span> ufile.info().gettype() == <span class="string">'text/html'</span>:</div><div class="line">			<span class="keyword">print</span> ufile.read()</div><div class="line">	<span class="keyword">except</span> IOError:</div><div class="line">		<span class="keyword">print</span> <span class="string">'problem reading url:'</span>, url</div><div class="line"></div><div class="line">wget(<span class="string">'http://www.baidu.com'</span>)  <span class="comment"># 一定要加http://</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><ul>
@@ -210,16 +174,35 @@ python基础篇之实用工具
 <li>练习题2: <a href="!--￼10--&gt;/assets/attachs/logpuzzle.py.txt">logpuzzle.py</a></li>
 </ul>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件模块"><span class="toc-number">1.</span> <span class="toc-text">文件模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行模块"><span class="toc-number">2.</span> <span class="toc-text">命令行模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常处理"><span class="toc-number">3.</span> <span class="toc-text">异常处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络模块"><span class="toc-number">4.</span> <span class="toc-text">网络模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#课后练习"><span class="toc-number">5.</span> <span class="toc-text">课后练习</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -229,13 +212,33 @@ python基础篇之实用工具
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

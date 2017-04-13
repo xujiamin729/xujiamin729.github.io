@@ -1,0 +1,228 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>C程序编程四步走 | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            C程序编程四步走
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-compile-gcc">  
+    
+    <div class="article-meta">
+        <a href="/2017/03/21/compile-gcc/" class="article-data">
+      <time datetime="2017-03-21T02:02:16.000Z" itemprop="datePublished">2017-03-21</time>
+</a>
+
+
+<a href="/2017/03/21/compile-gcc/" class="article-data">
+      <time datetime="2017-03-21T02:02:16.000Z" itemprop="datePublished">2017-03-21</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      C程序编程四步走
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Assemble/">Assemble</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Compile/">Compile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GCC/">GCC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Link/">Link</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>任何一个C程序代码到生成一个可执行文件都需要四步，分别是预处理<code>Pre-processing</code>，编译<code>Compiling</code>，汇编<code>Assembling</code>和链接<code>Link</code>，这里借助Gcc工具来探究这四步分别做了什么事，起到什么样的作用。本文使用的测试代码是经典入门程序”Hello World!”。<br><a id="more"></a></p>
+<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><p>为探究预处理，编译，汇编和链接的功能，我们在Ubuntu系统中使用Gcc编译器(version=4.8.4)，用简单的也是最经典的入门程序”Hello World!”作为测试代码。源文件<a href="/2017/03/21/compile-gcc/hello.c" title="hello.c">hello.c</a>代码如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// filename: hello.c</span></div><div class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">man</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"Hello World!"</span>);</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>正常情况我们都会执行命令<code>gcc hello.c -o hello.out</code>来生成二进制可执行程序hello.out。</p>
+<h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a><a href="https://zh.wikipedia.org/wiki/C%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8" target="_blank" rel="external">预处理</a></h2><p>C预处理器是用在编译器处理程序之前，它预扫描源代码完成包含头文件，宏扩展，条件编译，行控制等功能。对于测试代码中，预处理器只对头文件进行了处理。获取预处理器输出的结果使用该命令<code>gcc -E hello.c -o hello.i</code>。<br>由于<a href="/2017/03/21/compile-gcc/hello.i" title="hello.i">hello.i</a>文件内容比较多，这里截取部分进行说明。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// filename: hello.i</span></div><div class="line"># <span class="number">1</span> <span class="string">"hello.c"</span></div><div class="line"># <span class="number">1</span> <span class="string">"&lt;built-in&gt;"</span></div><div class="line"># <span class="number">1</span> <span class="string">"&lt;command-line&gt;"</span></div><div class="line"># <span class="number">1</span> <span class="string">"/usr/include/stdc-predef.h"</span> <span class="number">1</span> <span class="number">3</span> <span class="number">4</span></div><div class="line"># <span class="number">1</span> <span class="string">"&lt;command-line&gt;"</span> <span class="number">2</span></div><div class="line"># <span class="number">1</span> <span class="string">"hello.c"</span></div><div class="line"></div><div class="line">...</div><div class="line"># <span class="number">1</span> <span class="string">"/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"</span> <span class="number">1</span> <span class="number">3</span> <span class="number">4</span></div><div class="line"># <span class="number">212</span> <span class="string">"/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h"</span> <span class="number">3</span> <span class="number">4</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="keyword">size_t</span>;</div><div class="line"></div><div class="line">...</div><div class="line"># <span class="number">5</span> <span class="string">"hello.c"</span> <span class="number">2</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>Tips:</strong><br>hello.i中有很多这样的格式<code># line filename flags</code>，它表示下面行是由文件filename的第line行生成的。其中flags有1，2，3，4四种取值</p>
+<ul>
+<li>1 代表新文件的开始</li>
+<li>2 代表返回一个文件</li>
+<li>3 代表下面的文本来自系统头文件，所以某些警告可以过滤掉</li>
+<li>4 代表下面的文本应该包含在extern C块中<br>按照提示stddef.h文件中第212行有size_t的宏定义。</li>
+</ul>
+</blockquote>
+<h2 id="编译-compile"><a href="#编译-compile" class="headerlink" title="[编译][compile]"></a>[编译][compile]</h2><p>编译的过程是将某种编程语言写的源代码（这里特指C语言）转换成另一种编程语言（这里特指汇编语言）。前面我们将<a href="/2017/03/21/compile-gcc/hello.c" title="hello.c">hello.c</a>预处理成了<a href="/2017/03/21/compile-gcc/hello.i" title="hello.i">hello.i</a>文件，现在就要将<a href="/2017/03/21/compile-gcc/hello.i" title="hello.i">hello.i</a>文件编译成<a href="/2017/03/21/compile-gcc/hello.s" title="hello.s">hello.s</a>汇编文件。获取编译器输出的结果使用命令<code>gcc -S hello.i -o hello.s</code>。汇编结果见<a href="/2017/03/21/compile-gcc/hello.s" title="hello.s">hello.s</a>。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">	.file	<span class="string">"hello.c"</span></div><div class="line">	.section	.rodata</div><div class="line">.LC0:</div><div class="line">	.<span class="built_in">string</span>	<span class="string">"Hello World!"</span></div><div class="line">	.text</div><div class="line">	.globl	main</div><div class="line">	.type	main, @function</div><div class="line">main:</div><div class="line">.LFB0:</div><div class="line">	.cfi_startproc</div><div class="line">	pushq	%rbp</div><div class="line">	.cfi_def_cfa_offset <span class="number">16</span></div><div class="line">	.cfi_offset <span class="number">6</span>, <span class="number">-16</span></div><div class="line">	movq	%rsp, %rbp</div><div class="line">	.cfi_def_cfa_register <span class="number">6</span></div><div class="line">	movl	$.LC0, %edi</div><div class="line">	movl	$<span class="number">0</span>, %eax</div><div class="line">	call	<span class="built_in">printf</span></div><div class="line">	movl	$<span class="number">0</span>, %eax</div><div class="line">	popq	%rbp</div><div class="line">	.cfi_def_cfa <span class="number">7</span>, <span class="number">8</span></div><div class="line">	ret</div><div class="line">	.cfi_endproc</div><div class="line">.LFE0:</div><div class="line">	.size	main, .-main</div><div class="line">	.ident	<span class="string">"GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4"</span></div><div class="line">	.section	.note.GNU-<span class="built_in">stack</span>,<span class="string">""</span>,@progbits</div></pre></td></tr></table></figure></p>
+<h2 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a><a href="https://zh.wikipedia.org/wiki/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80" target="_blank" rel="external">汇编</a></h2><p>汇编的过程是将汇编语言编写的源码转换成可执行的机器代码，通常目标文件中包含至少两个段：代码段和数据段。其中代码段包含程序的指令，一般可读和可执行，不可写；数据段用来存放程序中所用到的各种全局变量或静态数据，一般可读，可写，可执行。获取汇编器输出的结果使用该命令<code>gcc -S hello.s -o hello.o</code>，由于是二进制文件，是无法阅读的。这里我们通过命令<code>objdump</code>来对二进制文件进行反汇编，查看里面内容。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// objdump -d hello.o 查看hello.o中代码段信息</span></div><div class="line">hello.o：     文件格式 elf64-x86<span class="number">-64</span></div><div class="line"></div><div class="line">Disassembly of section .text:</div><div class="line"></div><div class="line"><span class="number">0000000000000000</span> &lt;main&gt;:</div><div class="line">   <span class="number">0</span>:	<span class="number">55</span>                   	push   %rbp</div><div class="line">   <span class="number">1</span>:	<span class="number">48</span> <span class="number">89</span> e5             	mov    %rsp,%rbp</div><div class="line">   <span class="number">4</span>:	bf <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span>       	mov    $<span class="number">0x0</span>,%edi</div><div class="line">   <span class="number">9</span>:	b8 <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span>       	mov    $<span class="number">0x0</span>,%eax</div><div class="line">   e:	e8 <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span>       	callq  <span class="number">13</span> &lt;main+<span class="number">0x13</span>&gt;</div><div class="line">  <span class="number">13</span>:	b8 <span class="number">00</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span>       	mov    $<span class="number">0x0</span>,%eax</div><div class="line">  <span class="number">18</span>:	<span class="number">5</span>d                   	pop    %rbp</div><div class="line">  <span class="number">19</span>:	c3                   	retq</div></pre></td></tr></table></figure></p>
+<p>hello.o中各段信息如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// objdump -h hello.o 显示hello.o中各个段的头部信息</span></div><div class="line">hello.o：     文件格式 elf64-x86<span class="number">-64</span></div><div class="line"></div><div class="line">节：</div><div class="line">Idx Name          Size      VMA               LMA               File off  Algn</div><div class="line">  <span class="number">0</span> .text         <span class="number">0000001</span>a  <span class="number">0000000000000000</span>  <span class="number">0000000000000000</span>  <span class="number">00000040</span>  <span class="number">2</span>**<span class="number">0</span></div><div class="line">                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE</div><div class="line">  <span class="number">1</span> .data         <span class="number">00000000</span>  <span class="number">0000000000000000</span>  <span class="number">0000000000000000</span>  <span class="number">0000005</span>a  <span class="number">2</span>**<span class="number">0</span></div><div class="line">                  CONTENTS, ALLOC, LOAD, DATA</div><div class="line">  <span class="number">2</span> .bss          <span class="number">00000000</span>  <span class="number">0000000000000000</span>  <span class="number">0000000000000000</span>  <span class="number">0000005</span>a  <span class="number">2</span>**<span class="number">0</span></div><div class="line">                  ALLOC</div><div class="line">  <span class="number">3</span> .rodata       <span class="number">0000000</span>d  <span class="number">0000000000000000</span>  <span class="number">0000000000000000</span>  <span class="number">0000005</span>a  <span class="number">2</span>**<span class="number">0</span></div><div class="line">                  CONTENTS, ALLOC, LOAD, READONLY, DATA</div><div class="line">  <span class="number">4</span> .comment      <span class="number">0000002</span>c  <span class="number">0000000000000000</span>  <span class="number">0000000000000000</span>  <span class="number">00000067</span>  <span class="number">2</span>**<span class="number">0</span></div><div class="line">                  CONTENTS, READONLY</div><div class="line">  <span class="number">5</span> .note.GNU-<span class="built_in">stack</span> <span class="number">00000000</span>  <span class="number">0000000000000000</span>  <span class="number">0000000000000000</span>  <span class="number">00000093</span>  <span class="number">2</span>**<span class="number">0</span></div><div class="line">                  CONTENTS, READONLY</div><div class="line">  <span class="number">6</span> .eh_frame     <span class="number">00000038</span>  <span class="number">0000000000000000</span>  <span class="number">0000000000000000</span>  <span class="number">00000098</span>  <span class="number">2</span>**<span class="number">3</span></div><div class="line">                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA</div></pre></td></tr></table></figure></p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a><a href="https://zh.wikipedia.org/wiki/%E9%93%BE%E6%8E%A5%E5%99%A8" target="_blank" rel="external">链接</a></h2><p>链接的过程是将一个或多个由编译器或汇编器生成的目标文件链接库（静态库或动态库）形成可执行文件。其中静态库会和汇编生成的目标文件一起链接打包到可执行文件中【静态链接】，它对函数库的链接是放在编译时期完成的。而动态库在程序编译时不会被链接到可执行文件中，而是在程序运行时才会被载入【动态链接】。不同的应用程序如果调用相同的库，那么在内存中只需要一份该共享库实例。获取链接器链接后的可执行文件使用命令<code>gcc hello.o -o hello</code>。如果想看该可执行文件依赖的库，可以使用命令<code>ldd hello</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ldd hello 显示hello依赖的库</span></div><div class="line">	linux-vdso.so.1 =&gt;  (0x00007ffc85980000)</div><div class="line">	libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007f06c7a53000)</div><div class="line">	/lib64/ld-linux-x86-64.so.2 (0x000055ad7be9e000)</div></pre></td></tr></table></figure></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a href="https://zh.wikipedia.org/wiki/C%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8" target="_blank" rel="external">预处理</a></li>
+<li><a href="https://gcc.gnu.org/onlinedocs/cpp/Preprocessor-Output.html" target="_blank" rel="external">预处理-行号标记</a></li>
+<li>[编译器][compile]</li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80" target="_blank" rel="external">汇编</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%93%BE%E6%8E%A5%E5%99%A8" target="_blank" rel="external">链接器</a></li>
+</ol>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试环境"><span class="toc-number">1.</span> <span class="toc-text">测试环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预处理"><span class="toc-number">2.</span> <span class="toc-text">预处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译-compile"><span class="toc-number">3.</span> <span class="toc-text">[编译][compile]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#汇编"><span class="toc-number">4.</span> <span class="toc-text">汇编</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链接"><span class="toc-number">5.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

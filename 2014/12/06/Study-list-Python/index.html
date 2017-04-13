@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,200 +23,163 @@
     
     <title>python基础篇之链表 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        python基础篇之链表
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            python基础篇之链表
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Study-list-Python">  
+    
+    <div class="article-meta">
+        <a href="/2014/12/06/Study-list-Python/" class="article-data">
+      <time datetime="2014-12-05T16:00:00.000Z" itemprop="datePublished">2014-12-06</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2014/12/06/Study-list-Python/" class="article-data">
+      <time datetime="2014-12-05T16:00:00.000Z" itemprop="datePublished">2014-12-06</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>python基础篇之链表</title>
-</head>
-<body>
-python基础篇之链表
-<hr>
-<p>链表是python里面一个很重要的数据结构,也是非常常用的一个数据结构.<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      python基础篇之链表
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>链表是python里面一个很重要的数据结构,也是非常常用的一个数据结构.<br><a id="more"></a></p>
 <h2 id="链表的表示"><a href="#链表的表示" class="headerlink" title="链表的表示"></a>链表的表示</h2><ul>
 <li><p>初始化</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">colors = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>]</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">colors = [<span class="string">'red'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>]</div></pre></td></tr></table></figure>
 </li>
 <li><p>扩展</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 选择链表fruits中包含字符'a'，并全部转换成大写</span></span><br><span class="line">fruits = [<span class="string">'apple'</span>, <span class="string">'cherry'</span>, <span class="string">'bannana'</span>, <span class="string">'lemon'</span>]</span><br><span class="line"><span class="comment"># ['APPLE', 'BANNANA']</span></span><br><span class="line">afruits = [ s.upper() <span class="keyword">for</span> s <span class="keyword">in</span> fruits <span class="keyword">if</span> <span class="string">'a'</span> <span class="keyword">in</span> s ]</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 选择链表fruits中包含字符'a'，并全部转换成大写</span></div><div class="line">fruits = [<span class="string">'apple'</span>, <span class="string">'cherry'</span>, <span class="string">'bannana'</span>, <span class="string">'lemon'</span>]</div><div class="line"><span class="comment"># ['APPLE', 'BANNANA']</span></div><div class="line">afruits = [ s.upper() <span class="keyword">for</span> s <span class="keyword">in</span> fruits <span class="keyword">if</span> <span class="string">'a'</span> <span class="keyword">in</span> s ]</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="list常用方法"><a href="#list常用方法" class="headerlink" title="list常用方法"></a>list常用方法</h2><ul>
 <li><p>添加元素</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.append(elem)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list.append(elem)</div></pre></td></tr></table></figure>
 </li>
 <li><p>在i位置添加元素elem</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.insert(i,elem)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list.insert(i,elem)</div></pre></td></tr></table></figure>
 </li>
 <li><p>将list2中的元素添加到list中</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.extend(list2)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list.extend(list2)</div></pre></td></tr></table></figure>
 </li>
 <li><p>获取元素elem的索引号</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.index(elem)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list.index(elem)</div></pre></td></tr></table></figure>
 </li>
 <li><p>删除第一个出现的元素elem</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.remove(elem)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list.remove(elem)</div></pre></td></tr></table></figure>
 </li>
 <li><p>删除第i个元素</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.pop(i)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list.pop(i)</div></pre></td></tr></table></figure>
 </li>
 <li><p>给list排序</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.sort()</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list.sort()</div></pre></td></tr></table></figure>
 </li>
 <li><p>颠倒list</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.reverse()</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">list.reverse()</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="链表排序"><a href="#链表排序" class="headerlink" title="链表排序"></a>链表排序</h2><ul>
 <li><p>sorted基本方法</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">print</span> sorted(a)   <span class="comment">## [1, 3, 4, 5]</span></span><br><span class="line"><span class="keyword">print</span> sorted(a, reverse=<span class="keyword">True</span>)  <span class="comment">##[5, 4, 3, 1]</span></span><br><span class="line"><span class="keyword">print</span> a           <span class="comment">## [5, 1, 4, 3]</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = [<span class="number">5</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>]</div><div class="line"><span class="keyword">print</span> sorted(a)   <span class="comment">## [1, 3, 4, 5]</span></div><div class="line"><span class="keyword">print</span> sorted(a, reverse=<span class="keyword">True</span>)  <span class="comment">##[5, 4, 3, 1]</span></div><div class="line"><span class="keyword">print</span> a           <span class="comment">## [5, 1, 4, 3]</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>sorted按关键字排序</p>
 <ul>
 <li><p>以字符串的长度排序</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">		strs = [<span class="string">'ccc'</span>, <span class="string">'aaaa'</span>, <span class="string">'d'</span>, <span class="string">'bb'</span>]</span><br><span class="line">		<span class="keyword">print</span> sorted(strs, key=len)  <span class="comment">## ['d', 'bb', 'ccc', 'aaaa']</span></span><br><span class="line"><span class="comment">#len代表len()这个函数</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">		strs = [<span class="string">'ccc'</span>, <span class="string">'aaaa'</span>, <span class="string">'d'</span>, <span class="string">'bb'</span>]</div><div class="line">		<span class="keyword">print</span> sorted(strs, key=len)  <span class="comment">## ['d', 'bb', 'ccc', 'aaaa']</span></div><div class="line"><span class="comment">#len代表len()这个函数</span></div></pre></td></tr></table></figure>
 <p>  其函数处理细节见下图<br><img src="!--￼13--&gt;/assets/images/sorted_key.png" alt="sorted-key.png"></p>
 </li>
 <li><p>以自定义关键字函数排序</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据字符串最后一个字符来排序</span></span><br><span class="line">strs = [<span class="string">'xc'</span>, <span class="string">'zb'</span>, <span class="string">'yd'</span> ,<span class="string">'wa'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义一个函数，输入是一个字符串，返回最后一个字符</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MyFn</span><span class="params">(s)</span>:</span></span><br><span class="line">	    <span class="keyword">return</span> s[<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 传递key=MyFn作为参数</span></span><br><span class="line"><span class="keyword">print</span> sorted(strs, key=MyFn)  <span class="comment">## ['wa', 'zb', 'xc', 'yd']</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 根据字符串最后一个字符来排序</span></div><div class="line">strs = [<span class="string">'xc'</span>, <span class="string">'zb'</span>, <span class="string">'yd'</span> ,<span class="string">'wa'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 定义一个函数，输入是一个字符串，返回最后一个字符</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">MyFn</span><span class="params">(s)</span>:</span></div><div class="line">	    <span class="keyword">return</span> s[<span class="number">-1</span>]</div><div class="line"></div><div class="line"><span class="comment"># 传递key=MyFn作为参数</span></div><div class="line"><span class="keyword">print</span> sorted(strs, key=MyFn)  <span class="comment">## ['wa', 'zb', 'xc', 'yd']</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -225,16 +189,35 @@ python基础篇之链表
 <li>提升题: <a href="!--￼15--&gt;/assets/attachs/list2.py.txt">list2.py</a></li>
 </ul>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#链表的表示"><span class="toc-number">1.</span> <span class="toc-text">链表的表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list常用方法"><span class="toc-number">2.</span> <span class="toc-text">list常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链表排序"><span class="toc-number">3.</span> <span class="toc-text">链表排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#课后习题"><span class="toc-number">4.</span> <span class="toc-text">课后习题</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -244,13 +227,33 @@ python基础篇之链表
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

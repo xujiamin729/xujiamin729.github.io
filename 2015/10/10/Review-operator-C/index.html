@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,154 +23,117 @@
     
     <title>C语言编程之运算符 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        C语言编程之运算符
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            C语言编程之运算符
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Review-operator-C">  
+    
+    <div class="article-meta">
+        <a href="/2015/10/10/Review-operator-C/" class="article-data">
+      <time datetime="2015-10-09T16:00:00.000Z" itemprop="datePublished">2015-10-10</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2015/10/10/Review-operator-C/" class="article-data">
+      <time datetime="2015-10-09T16:00:00.000Z" itemprop="datePublished">2015-10-10</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>C语言编程之运算符</title>
-</head>
-<body>
-C语言编程之运算符
-<hr>
-<p>在C语言中有很多运算符，像求字节数运算符[sizeof]，赋值运算符,算术运算符,关系运算符,逻辑运算符，条件运算符，位运算符，指针运算符等。这些运算符在运算时是有优先级的，会最终影响结果。所以了解其优先级以及运算方法是挺重要的（虽然本人觉得这些都可以通过加括号来解决，但是还是要了解一下，以便更快读懂他人程序）。<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      C语言编程之运算符
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding/">Coding</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>在C语言中有很多运算符，像求字节数运算符[sizeof]，赋值运算符,算术运算符,关系运算符,逻辑运算符，条件运算符，位运算符，指针运算符等。这些运算符在运算时是有优先级的，会最终影响结果。所以了解其优先级以及运算方法是挺重要的（虽然本人觉得这些都可以通过加括号来解决，但是还是要了解一下，以便更快读懂他人程序）。<br><a id="more"></a></p>
 <h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><p>在C语言中，有很多双目运算符（一个运算符有两个操作数），一般情况下两个操作数的数据类型要是一样的，不过当两边类型不一致时就要进行==类型转换==。而类型转换的最基本的原则是==往最高级转换==。其转换的关系如下图：<br><img src="!--￼3--&gt;/assets/images/convert_type.png" alt="convert_type"><br>图中纵向代表转换的顺序，int-&gt;unsigned-&gt;long-&gt;double;而两个横向的转换是当表达式中出现了float会当作double来处理，出现了short，char类型都会当作int来处理，也就是说这步是必须的，必须执行的转换。所以我们得到以下的结论：</p>
 <ol>
 <li>表达式的结果类型只有int/unsigned/long/double四种类型。</li>
@@ -178,11 +142,11 @@ C语言编程之运算符
 <h2 id="自增-自减"><a href="#自增-自减" class="headerlink" title="自增/自减"></a>自增/自减</h2><p>自增和自减概念类似，这里以自增为例。自增包括前自增和后自增。前自增（++i）是指变量先自增，然后将自增后的结果当作表达式的值;而后自增（i++）是指变量先将值当作表达式的值，然后再自增1。这个在大学学C语言就知道了，这里在提及是为了下面关于自增/自减的两种使用情况。</p>
 <ol>
 <li><p>自增/自减操作符只能用于变量，不能用于表达式</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"i++ = %d\n"</span>,i++);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"++i = %d\n"</span>,++i);</span><br><span class="line">    rintf(<span class="string">"i = %d\n"</span>,i);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// error: lvalue required as increment operand</span></span><br><span class="line">    <span class="comment">//printf("(-i)++ = %d\n",(-i)++);</span></span><br><span class="line">    <span class="comment">//printf("++i++ = %d\n",++i++);</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i++ = %d\n"</span>,i++);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"++i = %d\n"</span>,++i);</div><div class="line">    rintf(<span class="string">"i = %d\n"</span>,i);</div><div class="line"></div><div class="line">    <span class="comment">// error: lvalue required as increment operand</span></div><div class="line">    <span class="comment">//printf("(-i)++ = %d\n",(-i)++);</span></div><div class="line">    <span class="comment">//printf("++i++ = %d\n",++i++);</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p> 由注释的三行可知：当给表达式进行自增操作的时候，回报左值需要增量操作数。</p>
 </li>
 <li><p>在输出中，计算顺序是从右往左</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 输出多个自增</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d, i++ =%d\n"</span>,i,i++);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"i++ = %d, ++i =%d\n"</span>,i,++i);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</div><div class="line">    <span class="comment">// 输出多个自增</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d, i++ =%d\n"</span>,i,i++);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i++ = %d, ++i =%d\n"</span>,i,++i);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"i = %d\n"</span>,i);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p> 根据下图输出的截图，我们发现运算的顺序是从右往左的。代码见<a href="!--￼4--&gt;/assets/attachs/selfinc.c.txt">附件</a>。</p>
 <p> <img src="!--￼5--&gt;/assets/images/increasment.png" alt="increasment">  </p>
 </li>
@@ -225,7 +189,7 @@ C语言编程之运算符
 </ul>
 </li>
 <li><p>剪刀法切割表达式  </p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> s;</span><br><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">float</span> f;</span><br><span class="line"><span class="keyword">double</span> d;</span><br><span class="line"><span class="keyword">unsigned</span> u;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="number">123</span>%s+(i+<span class="string">'@'</span>)+i*u-f/d);</span><br></pre></td></tr></table></figure>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">short</span> s;</div><div class="line"><span class="keyword">int</span> i;</div><div class="line"><span class="keyword">float</span> f;</div><div class="line"><span class="keyword">double</span> d;</div><div class="line"><span class="keyword">unsigned</span> u;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="number">123</span>%s+(i+<span class="string">'@'</span>)+i*u-f/d);</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>剪刀法是将表达式中的符号按照优先级由低到高的顺序依次减开，而且除了右撇子三剑客之外都要从右往左开始剪。比如上式表达式中按下面的顺序剪开：</p>
@@ -242,16 +206,35 @@ C语言编程之运算符
 <li><a href="https://www.baidu.com/link?url=Dxl9sKUNMilpQ6j0ntrsvTU9x_XC4SO_oLhDdDGf0eH5j66dL9L4Am84PcUWKIt9qIhzz8ymJ358i_1jtuzcfq&amp;wd=&amp;eqid=d2c31b200000d9dd000000045625cbc3" target="_blank" rel="external">运算符优先级</a></li>
 </ol>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#类型转换"><span class="toc-number">1.</span> <span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自增-自减"><span class="toc-number">2.</span> <span class="toc-text">自增/自减</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#混合运算"><span class="toc-number">3.</span> <span class="toc-text">混合运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题-amp-回答"><span class="toc-number">4.</span> <span class="toc-text">问题&回答</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">5.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -261,13 +244,33 @@ C语言编程之运算符
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

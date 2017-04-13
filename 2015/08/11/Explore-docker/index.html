@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,154 +23,117 @@
     
     <title>逃离VMWare拥抱docker | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        逃离VMWare拥抱docker
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            逃离VMWare拥抱docker
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Explore-docker">  
+    
+    <div class="article-meta">
+        <a href="/2015/08/11/Explore-docker/" class="article-data">
+      <time datetime="2015-08-10T16:00:00.000Z" itemprop="datePublished">2015-08-11</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2015/08/11/Explore-docker/" class="article-data">
+      <time datetime="2015-08-10T16:00:00.000Z" itemprop="datePublished">2015-08-11</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>逃离VMWare拥抱docker</title>
-</head>
-<body>
-逃离VMWare拥抱docker
-<hr>
-<p>Docker是一个开源项目，它是基于linux容器（LXC）等技术，旨在实现轻量级的操作系统虚拟化的一个解决方案。用户操作Docker的容器就像操作虚拟机一样，但是它比虚拟机更轻量更快速。<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      逃离VMWare拥抱docker
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OPS/">OPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>Docker是一个开源项目，它是基于linux容器（LXC）等技术，旨在实现轻量级的操作系统虚拟化的一个解决方案。用户操作Docker的容器就像操作虚拟机一样，但是它比虚拟机更轻量更快速。<br><a id="more"></a></p>
 <h2 id="VMWare-VS-Docker"><a href="#VMWare-VS-Docker" class="headerlink" title="VMWare VS Docker"></a>VMWare VS Docker</h2><p>这里VMWare只是传统虚拟化方式的一个典型代表–虚拟机。传统方式是在硬件层面实现的，就像我们有时在新建虚拟机时出现这样的错误信息：</p>
 <blockquote>
 <p><strong>Error:</strong><br>The virtual machine could not be started because the hypervisor is not running.</p>
@@ -187,25 +151,25 @@
 <h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h2><p>Docker是基于LXC等技术的，所以linux系统对其的支持是不言而喻的。这里Docker运行的环境是Ubuntu系统。</p>
 <ol>
 <li><p>升级内核<br>Docker需要的Ubuntu的内核版本要大于3.13。对于Ubuntu 14.04这个版本是不需要升级内核以及安装依赖软件，而之前的版本是需要升级内核的。升级脚本如下：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install linux-image-generic-lts-raring linux-headers-generic-lts-raring</span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install linux-image-generic-lts-raring linux-headers-generic-lts-raring</div><div class="line">sudo reboot</div></pre></td></tr></table></figure>
 </li>
 <li><p>通过源安装Docker</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装apt-transport-https支持</span></span><br><span class="line">sudo apt-get install apt-transport-https</span><br><span class="line"><span class="comment"># 获取锁钥</span></span><br><span class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9</span><br><span class="line"><span class="comment"># 添加Docker源</span></span><br><span class="line">sudo bash -c <span class="string">"echo deb https://get.docker.io/ubuntu docker main &gt; /etc/apt/sources.list.d/docker.list"</span></span><br><span class="line"><span class="comment"># 更新软件源仓库</span></span><br><span class="line">sudo apt-get update</span><br><span class="line"><span class="comment"># 安装Docker</span></span><br><span class="line">sudo apt-get install lxc-docker -y --force-yes</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装apt-transport-https支持</span></div><div class="line">sudo apt-get install apt-transport-https</div><div class="line"><span class="comment"># 获取锁钥</span></div><div class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9</div><div class="line"><span class="comment"># 添加Docker源</span></div><div class="line">sudo bash -c <span class="string">"echo deb https://get.docker.io/ubuntu docker main &gt; /etc/apt/sources.list.d/docker.list"</span></div><div class="line"><span class="comment"># 更新软件源仓库</span></div><div class="line">sudo apt-get update</div><div class="line"><span class="comment"># 安装Docker</span></div><div class="line">sudo apt-get install lxc-docker -y --force-yes</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="Docker配置"><a href="#Docker配置" class="headerlink" title="Docker配置"></a>Docker配置</h2><p>Docker的配置文件是<a href="!--￼9--&gt;/assets/attachs/docker.txt">/etc/default/docker</a>，里面可以设置Docker的启动路径，参数配置，代理以及临时目录设置。</p>
 <ol>
 <li><p>使用代理</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EOF &gt;&gt; /etc/default/docker</span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:8080"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:8080"</span></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cat &lt;&lt; EOF &gt;&gt; /etc/default/docker</div><div class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:8080"</span></div><div class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:8080"</span></div><div class="line">EOF</div></pre></td></tr></table></figure>
 </li>
 <li><p>改变docker进程监听的IP和端口</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EOF &gt;&gt; /etc/default/docker</span><br><span class="line">DOCKER_OPTS=<span class="string">"-H unix:///var/run/docker.sock -H 0.0.0.0:4243 --insecure-regis    try 127.0.0.1:5000"</span></span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cat &lt;&lt; EOF &gt;&gt; /etc/default/docker</div><div class="line">DOCKER_OPTS=<span class="string">"-H unix:///var/run/docker.sock -H 0.0.0.0:4243 --insecure-regis    try 127.0.0.1:5000"</span></div><div class="line">EOF</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>附：Docker一键安装配置<a href="!--￼10--&gt;/assets/attachs/install_docker.sh.txt">install_docker.sh</a></p>
 <h2 id="Docker使用"><a href="#Docker使用" class="headerlink" title="Docker使用"></a>Docker使用</h2><ol>
 <li><p>镜像操作</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取注册服务器registry.hub.docker.com上的ubuntu镜像</span></span><br><span class="line">sudo docker pull ubuntu:14.04</span><br><span class="line"><span class="comment"># 列出本地镜像</span></span><br><span class="line">sudo docker images</span><br><span class="line"><span class="comment"># 启动docker容器</span></span><br><span class="line">sudo docker run -it ubuntu:14.04 /bin/bash</span><br><span class="line"><span class="comment"># 提交已有镜像,获得新镜像id</span></span><br><span class="line">sudo docker commit -m <span class="string">"commit information"</span> <span class="_">-a</span> <span class="string">"user information"</span> original_docker_id repository:tag</span><br><span class="line"><span class="comment"># 从当前目录下的Dockerfile中生成镜像</span></span><br><span class="line">sudo docker build -t=<span class="string">"repository:tag"</span> .</span><br><span class="line"><span class="comment"># 修改镜像标签</span></span><br><span class="line">sudo docker tag image_id repostory:new_tag</span><br><span class="line"><span class="comment"># 从本地文件系统（容器快照）导入</span></span><br><span class="line">sudo cat ubuntu-14.04-x86_64-minimal.tar.gz | docker import - ubuntu:14.04</span><br><span class="line"><span class="comment"># 保存镜像</span></span><br><span class="line">sudo docker save -o ubuntu_14.04.tar ubuntu:14.04</span><br><span class="line"><span class="comment"># 载入镜像</span></span><br><span class="line">sudo docker load &lt; ubuntu_14.04.tar</span><br><span class="line"><span class="comment"># 上传镜像</span></span><br><span class="line">sudo docker push repostory:tag</span><br><span class="line"><span class="comment"># 清理所有未打过标签的本地镜像</span></span><br><span class="line">sudo docker rmi $(docker images --quiet --filter <span class="string">"dangling=true"</span>)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 获取注册服务器registry.hub.docker.com上的ubuntu镜像</span></div><div class="line">sudo docker pull ubuntu:14.04</div><div class="line"><span class="comment"># 列出本地镜像</span></div><div class="line">sudo docker images</div><div class="line"><span class="comment"># 启动docker容器</span></div><div class="line">sudo docker run -it ubuntu:14.04 /bin/bash</div><div class="line"><span class="comment"># 提交已有镜像,获得新镜像id</span></div><div class="line">sudo docker commit -m <span class="string">"commit information"</span> <span class="_">-a</span> <span class="string">"user information"</span> original_docker_id repository:tag</div><div class="line"><span class="comment"># 从当前目录下的Dockerfile中生成镜像</span></div><div class="line">sudo docker build -t=<span class="string">"repository:tag"</span> .</div><div class="line"><span class="comment"># 修改镜像标签</span></div><div class="line">sudo docker tag image_id repostory:new_tag</div><div class="line"><span class="comment"># 从本地文件系统（容器快照）导入</span></div><div class="line">sudo cat ubuntu-14.04-x86_64-minimal.tar.gz | docker import - ubuntu:14.04</div><div class="line"><span class="comment"># 保存镜像</span></div><div class="line">sudo docker save -o ubuntu_14.04.tar ubuntu:14.04</div><div class="line"><span class="comment"># 载入镜像</span></div><div class="line">sudo docker load &lt; ubuntu_14.04.tar</div><div class="line"><span class="comment"># 上传镜像</span></div><div class="line">sudo docker push repostory:tag</div><div class="line"><span class="comment"># 清理所有未打过标签的本地镜像</span></div><div class="line">sudo docker rmi $(docker images --quiet --filter <span class="string">"dangling=true"</span>)</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>附：</p>
@@ -213,23 +177,42 @@
 2. 本地文件系统导入镜像的下载：[openvz的模板下载](http://openvz.org/Download/templates/precreated)
 </code></pre><ol>
 <li><p>容器操作</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 容器启动</span></span><br><span class="line"><span class="comment">## -t	让Docker分配一个终端Terminal并绑定容器的标准输入</span></span><br><span class="line"><span class="comment">## -i	让容器的标准输入保持打开（交互模式）</span></span><br><span class="line"><span class="comment">## -d	以守护态运行</span></span><br><span class="line">sudo docker run -it ubuntu:14.04 /bin/bash</span><br><span class="line"><span class="comment"># 显示容器状态</span></span><br><span class="line">sudo docker ps</span><br><span class="line"><span class="comment"># 获取容器的输出信息</span></span><br><span class="line">sudo docker logs container_id</span><br><span class="line"><span class="comment"># 容器快照的导出</span></span><br><span class="line">sudo docker <span class="built_in">export</span> container_id</span><br><span class="line"><span class="comment"># 清理所有处于终止状态的容器</span></span><br><span class="line">sudo docker rm $(docker ps <span class="_">-a</span> -q)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 容器启动</span></div><div class="line"><span class="comment">## -t	让Docker分配一个终端Terminal并绑定容器的标准输入</span></div><div class="line"><span class="comment">## -i	让容器的标准输入保持打开（交互模式）</span></div><div class="line"><span class="comment">## -d	以守护态运行</span></div><div class="line">sudo docker run -it ubuntu:14.04 /bin/bash</div><div class="line"><span class="comment"># 显示容器状态</span></div><div class="line">sudo docker ps</div><div class="line"><span class="comment"># 获取容器的输出信息</span></div><div class="line">sudo docker logs container_id</div><div class="line"><span class="comment"># 容器快照的导出</span></div><div class="line">sudo docker <span class="built_in">export</span> container_id</div><div class="line"><span class="comment"># 清理所有处于终止状态的容器</span></div><div class="line">sudo docker rm $(docker ps <span class="_">-a</span> -q)</div></pre></td></tr></table></figure>
 </li>
 <li><p>仓库操作</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找官方仓库的镜像</span></span><br><span class="line">sudo docker search ubuntu</span><br><span class="line"><span class="comment"># 创建私有仓库（官方registry镜像）</span></span><br><span class="line">sudo docker run <span class="_">-d</span> -p 5000:5000 registry</span><br><span class="line"><span class="comment"># 上传镜像到私有仓库</span></span><br><span class="line">sudo docker push localhost:5000/image_id:tag</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查找官方仓库的镜像</span></div><div class="line">sudo docker search ubuntu</div><div class="line"><span class="comment"># 创建私有仓库（官方registry镜像）</span></div><div class="line">sudo docker run <span class="_">-d</span> -p 5000:5000 registry</div><div class="line"><span class="comment"># 上传镜像到私有仓库</span></div><div class="line">sudo docker push localhost:5000/image_id:tag</div></pre></td></tr></table></figure>
 </li>
 </ol>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VMWare-VS-Docker"><span class="toc-number">1.</span> <span class="toc-text">VMWare VS Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker安装"><span class="toc-number">2.</span> <span class="toc-text">Docker安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker配置"><span class="toc-number">3.</span> <span class="toc-text">Docker配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker使用"><span class="toc-number">4.</span> <span class="toc-text">Docker使用</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -239,13 +222,33 @@
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

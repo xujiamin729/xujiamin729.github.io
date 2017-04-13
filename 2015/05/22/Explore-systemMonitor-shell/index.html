@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,154 +23,117 @@
     
     <title>shell编程之系统进程监控 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        shell编程之系统进程监控
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            shell编程之系统进程监控
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Explore-systemMonitor-shell">  
+    
+    <div class="article-meta">
+        <a href="/2015/05/22/Explore-systemMonitor-shell/" class="article-data">
+      <time datetime="2015-05-21T16:00:00.000Z" itemprop="datePublished">2015-05-22</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2015/05/22/Explore-systemMonitor-shell/" class="article-data">
+      <time datetime="2015-05-21T16:00:00.000Z" itemprop="datePublished">2015-05-22</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>shell编程之系统进程监控</title>
-</head>
-<body>
-shell编程之系统进程监控
-<hr>
-<p>本问内容均是根据网络上一篇博文<a href="http://blog.jobbole.com/22318/" target="_blank" rel="external">使用shell脚本对linux系统和进程资源进行监控</a>对其验证学习的总结.<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      shell编程之系统进程监控
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>本问内容均是根据网络上一篇博文<a href="http://blog.jobbole.com/22318/" target="_blank" rel="external">使用shell脚本对linux系统和进程资源进行监控</a>对其验证学习的总结.<br><a id="more"></a></p>
 <h2 id="命令支持"><a href="#命令支持" class="headerlink" title="命令支持"></a>命令支持</h2><ul>
 <li><code>ps</code>    查看系统中瞬间进程信息<ul>
 <li><code>-u</code>    指定所属用户</li>
@@ -189,26 +153,26 @@ shell编程之系统进程监控
 </ul>
 <h2 id="获取进程id"><a href="#获取进程id" class="headerlink" title="获取进程id"></a>获取进程id</h2><ul>
 <li><p>代码演示</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="comment"># 通过进程的使用者和名称来获取进程的PID</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提示脚本用法</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$#</span>"</span> <span class="_">-ne</span> 2 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$0</span> pUser pName"</span></span><br><span class="line">	<span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">pUser=<span class="variable">$1</span></span><br><span class="line">pName=<span class="variable">$2</span></span><br><span class="line">pId=`ps -u <span class="variable">$pUser</span> | grep <span class="variable">$pName</span> | grep -v <span class="string">'grep'</span> | grep -v <span class="string">'vi'</span> | grep -v <span class="string">'dbx\n'</span> | grep -v <span class="string">'tail'</span> | grep -v <span class="string">'start'</span> | grep -v <span class="string">'stop'</span> | sed -n 1p | awk <span class="string">'&#123;print $1&#125;'</span>`</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检测进程是否存在</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"-<span class="variable">$pId</span>"</span> == <span class="string">"-"</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"The process does not exist."</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$pId</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#! /bin/bash</span></div><div class="line"><span class="comment"># 通过进程的使用者和名称来获取进程的PID</span></div><div class="line"></div><div class="line"><span class="comment"># 提示脚本用法</span></div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$#</span>"</span> <span class="_">-ne</span> 2 ]</div><div class="line"><span class="keyword">then</span></div><div class="line">	<span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$0</span> pUser pName"</span></div><div class="line">	<span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div><div class="line"></div><div class="line">pUser=<span class="variable">$1</span></div><div class="line">pName=<span class="variable">$2</span></div><div class="line">pId=`ps -u <span class="variable">$pUser</span> | grep <span class="variable">$pName</span> | grep -v <span class="string">'grep'</span> | grep -v <span class="string">'vi'</span> | grep -v <span class="string">'dbx\n'</span> | grep -v <span class="string">'tail'</span> | grep -v <span class="string">'start'</span> | grep -v <span class="string">'stop'</span> | sed -n 1p | awk <span class="string">'&#123;print $1&#125;'</span>`</div><div class="line"></div><div class="line"><span class="comment"># 检测进程是否存在</span></div><div class="line"><span class="keyword">if</span> [ <span class="string">"-<span class="variable">$pId</span>"</span> == <span class="string">"-"</span> ]</div><div class="line"><span class="keyword">then</span></div><div class="line">	<span class="built_in">echo</span> <span class="string">"The process does not exist."</span></div><div class="line"><span class="keyword">else</span></div><div class="line">	<span class="built_in">echo</span> <span class="variable">$pId</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>个人理解<br>在获取pId的命令中,ps挑选用户,再用grep查找进程,剔除掉包含grep,vi,dbx,tail,start,stop的命令行==[不懂为嘛]==,sed选取第一行,awk提取出pId.</p>
 </li>
 </ul>
 <h2 id="监控进程使用的CPU-amp-内存"><a href="#监控进程使用的CPU-amp-内存" class="headerlink" title="监控进程使用的CPU&amp;内存"></a>监控进程使用的CPU&amp;内存</h2><ul>
 <li><p>监控CPU</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过pId来获取该进程CPU的使用情况</span></span><br><span class="line"><span class="keyword">function</span> GetCpu</span><br><span class="line">&#123;</span><br><span class="line">	cpuValue=`ps -p <span class="variable">$1</span> -o pcpu | grep -v CPU | awk <span class="string">'&#123;print $1&#125;'</span> | awk -F. <span class="string">'&#123;print $1&#125;'</span>`</span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$cpuValue</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 通过pId来获取该进程CPU的使用情况</span></div><div class="line"><span class="keyword">function</span> GetCpu</div><div class="line">&#123;</div><div class="line">	cpuValue=`ps -p <span class="variable">$1</span> -o pcpu | grep -v CPU | awk <span class="string">'&#123;print $1&#125;'</span> | awk -F. <span class="string">'&#123;print $1&#125;'</span>`</div><div class="line">	<span class="built_in">echo</span> <span class="variable">$cpuValue</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>注意:</strong><br>最后的<code>awk</code>是取整的目的.</p>
 </blockquote>
 </li>
 <li><p>监控内存</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过pId来获取进程内存使用情况</span></span><br><span class="line"><span class="keyword">function</span> GetMem</span><br><span class="line">&#123;</span><br><span class="line">	memUsage=`ps -p <span class="variable">$1</span> -o vsz | grep -v VSZ`</span><br><span class="line">	((memUsage /= 1000))</span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$memUsage</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 通过pId来获取进程内存使用情况</span></div><div class="line"><span class="keyword">function</span> GetMem</div><div class="line">&#123;</div><div class="line">	memUsage=`ps -p <span class="variable">$1</span> -o vsz | grep -v VSZ`</div><div class="line">	((memUsage /= 1000))</div><div class="line">	<span class="built_in">echo</span> <span class="variable">$memUsage</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>句柄数<br>句柄使用过高可能由于负载过高，句柄泄露等情况，通过脚本对业务进程句柄使用量进行时时监控，可以在异常时及时发送告警（例如通过短信），便于维护人员及时处理</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过pId来获取该进程句柄使用量</span></span><br><span class="line"><span class="keyword">function</span> GetHandle</span><br><span class="line">&#123;</span><br><span class="line">	handle=`ls /proc/<span class="variable">$1</span>/fd | wc <span class="_">-l</span>`</span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$handle</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 通过pId来获取该进程句柄使用量</span></div><div class="line"><span class="keyword">function</span> GetHandle</div><div class="line">&#123;</div><div class="line">	handle=`ls /proc/<span class="variable">$1</span>/fd | wc <span class="_">-l</span>`</div><div class="line">	<span class="built_in">echo</span> <span class="variable">$handle</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>监控系统CPU</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取系统CPU负载</span></span><br><span class="line"><span class="keyword">function</span> GetSysCpu</span><br><span class="line">&#123;</span><br><span class="line">	cpuIdle=`vmstat 1 5 | sed -n <span class="string">'3,$p'</span> | awk <span class="string">'&#123;x = x + $15&#125; END &#123;print x/5&#125;'</span> | awk -F. <span class="string">'&#123;print $1&#125;'</span>`</span><br><span class="line">	cpuNum=`<span class="built_in">echo</span> <span class="string">"100-<span class="variable">$cpuIdle</span>"</span> | bc`</span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$cpuNum</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 获取系统CPU负载</span></div><div class="line"><span class="keyword">function</span> GetSysCpu</div><div class="line">&#123;</div><div class="line">	cpuIdle=`vmstat 1 5 | sed -n <span class="string">'3,$p'</span> | awk <span class="string">'&#123;x = x + $15&#125; END &#123;print x/5&#125;'</span> | awk -F. <span class="string">'&#123;print $1&#125;'</span>`</div><div class="line">	cpuNum=`<span class="built_in">echo</span> <span class="string">"100-<span class="variable">$cpuIdle</span>"</span> | bc`</div><div class="line">	<span class="built_in">echo</span> <span class="variable">$cpuNum</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>注解:</strong><br>使用 vmstat 取 5 次系统 CPU 的 idle 值，取平均值，然后通过与 100 取差得到当前 CPU 的实际占用值。</p>
 </blockquote>
@@ -220,16 +184,35 @@ shell编程之系统进程监控
 <li>结果分析<br>==目前google浏览器cpu使用占3%,而整个系统的cpu使用是5%.内存使用是2210M,超了不少,运行的进程有40个,也超了不少,而占用的句柄数是426,也是比较多的.==</li>
 </ul>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命令支持"><span class="toc-number">1.</span> <span class="toc-text">命令支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取进程id"><span class="toc-number">2.</span> <span class="toc-text">获取进程id</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#监控进程使用的CPU-amp-内存"><span class="toc-number">3.</span> <span class="toc-text">监控进程使用的CPU&内存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完整演示"><span class="toc-number">4.</span> <span class="toc-text">完整演示</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -239,13 +222,33 @@ shell编程之系统进程监控
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,195 +23,177 @@
     
     <title>shell编程之实用脚本片段 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        shell编程之实用脚本片段
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            shell编程之实用脚本片段
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Summary-snip-Shell">  
+    
+    <div class="article-meta">
+        <a href="/2014/03/01/Summary-snip-Shell/" class="article-data">
+      <time datetime="2014-02-28T16:00:00.000Z" itemprop="datePublished">2014-03-01</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2014/03/01/Summary-snip-Shell/" class="article-data">
+      <time datetime="2014-02-28T16:00:00.000Z" itemprop="datePublished">2014-03-01</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>shell编程之实用脚本片段</title>
-</head>
-<body>
-shell编程之实用脚本片段
-<hr>
-<p>现在编程都讲究面向对象,处理的对象不再是最底层的变量,结构等.所以在日常也要注意实用脚本片段的积累.<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      shell编程之实用脚本片段
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>现在编程都讲究面向对象,处理的对象不再是最底层的变量,结构等.所以在日常也要注意实用脚本片段的积累.<br><a id="more"></a></p>
 <h2 id="校验参数"><a href="#校验参数" class="headerlink" title="校验参数"></a>校验参数</h2><ol>
 <li>情景描述<br> 有些脚本文件需要传入一些参数,那么就需要在脚本里对参数进行预处理,使得用户更好的使用该脚本.</li>
 <li><p>脚本片段</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$#</span>"</span> <span class="_">-ne</span> 1 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Incorrect number of arguments"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Usage: command arg1"</span></span><br><span class="line"><span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$#</span>"</span> <span class="_">-ne</span> 1 ]</div><div class="line"><span class="keyword">then</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Incorrect number of arguments"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Usage: command arg1"</span></div><div class="line"><span class="built_in">exit</span> 1</div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="等待程序执行"><a href="#等待程序执行" class="headerlink" title="等待程序执行"></a>等待程序执行</h2><ol>
 <li>情景描述<br> 编程中有些命令执行需要很耗时间和资源,需要提早运行.但是有时还需要等待该命令,对其结果进行进一步处理,此时就需要这样的代码段.</li>
 <li><p>脚本片段</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">prog1 &amp;</span><br><span class="line"><span class="comment"># 获取prog1的pid</span></span><br><span class="line">pid = <span class="variable">$1</span></span><br><span class="line"><span class="comment"># 等待后台prog1执行完继续脚本</span></span><br><span class="line"><span class="built_in">wait</span> <span class="variable">$pid</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">prog1 &amp;</div><div class="line"><span class="comment"># 获取prog1的pid</span></div><div class="line">pid = <span class="variable">$1</span></div><div class="line"><span class="comment"># 等待后台prog1执行完继续脚本</span></div><div class="line"><span class="built_in">wait</span> <span class="variable">$pid</span></div><div class="line">...</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="提示用户输入"><a href="#提示用户输入" class="headerlink" title="提示用户输入"></a>提示用户输入</h2><ol>
 <li>情景描述<br> 智能提示,让shell脚本更加人性化.</li>
 <li><p>脚本片段</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">"please type the password:"</span> PW</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PW</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="built_in">read</span> -p <span class="string">"please type the password:"</span> PW</div><div class="line"><span class="built_in">echo</span> <span class="variable">$PW</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="更改用户密码"><a href="#更改用户密码" class="headerlink" title="更改用户密码"></a>更改用户密码</h2><ol>
 <li>情景描述<br> 更改登录用户密码,懒得每次输入新旧密码</li>
 <li><p>脚本片段</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">(<span class="built_in">echo</span> <span class="string">"curpw"</span>; sleep 1; <span class="built_in">echo</span> <span class="string">"newpw"</span>; sleep 1; <span class="built_in">echo</span> <span class="string">"newpw"</span>) | passwd</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">(<span class="built_in">echo</span> <span class="string">"curpw"</span>; sleep 1; <span class="built_in">echo</span> <span class="string">"newpw"</span>; sleep 1; <span class="built_in">echo</span> <span class="string">"newpw"</span>) | passwd</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="ACM检验"><a href="#ACM检验" class="headerlink" title="ACM检验"></a>ACM检验</h2><ol>
 <li>情景描述<br> ACM中需要对代码的测试数据进行验证.</li>
 <li><p>脚本片段</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">#！/bin/bash</span></span><br><span class="line">	<span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		<span class="comment">#生成随机变量到input文件中,r可以是生成脚本</span></span><br><span class="line">		./r &gt; input</span><br><span class="line">		./a &lt; input &gt; output.a</span><br><span class="line">		./b &lt; input &gt; output.b</span><br><span class="line">		diff output.a output.b</span><br><span class="line">		<span class="keyword">if</span> [ $? <span class="_">-ne</span> 0 ]</span><br><span class="line">		<span class="keyword">then</span></span><br><span class="line">			<span class="built_in">break</span></span><br><span class="line">		<span class="keyword">fi</span></span><br><span class="line">	<span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## 跨系统脚本</span></span><br><span class="line"></span><br><span class="line">1. 情景描述  </span><br><span class="line">    对于不同的Linux发行版本，它们的包管理命令是不同的，比如ubuntu用apt-get命令他，centos用yum命令，mac系统用homebrew命令，但是它们都能运行shell脚本，所以shell脚本可以针对不同的发行版本安装不同的软件，以完成系统的配置。</span><br><span class="line">2. 脚本片段</span><br><span class="line"></span><br><span class="line">    ```bash</span><br><span class="line">    <span class="comment">#！/bin/bash</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">which</span> apt-get &gt; /dev/null; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"You are using Ubuntu!"</span></span><br><span class="line">        sudo apt-get install-y git</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">which</span> yum &gt; /dev/null; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"You are using CentOs!"</span></span><br><span class="line">        sudo yum install -y git</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">which</span> brew &gt; /dev/null; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"You are using Mac OS X!"</span></span><br><span class="line">        brew install git</span><br><span class="line">    <span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">	<span class="comment">#！/bin/bash</span></div><div class="line">	<span class="keyword">while</span> <span class="literal">true</span></div><div class="line">	<span class="keyword">do</span></div><div class="line">		<span class="comment">#生成随机变量到input文件中,r可以是生成脚本</span></div><div class="line">		./r &gt; input</div><div class="line">		./a &lt; input &gt; output.a</div><div class="line">		./b &lt; input &gt; output.b</div><div class="line">		diff output.a output.b</div><div class="line">		<span class="keyword">if</span> [ $? <span class="_">-ne</span> 0 ]</div><div class="line">		<span class="keyword">then</span></div><div class="line">			<span class="built_in">break</span></div><div class="line">		<span class="keyword">fi</span></div><div class="line">	<span class="keyword">done</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">## 跨系统脚本</span></div><div class="line"></div><div class="line">1. 情景描述  </div><div class="line">    对于不同的Linux发行版本，它们的包管理命令是不同的，比如ubuntu用apt-get命令他，centos用yum命令，mac系统用homebrew命令，但是它们都能运行shell脚本，所以shell脚本可以针对不同的发行版本安装不同的软件，以完成系统的配置。</div><div class="line">2. 脚本片段</div><div class="line"></div><div class="line">    ```bash</div><div class="line">    <span class="comment">#！/bin/bash</span></div><div class="line">    <span class="keyword">if</span> <span class="built_in">which</span> apt-get &gt; /dev/null; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"You are using Ubuntu!"</span></div><div class="line">        sudo apt-get install-y git</div><div class="line">    <span class="keyword">elif</span> <span class="built_in">which</span> yum &gt; /dev/null; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"You are using CentOs!"</span></div><div class="line">        sudo yum install -y git</div><div class="line">    <span class="keyword">elif</span> <span class="built_in">which</span> brew &gt; /dev/null; <span class="keyword">then</span></div><div class="line">        <span class="built_in">echo</span> <span class="string">"You are using Mac OS X!"</span></div><div class="line">        brew install git</div><div class="line">    <span class="keyword">fi</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#校验参数"><span class="toc-number">1.</span> <span class="toc-text">校验参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#等待程序执行"><span class="toc-number">2.</span> <span class="toc-text">等待程序执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提示用户输入"><span class="toc-number">3.</span> <span class="toc-text">提示用户输入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改用户密码"><span class="toc-number">4.</span> <span class="toc-text">更改用户密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACM检验"><span class="toc-number">5.</span> <span class="toc-text">ACM检验</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -220,13 +203,33 @@ shell编程之实用脚本片段
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

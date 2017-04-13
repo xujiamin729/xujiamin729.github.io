@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,203 +23,185 @@
     
     <title>python基础篇之元组和字典 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        python基础篇之元组和字典
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            python基础篇之元组和字典
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Study-tupleDict-Python">  
+    
+    <div class="article-meta">
+        <a href="/2014/12/07/Study-tupleDict-Python/" class="article-data">
+      <time datetime="2014-12-06T16:00:00.000Z" itemprop="datePublished">2014-12-07</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2014/12/07/Study-tupleDict-Python/" class="article-data">
+      <time datetime="2014-12-06T16:00:00.000Z" itemprop="datePublished">2014-12-07</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>python基础篇之元组和字典</title>
-</head>
-<body>
-python基础篇之元组和字典
-<hr>
-<p>除了list之外,python还有两个比较常用的数据结构,就是本文所介绍的元组和字典.元组其实就相当于数组.其元素的大小无法改变.<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      python基础篇之元组和字典
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>除了list之外,python还有两个比较常用的数据结构,就是本文所介绍的元组和字典.元组其实就相当于数组.其元素的大小无法改变.<br><a id="more"></a></p>
 <h2 id="元组表示"><a href="#元组表示" class="headerlink" title="元组表示"></a>元组表示</h2><ul>
 <li><p>赋值(用圆圆括号包含元素)</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="string">'hi'</span>)</span><br><span class="line"><span class="keyword">print</span> len(tuple)  <span class="comment">## 3</span></span><br><span class="line"><span class="keyword">print</span> tuple[<span class="number">2</span>]    <span class="comment">## hi</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="string">'hi'</span>)</div><div class="line"><span class="keyword">print</span> len(tuple)  <span class="comment">## 3</span></div><div class="line"><span class="keyword">print</span> tuple[<span class="number">2</span>]    <span class="comment">## hi</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>更改元素</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 报错，元组元素无法更改</span></span><br><span class="line">tuple[<span class="number">2</span>] = <span class="string">'bye'</span></span><br><span class="line"><span class="comment"># this works</span></span><br><span class="line">tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="string">'bye'</span>)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 报错，元组元素无法更改</span></div><div class="line">tuple[<span class="number">2</span>] = <span class="string">'bye'</span></div><div class="line"><span class="comment"># this works</span></div><div class="line">tuple = (<span class="number">1</span>, <span class="number">2</span>, <span class="string">'bye'</span>)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="字典表示"><a href="#字典表示" class="headerlink" title="字典表示"></a>字典表示</h2><ul>
 <li><p>赋值</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以以&#123;&#125;开始构建空字典，然后以赋值的形式给字典添加键值对</span></span><br><span class="line">dict = &#123;&#125;</span><br><span class="line">dict[<span class="string">'a'</span>] = <span class="string">'alpha'</span></span><br><span class="line">dict[<span class="string">'g'</span>] = <span class="string">'gamma'</span></span><br><span class="line">dict[<span class="string">'o'</span>] = <span class="string">'omega'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> dict  <span class="comment">## &#123;'a': 'alpha', 'o': 'omega', 'g': 'gamma'&#125;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 可以以&#123;&#125;开始构建空字典，然后以赋值的形式给字典添加键值对</span></div><div class="line">dict = &#123;&#125;</div><div class="line">dict[<span class="string">'a'</span>] = <span class="string">'alpha'</span></div><div class="line">dict[<span class="string">'g'</span>] = <span class="string">'gamma'</span></div><div class="line">dict[<span class="string">'o'</span>] = <span class="string">'omega'</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> dict  <span class="comment">## &#123;'a': 'alpha', 'o': 'omega', 'g': 'gamma'&#125;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>查看和更改元素</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> dict[<span class="string">'a'</span>]     <span class="comment"># 查看'a'对应的值 'alpha'</span></span><br><span class="line">dict[<span class="string">'a'</span>] = <span class="number">6</span>       <span class="comment"># 给'a'重新赋值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">'z'</span> <span class="keyword">in</span> dict: <span class="keyword">print</span> dict[<span class="string">'z'</span>]     <span class="comment"># 避免报错</span></span><br><span class="line"><span class="keyword">print</span> dict.get(<span class="string">'z'</span>)  <span class="comment"># None (instead of KeyError)</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> dict[<span class="string">'a'</span>]     <span class="comment"># 查看'a'对应的值 'alpha'</span></div><div class="line">dict[<span class="string">'a'</span>] = <span class="number">6</span>       <span class="comment"># 给'a'重新赋值</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="string">'z'</span> <span class="keyword">in</span> dict: <span class="keyword">print</span> dict[<span class="string">'z'</span>]     <span class="comment"># 避免报错</span></div><div class="line"><span class="keyword">print</span> dict.get(<span class="string">'z'</span>)  <span class="comment"># None (instead of KeyError)</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="字典方法"><a href="#字典方法" class="headerlink" title="字典方法"></a>字典方法</h2><ul>
 <li><p>获取字典关键字</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict.keys()</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dict.keys()</div></pre></td></tr></table></figure>
 </li>
 <li><p>获取字典值</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict.values()</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dict.values()</div></pre></td></tr></table></figure>
 </li>
 <li><p>获取字典键值对(返回的是一个元组链表)</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict.items()</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dict.items()</div></pre></td></tr></table></figure>
 </li>
 <li><p>循环中获取键和值</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> dict.items():</span><br><span class="line">	<span class="keyword">print</span> k, <span class="string">'&gt;'</span>, v</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> dict.items():</div><div class="line">	<span class="keyword">print</span> k, <span class="string">'&gt;'</span>, v</div></pre></td></tr></table></figure>
 </li>
 <li><p>删除元素(对list也适用)</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">del</span> dict[<span class="string">'b'</span>]   <span class="comment"># 删除'b'元素</span></span><br><span class="line"><span class="keyword">print</span> dict      <span class="comment">## &#123;'a':1, 'c':3&#125;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dict = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;</div><div class="line"><span class="keyword">del</span> dict[<span class="string">'b'</span>]   <span class="comment"># 删除'b'元素</span></div><div class="line"><span class="keyword">print</span> dict      <span class="comment">## &#123;'a':1, 'c':3&#125;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="字典排序"><a href="#字典排序" class="headerlink" title="字典排序"></a>字典排序</h2><ul>
 <li><p>sorted方法</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dict1=&#123;<span class="string">'A'</span>: <span class="number">9</span>, <span class="string">'C'</span>: <span class="number">5</span>, <span class="string">'B'</span>: <span class="number">1</span>, <span class="string">'E'</span>: <span class="number">14</span>, <span class="string">'D'</span>: <span class="number">3</span>, <span class="string">'G'</span>: <span class="number">3</span>, <span class="string">'F'</span>: <span class="number">3</span>, <span class="string">'I'</span>: <span class="number">9</span>, <span class="string">'H'</span>: <span class="number">7</span>, <span class="string">'J'</span>: <span class="number">1</span>, <span class="string">'L'</span>: <span class="number">2</span>, <span class="string">'O'</span>: <span class="number">8</span>, <span class="string">'N'</span>: <span class="number">3</span>, <span class="string">'P'</span>: <span class="number">4</span>, <span class="string">'S'</span>: <span class="number">10</span>, <span class="string">'R'</span>: <span class="number">5</span>, <span class="string">'U'</span>: <span class="number">1</span>, <span class="string">'T'</span>: <span class="number">17</span>, <span class="string">'W'</span>: <span class="number">1</span>, <span class="string">'V'</span>: <span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#对字典按值排序,以元组的形式返回</span></span><br><span class="line"><span class="keyword">print</span> sorted(dict1.iteritems(),key=<span class="keyword">lambda</span> dict1:dict1[<span class="number">1</span>],reverse=<span class="keyword">True</span>)</span><br><span class="line"><span class="comment">#对字典按键排序,以元组的形式返回</span></span><br><span class="line"><span class="keyword">print</span> sorted(dict1.iteritems(),key=<span class="keyword">lambda</span> dict1:dict1[<span class="number">0</span>],reverse=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">dict1=&#123;<span class="string">'A'</span>: <span class="number">9</span>, <span class="string">'C'</span>: <span class="number">5</span>, <span class="string">'B'</span>: <span class="number">1</span>, <span class="string">'E'</span>: <span class="number">14</span>, <span class="string">'D'</span>: <span class="number">3</span>, <span class="string">'G'</span>: <span class="number">3</span>, <span class="string">'F'</span>: <span class="number">3</span>, <span class="string">'I'</span>: <span class="number">9</span>, <span class="string">'H'</span>: <span class="number">7</span>, <span class="string">'J'</span>: <span class="number">1</span>, <span class="string">'L'</span>: <span class="number">2</span>, <span class="string">'O'</span>: <span class="number">8</span>, <span class="string">'N'</span>: <span class="number">3</span>, <span class="string">'P'</span>: <span class="number">4</span>, <span class="string">'S'</span>: <span class="number">10</span>, <span class="string">'R'</span>: <span class="number">5</span>, <span class="string">'U'</span>: <span class="number">1</span>, <span class="string">'T'</span>: <span class="number">17</span>, <span class="string">'W'</span>: <span class="number">1</span>, <span class="string">'V'</span>: <span class="number">1</span>&#125;</div><div class="line"></div><div class="line"><span class="comment">#对字典按值排序,以元组的形式返回</span></div><div class="line"><span class="keyword">print</span> sorted(dict1.iteritems(),key=<span class="keyword">lambda</span> dict1:dict1[<span class="number">1</span>],reverse=<span class="keyword">True</span>)</div><div class="line"><span class="comment">#对字典按键排序,以元组的形式返回</span></div><div class="line"><span class="keyword">print</span> sorted(dict1.iteritems(),key=<span class="keyword">lambda</span> dict1:dict1[<span class="number">0</span>],reverse=<span class="keyword">False</span>)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#元组表示"><span class="toc-number">1.</span> <span class="toc-text">元组表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字典表示"><span class="toc-number">2.</span> <span class="toc-text">字典表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字典方法"><span class="toc-number">3.</span> <span class="toc-text">字典方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字典排序"><span class="toc-number">4.</span> <span class="toc-text">字典排序</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -228,13 +211,33 @@ python基础篇之元组和字典
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

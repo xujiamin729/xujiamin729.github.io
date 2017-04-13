@@ -1,0 +1,230 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>活用python虚拟环境virtualenv | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            活用python虚拟环境virtualenv
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-virtualenv">  
+    
+    <div class="article-meta">
+        <a href="/2017/01/30/virtualenv/" class="article-data">
+      <time datetime="2017-01-30T00:54:03.000Z" itemprop="datePublished">2017-01-30</time>
+</a>
+
+
+<a href="/2017/01/30/virtualenv/" class="article-data">
+      <time datetime="2017-01-30T00:54:03.000Z" itemprop="datePublished">2017-01-30</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      活用python虚拟环境virtualenv
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>程序猿的开发历程是悠久的，但是开发技术的版本更新是日新月异的，所有这样的现象很常见：N年前开发的应用程序是基于Python2.7的，但是现在的Python版本已经到3.x了，而3.x对2.7的兼容性并不是100%的 ，所以问题来了–是不运行基于Python2.7的应用程序还是运行基于Python3.x的应用程序，而对于程序猿而言，2.7的开发程序是儿子，3.x的开发程序也是儿子哇，能使二者之间兼得的神器就是virtualenv。<br><a id="more"></a></p>
+<p>virtualenv是一个创建隔绝的Python环境的工具。它会创建一个包含所有必要的可执行文件的文件夹，用来使用Python工程所需要的包。换句话说，我们可以用virtualenv给各个项目创建各自的Python环境，各个的环境之间安装的包相互独立，互不影响。通过激活<code>avtive</code>相应的Python环境来使用相应的Python环境。这里为了方便管理不同的Python环境，我们使用virtualenvwrapper来对Python虚拟环境进行管理。</p>
+<h2 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h2><p>virtualenv和virtualenvwrapper的安装很简单，一条命令即可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pip install virtualenv  <span class="comment"># 安装virtualenv</span></div><div class="line">pip install virtualenvwrapper <span class="comment"># 安装virtualenvwrapper</span></div></pre></td></tr></table></figure></p>
+<p>virtualenv是不需要配置的，它的使用直接是在项目文件夹里执行命令<code>virtualenv proEnv</code>，就会在当前项目目录下生成proEnv的目录，目录下会包含bin/，include/，lib/，local/这四个文件夹和一个pip-selfcheck.json文件。当该虚拟环境被激活后<code>source proEnv/bin/activate</code>，所有执行的pip安装程序都会安装在当前虚拟环境文件夹proEnv中。不过这样就导致下面的问题：</p>
+<ol>
+<li>不方便管理–激活，消活<code>deactivate</code>，环境切换等</li>
+<li>无法重用–存放在指定项目目录下<br>而virtualenvwrapper能完美解决这些问题。</li>
+</ol>
+<p>virtualenvwrapper的配置如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 1.在~/.bashrc文件结尾添加下面</span></div><div class="line"><span class="built_in">source</span> <span class="variable">$HOME</span>/.local/bin/virtualenvwrapper.<span class="comment">#!/bin/sh</span></div><div class="line"></div><div class="line"><span class="comment"># 2. 重新加载配置</span></div><div class="line"><span class="built_in">source</span> <span class="variable">$HOME</span>/.bashrc</div></pre></td></tr></table></figure></p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><ol>
+<li><p>创建环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在$HOME/.virtualenvs/目录下创建项目python环境</span></div><div class="line">mkvirtualenv proEnv [-p python3.5]</div></pre></td></tr></table></figure>
+</li>
+<li><p>列举所有环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lsvirtualenv</div></pre></td></tr></table></figure>
+</li>
+<li><p>切换环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">workon proEnv</div></pre></td></tr></table></figure>
+</li>
+<li><p>退出环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deactivate</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">revirtualenv proEnv</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装和配置"><span class="toc-number">1.</span> <span class="toc-text">安装和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用说明"><span class="toc-number">2.</span> <span class="toc-text">使用说明</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

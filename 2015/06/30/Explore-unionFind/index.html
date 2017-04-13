@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,154 +23,117 @@
     
     <title>ACM算法之基本并查集 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        ACM算法之基本并查集
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            ACM算法之基本并查集
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Explore-unionFind">  
+    
+    <div class="article-meta">
+        <a href="/2015/06/30/Explore-unionFind/" class="article-data">
+      <time datetime="2015-06-29T16:00:00.000Z" itemprop="datePublished">2015-06-30</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2015/06/30/Explore-unionFind/" class="article-data">
+      <time datetime="2015-06-29T16:00:00.000Z" itemprop="datePublished">2015-06-30</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>ACM算法之基本并查集</title>
-</head>
-<body>
-ACM算法之基本并查集
-<hr>
-<p>并查集是一种用途广泛的数据结构，能够快速地处理集合的合并和查询问题，并且实现起来非常方便，在很多场合中都有着非常巧妙的应用。本文首先介绍并查集的定义、原理及具体实现，然后结合hihocoder以及poj上的题目做一些具体实践。<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      ACM算法之基本并查集
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>并查集是一种用途广泛的数据结构，能够快速地处理集合的合并和查询问题，并且实现起来非常方便，在很多场合中都有着非常巧妙的应用。本文首先介绍并查集的定义、原理及具体实现，然后结合hihocoder以及poj上的题目做一些具体实践。<br><a id="more"></a></p>
 <h2 id="定义和原理"><a href="#定义和原理" class="headerlink" title="定义和原理"></a>定义和原理</h2><p><a href="https://zh.wikipedia.org/wiki/%E5%B9%B6%E6%9F%A5%E9%9B%86" target="_blank" rel="external">并查集</a>(Union-Find Set)是一种树型的数据结构，其保持着用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。有一个联合-查找算法（union-find algorithm）定义了两个操作用于此数据结构：</p>
 <ul>
 <li><code>Find</code>            确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。  </li>
@@ -183,20 +147,20 @@ ACM算法之基本并查集
 </ul>
 <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><ul>
 <li><p>并查集的数据存储[==O(n)==]</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LENMAX 1000000</span></span><br><span class="line"><span class="keyword">int</span> father[LENMAX]</span><br></pre></td></tr></table></figure>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LENMAX 1000000</span></div><div class="line"><span class="keyword">int</span> father[LENMAX]</div></pre></td></tr></table></figure>
 <p>  虽然并查集是树型的数据结构，但是实际的存储是用数组，就跟堆排序一样。</p>
 </li>
 <li><p>并查集的初始化<code>MakeSet</code></p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MakeSet</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;LENMAX;i++)&#123;</span><br><span class="line">		father[i]=i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">MakeSet</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> i;</div><div class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;LENMAX;i++)&#123;</div><div class="line">		father[i]=i;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>  <code>MakeSet</code>是并查集的初始化函数，这里采用<code>father[i]==i</code>来判定该i是否是某个集合的代表。</p>
 </li>
 <li><p>并查集的查找操作[==O(alpha(n)) alpha(n)&lt;n==]</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查找操作--未压缩路径</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x==father[x])</span><br><span class="line">	  <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	  <span class="keyword">return</span> Find(father[x]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查找操作--压缩路径</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x==father[x])</span><br><span class="line">	  <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		father[x]=Find(father[x]);</span><br><span class="line">		<span class="keyword">return</span> father[x];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 查找操作--未压缩路径</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(x==father[x])</div><div class="line">	  <span class="keyword">return</span> x;</div><div class="line">	<span class="keyword">else</span></div><div class="line">	  <span class="keyword">return</span> Find(father[x]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 查找操作--压缩路径</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(x==father[x])</div><div class="line">	  <span class="keyword">return</span> x;</div><div class="line">	<span class="keyword">else</span>&#123;</div><div class="line">		father[x]=Find(father[x]);</div><div class="line">		<span class="keyword">return</span> father[x];</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>  压缩路径可以避免重复查找，其实际的意义是将树的深度由n变成1。就是将层层的等级制度变成全部向皇帝/代表负责。</p>
 </li>
 <li><p>并查集的合并操作[==O(alpha(n))  alpha(n)&lt;n==]</p>
-  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 合并操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fatherX = Find(x);</span><br><span class="line">	<span class="keyword">int</span> fatherY = Find(y);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// fatherY归fatherX管了</span></span><br><span class="line">	<span class="keyword">if</span>(fatherX!=fatherY)</span><br><span class="line">	  father[fatherY]=fatherX;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span><br><span class="line">	// 合并的时候取小的数值</span><br><span class="line">	if(fatherX&lt;fatherY)</span><br><span class="line">		father[fatherY]=fatherX;</span><br><span class="line">	else</span><br><span class="line">		father[fatherX]=fatherY;</span><br><span class="line">	*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 合并操作</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Union</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> fatherX = Find(x);</div><div class="line">	<span class="keyword">int</span> fatherY = Find(y);</div><div class="line"></div><div class="line">	<span class="comment">// fatherY归fatherX管了</span></div><div class="line">	<span class="keyword">if</span>(fatherX!=fatherY)</div><div class="line">	  father[fatherY]=fatherX;</div><div class="line"></div><div class="line">	<span class="comment">/*</span></div><div class="line">	// 合并的时候取小的数值</div><div class="line">	if(fatherX&lt;fatherY)</div><div class="line">		father[fatherY]=fatherX;</div><div class="line">	else</div><div class="line">		father[fatherX]=fatherY;</div><div class="line">	*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="解题报告"><a href="#解题报告" class="headerlink" title="解题报告"></a>解题报告</h2><ul>
@@ -229,16 +193,35 @@ ACM算法之基本并查集
 </li>
 </ul>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义和原理"><span class="toc-number">1.</span> <span class="toc-text">定义和原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">2.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解题报告"><span class="toc-number">3.</span> <span class="toc-text">解题报告</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -248,13 +231,33 @@ ACM算法之基本并查集
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

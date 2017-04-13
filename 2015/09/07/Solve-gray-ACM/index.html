@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,154 +23,117 @@
     
     <title>ACM解题报告之格雷码 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        ACM解题报告之格雷码
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            ACM解题报告之格雷码
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Solve-gray-ACM">  
+    
+    <div class="article-meta">
+        <a href="/2015/09/07/Solve-gray-ACM/" class="article-data">
+      <time datetime="2015-09-06T16:00:00.000Z" itemprop="datePublished">2015-09-07</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2015/09/07/Solve-gray-ACM/" class="article-data">
+      <time datetime="2015-09-06T16:00:00.000Z" itemprop="datePublished">2015-09-07</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>ACM解题报告之格雷码</title>
-</head>
-<body>
-ACM解题报告之格雷码
-<hr>
-<p><strong>格雷码</strong>（Gray Code）是指在一组数的编码中，任意两个相邻的代码只有一位二进制数不同，则称这种代码为格雷码。另外由于最大数和最小数之间也仅有一位数不同，即“首尾相连”，因此又称为<strong>循环码*</strong>或<strong>*反射码</strong>。这篇博文主要介绍怎样用递归的方式构造格雷码以及格雷码与8421码之间的转换。<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      ACM解题报告之格雷码
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Report/">Report</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p><strong>格雷码</strong>（Gray Code）是指在一组数的编码中，任意两个相邻的代码只有一位二进制数不同，则称这种代码为格雷码。另外由于最大数和最小数之间也仅有一位数不同，即“首尾相连”，因此又称为<strong>循环码*</strong>或<strong>*反射码</strong>。这篇博文主要介绍怎样用递归的方式构造格雷码以及格雷码与8421码之间的转换。<br><a id="more"></a></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在数字系统中，通常要求代码按一定顺序变化。例如，按自然数递增计数，若采用8421码，则数0111变到1000时四位均需要变化，而在实际电路中，四位的变化不可能绝对同时发生，则计数中可能出现短暂的其他编码（1100,1111等），在特定情况下可能导致电路状态或输出错误。而使用格雷码可以避免这种错误。这也是<strong>格雷码</strong>叫<strong>循环码</strong>的原因。而叫它<strong>反射码</strong>的原因在于常见的编码生成方式是反射或镜像。</p>
 <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>题目的来源有两个，一个是最近腾讯笔试的编程题：给定一个编码位数n，用递归的方式输出这串n位格雷码，而另一题目是<a href="https://leetcode.com/problems/gray-code/" target="_blank" rel="external">LeetCode</a>上的第87题，就是给出一个编码位数n，以十进制的方式输出这串n位格雷码。</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol>
@@ -188,26 +152,45 @@ ACM解题报告之格雷码
 </code></pre><p>图中第二个矩形表示的是格雷码和8421码之间的转换关系。由图中可以看出由格雷码转换到8421码时，有如下的对应关系：<br>$$<br>    8421[0]=Gray[0];            i=0<br>$$$$<br>    8421[i]=Gray[i] \wedge Gray[i-1];  i&gt;0<br>$$<br>同理我们可以得到8421码到格雷码的转换，转换关系如下：<br>$$<br>    Gray[0]=8421[0];            i=0<br>$$$$<br>    Gray[i]=\backsim (8421[i] \wedge 8421[i-1]);  i&gt;0<br>$$</p>
 <h2 id="算法说明"><a href="#算法说明" class="headerlink" title="算法说明"></a>算法说明</h2><ol>
 <li><p>通过递归的方式构造格雷码</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bin[]    存放二进制编码</span></span><br><span class="line"><span class="comment">// ind      确定第ind的编码</span></span><br><span class="line"><span class="comment">// sum      前ind位有多少个1</span></span><br><span class="line"><span class="comment">// num      编码的位数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GrayCode</span><span class="params">(<span class="keyword">int</span> bin[], <span class="keyword">int</span> ind, <span class="keyword">int</span> sum, <span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">if</span>(ind==num)&#123;</span><br><span class="line">        <span class="comment">// 输出显示</span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;num; i++)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,bin[i]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(sum%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">// 前ind位有偶数个1，正常顺序</span></span><br><span class="line">            bin[ind]=<span class="number">0</span>;</span><br><span class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum,num);</span><br><span class="line">            bin[ind]=<span class="number">1</span>;</span><br><span class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum+<span class="number">1</span>,num);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">// 前ind位有奇数个1,不正常顺序</span></span><br><span class="line">            bin[ind]=<span class="number">1</span>;</span><br><span class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum+<span class="number">1</span>,num);</span><br><span class="line">            bin[ind]=<span class="number">0</span>;</span><br><span class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum,num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bin[]    存放二进制编码</span></div><div class="line"><span class="comment">// ind      确定第ind的编码</span></div><div class="line"><span class="comment">// sum      前ind位有多少个1</span></div><div class="line"><span class="comment">// num      编码的位数</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">GrayCode</span><span class="params">(<span class="keyword">int</span> bin[], <span class="keyword">int</span> ind, <span class="keyword">int</span> sum, <span class="keyword">int</span> num)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> i;</div><div class="line">    <span class="keyword">if</span>(ind==num)&#123;</div><div class="line">        <span class="comment">// 输出显示</span></div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;num; i++)</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,bin[i]);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span>(sum%<span class="number">2</span>==<span class="number">0</span>)&#123;</div><div class="line">            <span class="comment">// 前ind位有偶数个1，正常顺序</span></div><div class="line">            bin[ind]=<span class="number">0</span>;</div><div class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum,num);</div><div class="line">            bin[ind]=<span class="number">1</span>;</div><div class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum+<span class="number">1</span>,num);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">// 前ind位有奇数个1,不正常顺序</span></div><div class="line">            bin[ind]=<span class="number">1</span>;</div><div class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum+<span class="number">1</span>,num);</div><div class="line">            bin[ind]=<span class="number">0</span>;</div><div class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum,num);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p> <a href="!--￼4--&gt;/assets/attachs/gray.c.txt">源码</a></p>
 </li>
 <li><p>8421码转换到格雷码</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// n        编码位数</span></span><br><span class="line"><span class="comment">// returnSize   存放返回8421码数组的长度</span></span><br><span class="line"><span class="comment">// return   8421码数组</span></span><br><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">GrayCode</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>* returnSize)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="comment">// 数组长度</span></span><br><span class="line">    *returnSize = <span class="number">1</span>&lt;&lt;n;</span><br><span class="line">    <span class="keyword">int</span>* gray=<span class="built_in">malloc</span>((*returnSize)*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;*returnSize; i++)&#123;</span><br><span class="line">        <span class="comment">// 格雷码转换为8421码，一步到位</span></span><br><span class="line">        gray[i]=i^(i&gt;&gt;<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> gray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// n        编码位数</span></div><div class="line"><span class="comment">// returnSize   存放返回8421码数组的长度</span></div><div class="line"><span class="comment">// return   8421码数组</span></div><div class="line"><span class="function"><span class="keyword">int</span>* <span class="title">GrayCode</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>* returnSize)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> i;</div><div class="line">    <span class="comment">// 数组长度</span></div><div class="line">    *returnSize = <span class="number">1</span>&lt;&lt;n;</div><div class="line">    <span class="keyword">int</span>* gray=<span class="built_in">malloc</span>((*returnSize)*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;*returnSize; i++)&#123;</div><div class="line">        <span class="comment">// 格雷码转换为8421码，一步到位</span></div><div class="line">        gray[i]=i^(i&gt;&gt;<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> gray;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p> <a href="!--￼5--&gt;/assets/attachs/89.c.txt">源码</a></p>
 </li>
 </ol>
 <h2 id="举一反三"><a href="#举一反三" class="headerlink" title="举一反三"></a>举一反三</h2><p>格雷码转换到8421码也可以用位运算一步解决：<br>$$<br>    8421=～(Gray \wedge (Gray&gt;&gt;1));<br>$$</p>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">2.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">3.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法说明"><span class="toc-number">4.</span> <span class="toc-text">算法说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#举一反三"><span class="toc-number">5.</span> <span class="toc-text">举一反三</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -217,13 +200,33 @@ ACM解题报告之格雷码
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

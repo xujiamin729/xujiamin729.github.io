@@ -1,0 +1,277 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>从零开始搭建https服务器 | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            从零开始搭建https服务器
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-https-server">  
+    
+    <div class="article-meta">
+        <a href="/2017/01/24/https-server/" class="article-data">
+      <time datetime="2017-01-24T13:03:12.000Z" itemprop="datePublished">2017-01-24</time>
+</a>
+
+
+<a href="/2017/01/24/https-server/" class="article-data">
+      <time datetime="2017-01-24T13:03:12.000Z" itemprop="datePublished">2017-01-24</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      从零开始搭建https服务器
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>写这篇文章的目的是为了开发微信小程序。因为它要使用wx.request发起https请求，而要进行https网络通信，必须先设置域名。所以需要搭建一个https服务器来存放微信小程序的应用数据。要从零开始搭建一个https的服务需要下面4个要素：域名，备案，云服务器，服务器配置。下面分别介绍着四要素的具体要求。<br><a id="more"></a></p>
+<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><p><a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D" target="_blank" rel="external">域名</a>（<code>Domain Name</code>）又叫网域，是由一串用点分隔的名字组成的Internet上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位。例如，www.haojunyu.com是一个域名，可以通过域名名称系统（<code>Domain Name System</code>）将该域名映射成对应的IP地址。该操作可以通过域名解析来实现。</p>
+<h3 id="域名注册和解析"><a href="#域名注册和解析" class="headerlink" title="域名注册和解析"></a>域名注册和解析</h3><p>域名注册前，可以通过<a href="https://who.is/" target="_blank" rel="external">WHOIS域名查询</a>来查询该域名是否被注册过。目前BAT都提供域名注册，如阿里的[万网],百度的[域名服务][baiduyuming]，腾讯的<a href="https://dnspod.qcloud.com/?from=console" target="_blank" rel="external">Dnspod</a>。我的域名haojunyu.com是在阿里的万网注册的，之前注册域名的初衷是为了给github上面的个人博客作个性化的域名。并在其中的域名解析中作了设置，这里并不需要做太多的改动，只要将之前为个人博客添加的记录都暂停，并添加如下解析：记录类型为，主机记录为@，解析线路为默认，记录值为欲映射的IP。这样的话，当你在浏览器中输入haojunyu.com时，DNS会自动将其解析为映射的IP地址。</p>
+<h2 id="备案"><a href="#备案" class="headerlink" title="备案"></a>备案</h2><p>这里的备案是针对像个人博客这类非经营性网站所做的备案。守法的网站对促进信息共享、文化繁荣和社会进步产生积极的作用，但有些不良的网站却传递色情，非法盈利的信息，所以备案的目的也就是为了方便网站的管理。</p>
+<p>目前网站域名的备案BAT都能提供，不过备案这个流程很长，大概要一个月，我的域名haojunyu.com是在百度云备案的，当时是先提交的资料（主要是身份证正反面照片），然后等百度快递来背景墙，再拍照片上传核实后才可以备案成功。</p>
+<h2 id="云服务器"><a href="#云服务器" class="headerlink" title="云服务器"></a>云服务器</h2><p>服务器就是一台可以运行的电脑，可以是自己家里的电脑，也可以到BAT上买云服务。这里因为腾讯云上面有免费8天的试用，所以就试着在云服务上面搭建个https的服务，以方便微信小程序能成功发起request请求。如果试用体验还不错的话，可以续费（74元/月）。新建云主机时要选一个操作系统，鉴于对Ubutnu的熟悉以及服务器的需要，所以选择了Ubuntu Server 16.04.1 LTS 64的镜像做系统。当新建一个云主机后，百度云会提供一个对外的IP地址，这个IP地址就是域名解析中要填入的记录值。</p>
+<h2 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2><p>服务器的配置主要有三步个，第一步是应用程序的布置，第二步是Nginx服务器的配置，第三步是http升级为https。前两步的配置是参考这篇博文<a href="https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu" target="_blank" rel="external">在Ubuntu上使用Nginx部署Flask应用</a>，第三步是参考<a href="https://www.qcloud.com/document/product/400/4143#2.-nginx-.E8.AF.81.E4.B9.A6.E9.83.A8.E7.BD.B2" target="_blank" rel="external">腾讯云上Nginx证书安装</a>。</p>
+<h3 id="应用程序"><a href="#应用程序" class="headerlink" title="应用程序"></a>应用程序</h3><p>考虑到微信小程序主要是用json的数据，所以就想服务器能够提供restful服务，又因为对python语言比较喜欢，所以就挑了python里的Flask这个轻量级的Web框架。服务器选择的是Nginx，而连接服务器和应用程序的是uWSGI。具体的安装步骤如下：</p>
+<ol>
+<li><p>环境配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade <span class="comment"># 更新所有软件</span></div><div class="line">sudo apt-get install build-essential  <span class="comment"># 安装编译环境</span></div><div class="line">sudo apt-get install  python python-dev python-setuptools <span class="comment"># 安装python环境</span></div><div class="line">sudo easy_install pip</div><div class="line">sudo apt-get install nginx  <span class="comment"># 安装Nginx</span></div><div class="line">sudo apt-get install uwsgi uwsgi-plugin-python  <span class="comment"># 安装uwsgi及其插件</span></div><div class="line">sudo apt-get install supervisor <span class="comment"># 安装进程管理软件</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>TIPS:常用命令</strong></p>
+<ol>
+<li><p>nginx服务启动|停止|重启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/nginx start|stop|restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>sdf</p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>应用配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">sudo mkdir -p /var/www/flaskApp <span class="comment"># 创建应用程序文件夹</span></div><div class="line">sudo chown -R ubuntu：ubuntu /var/www/flaskApp <span class="comment"># 更改应用程序文件夹所有权</span></div><div class="line">sudo pip install virtualenv <span class="comment"># 安装python虚拟环境</span></div><div class="line"><span class="comment"># 创建python虚拟环境</span></div><div class="line"><span class="built_in">cd</span> /var/www/flaskApp</div><div class="line">virtualenv venv</div><div class="line">. venv/bin/activate <span class="comment"># 激活python虚拟环境venv</span></div><div class="line">pip install flask flask-restful <span class="comment"># 在虚拟环境中安装flask Web框架</span></div></pre></td></tr></table></figure>
+<p>创建api.py代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!flask/bin/python</span></div><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, jsonify</div><div class="line"></div><div class="line">app = Flask(__name__)</div><div class="line"></div><div class="line">tasks = [</div><div class="line">    &#123;</div><div class="line">        <span class="string">'id'</span>: <span class="number">1</span>,</div><div class="line">        <span class="string">'title'</span>: <span class="string">u'Buy groceries'</span>,</div><div class="line">        <span class="string">'description'</span>: <span class="string">u'Milk, Cheese, Pizza, Fruit, Tylenol'</span>,</div><div class="line">        <span class="string">'done'</span>: <span class="keyword">False</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="string">'id'</span>: <span class="number">2</span>,</div><div class="line">        <span class="string">'title'</span>: <span class="string">u'Learn Python'</span>,</div><div class="line">        <span class="string">'description'</span>: <span class="string">u'Need to find a good Python tutorial on the web'</span>,</div><div class="line">        <span class="string">'done'</span>: <span class="keyword">False</span></div><div class="line">    &#125;</div><div class="line">]</div><div class="line"></div><div class="line"><span class="meta">@app.route('/todo/api/v1.0/tasks', methods=['GET'])</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_tasks</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> jsonify(&#123;<span class="string">'tasks'</span>: tasks&#125;)</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, port=<span class="number">8080</span>)</div></pre></td></tr></table></figure>
+<p>执行脚本<code>python api.py</code>后可以通过浏览器来访问<a href="http://主机IP:8080/todo/api/v1.0/tasks，以此来获取tasks数据。" target="_blank" rel="external">http://主机IP:8080/todo/api/v1.0/tasks，以此来获取tasks数据。</a></p>
+</li>
+</ol>
+<h3 id="服务器配置-1"><a href="#服务器配置-1" class="headerlink" title="服务器配置"></a>服务器配置</h3><h4 id="Nginx配置"><a href="#Nginx配置" class="headerlink" title="Nginx配置"></a>Nginx配置</h4><ol>
+<li><p>删除nginx默认配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo rm /etc/nginx/sites-enabled/default</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建新的配置文件/var/www/flaskApp/config/flaskApp_nginx.conf</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">  listen      80;</div><div class="line">  server_name www.haojunyu.com; <span class="comment">#此时域名已经映射到主机IP</span></div><div class="line">  charset     utf-8;</div><div class="line">  client_max_body_size 75M;</div><div class="line"></div><div class="line">  location / &#123; try_files <span class="variable">$uri</span> @yourapplication; &#125;</div><div class="line">  location @yourapplication &#123;</div><div class="line">      include uwsgi_params;</div><div class="line">      uwsgi_pass unix:/var/www/flaskApp/config/flaskApp_uwsgi.sock;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建配置文件服务，重启服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo ln <span class="_">-s</span> /var/www/flaskApp/config/nginx.conf /etc/nginx/conf.d/ <span class="comment">#将应用文件夹里的配置文件链接到nginx配置文件处</span></div><div class="line">sudo /etc/init.d/nginx restart  <span class="comment"># 重启nginx</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>验证<br>现在通过浏览器来访问<a href="http://haojunyu.com/todo/api/v1.0/tasks，无法获取到数据，因为flaskApp_uwsgi.sock尚未生成，无法让uwsgi在Nginx和python应用程序之间构建一座桥。" target="_blank" rel="external">http://haojunyu.com/todo/api/v1.0/tasks，无法获取到数据，因为flaskApp_uwsgi.sock尚未生成，无法让uwsgi在Nginx和python应用程序之间构建一座桥。</a></p>
+</li>
+</ol>
+<h4 id="uWSGI配置"><a href="#uWSGI配置" class="headerlink" title="uWSGI配置"></a>uWSGI配置</h4><ol>
+<li><p>创建新的配置文件/var/www/flaskApp/config/flaskApp_uwsgi.ini</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">[uwsgi]</div><div class="line"><span class="comment">#application's base folder</span></div><div class="line">base = /var/www/flaskApp</div><div class="line"></div><div class="line"><span class="comment">#python module to import</span></div><div class="line">app = api</div><div class="line">module = %(app)</div><div class="line"></div><div class="line">home = %(base)/venv</div><div class="line">pythonpath = %(base)</div><div class="line"><span class="comment">## 使用virtualenvwrapper管理virtualenv后用下面的两个参数取代home和pythonpath</span></div><div class="line"><span class="comment">#chdir = %(base)</span></div><div class="line"><span class="comment">#virtualenvs = %HOME/.virtualenvs/flaskEnv</span></div><div class="line"></div><div class="line"><span class="comment">#socket file's location</span></div><div class="line">socket = /var/www/flaskApp/%n.sock</div><div class="line"></div><div class="line"><span class="comment">#permissions for the socket file</span></div><div class="line">chmod-socket    = 666</div><div class="line"></div><div class="line"><span class="comment">#the variable that holds a flask application inside the module imported at line #6</span></div><div class="line">callable = app</div><div class="line"></div><div class="line"><span class="comment">#location of log files</span></div><div class="line">logto = /var/<span class="built_in">log</span>/uwsgi/%n.log</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建uWSGI日志文件夹，并更改文件所有权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo mkdir -p /var/<span class="built_in">log</span>/uwsgi <span class="comment"># uWSGI日志文件夹</span></div><div class="line">sudo chown -R ubuntu:ubuntu /var/<span class="built_in">log</span>/uwsgi <span class="comment"># 更改uWSGI日志文件夹所有权</span></div><div class="line">uwsgi --ini /var/www/flaskApp/config/flaskApp_uwsgi.ini --plugin python &amp; <span class="comment"># 后台启动uwsgi</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="supervisor配置"><a href="#supervisor配置" class="headerlink" title="supervisor配置"></a>supervisor配置</h4><p>supervisor是为了方便管理进程而存在的，因为每次开机后，都得重新执行<code>uwsgi --ini /var/www/flaskApp/config/flaskApp_uwsgi.ini</code>命令来启动uwsgi，这个很费神，因为你不可能永远记得清楚这么个应用，这么个配置。所以使用supervisor来管理，而我们只需要在开发这个应用时创建一个flaskApp_supervisor.conf配置文件，而重启机器后启动supervisor服务，即执行<code>sudo service supervisor start</code>。</p>
+<ol>
+<li><p>安装supervisor</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt install supervisor</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[program:flaskApp]</div><div class="line"><span class="comment"># 启动命令入口</span></div><div class="line"><span class="built_in">command</span>=/usr/<span class="built_in">local</span>/bin/uwsgi --ini /var/www/flaskApp/flaskApp_uwsgi.ini</div><div class="line"><span class="comment"># 运行命令的用户名</span></div><div class="line">user=ubuntu</div><div class="line">autostart=<span class="literal">true</span></div><div class="line">autorestat=<span class="literal">true</span></div><div class="line"><span class="comment">#日志地址</span></div><div class="line">stdout_logfile=/var/<span class="built_in">log</span>/supervisor/flaskApp_supervisor.log</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建配置文件副本并重启服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo ln <span class="_">-s</span> /var/www/flaskApp/flaskApp_supervisor.conf /etc/supervisor/conf.d/</div><div class="line">sudo service supervisor restart</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="http升级https"><a href="#http升级https" class="headerlink" title="http升级https"></a>http升级https</h3><p>升级https需要证书的支持，这里BAT都提供这样的服务，都有相对应的配置安装说明。我这里是按照<a href="https://www.qcloud.com/document/product/400/4143#2.-nginx-.E8.AF.81.E4.B9.A6.E9.83.A8.E7.BD.B2" target="_blank" rel="external">腾讯云上Nginx证书安装</a>,主要就是将申请的证书保存到config目录中，并将flaskApp_nginx.conf修改如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">  listen      443;</div><div class="line">  server_name www.haojunyu.com; <span class="comment">#此时域名已经映射到主机IP</span></div><div class="line"></div><div class="line">  ssl on;</div><div class="line">  ssl_certificate /var/www/flaskApp/1_haojunyu.com_bundle.crt;</div><div class="line">  ssl_certificate_key /var/www/flaskApp/2_haojunyu.com.key;</div><div class="line">  ssl_session_timeout 5m;</div><div class="line">  ssl_protocols TLSv1 TLSv1.1 TLSv1.2; <span class="comment">#按照这个协议配置</span></div><div class="line">  ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;<span class="comment">#按照这个套件配置</span></div><div class="line">  ssl_prefer_server_ciphers on;</div><div class="line"></div><div class="line">  location / &#123; try_files <span class="variable">$uri</span> @yourapplication; &#125;</div><div class="line">  location @yourapplication &#123;</div><div class="line">      include uwsgi_params;</div><div class="line">      uwsgi_pass unix:/var/www/flaskApp/config/flaskApp_uwsgi.sock;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D" target="_blank" rel="external">wiki-域名</a></li>
+<li><a href="https://who.is/" target="_blank" rel="external">whois域名查询</a></li>
+<li><a href="https://wanwang.aliyun.com/?spm=5176.8142029.388261.26.C75xLA" target="_blank" rel="external">万网</a></li>
+<li>[百度域名服务][baiduyuming]</li>
+<li><a href="https://dnspod.qcloud.com/?from=console" target="_blank" rel="external">Dnspod</a></li>
+<li><a href="https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu" target="_blank" rel="external">在Ubuntu上使用Nginx部署Flask应用</a></li>
+<li><a href="https://www.qcloud.com/document/product/400/4143#2.-nginx-.E8.AF.81.E4.B9.A6.E9.83.A8.E7.BD.B2" target="_blank" rel="external">腾讯云上Nginx证书安装</a></li>
+</ol>
+<p>[baiduyuming]： <a href="https://cloud.baidu.com/product/bcd.html" target="_blank" rel="external">https://cloud.baidu.com/product/bcd.html</a></p>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#域名"><span class="toc-number">1.</span> <span class="toc-text">域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#域名注册和解析"><span class="toc-number">1.1.</span> <span class="toc-text">域名注册和解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#备案"><span class="toc-number">2.</span> <span class="toc-text">备案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#云服务器"><span class="toc-number">3.</span> <span class="toc-text">云服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器配置"><span class="toc-number">4.</span> <span class="toc-text">服务器配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用程序"><span class="toc-number">4.1.</span> <span class="toc-text">应用程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器配置-1"><span class="toc-number">4.2.</span> <span class="toc-text">服务器配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx配置"><span class="toc-number">4.2.1.</span> <span class="toc-text">Nginx配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#uWSGI配置"><span class="toc-number">4.2.2.</span> <span class="toc-text">uWSGI配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#supervisor配置"><span class="toc-number">4.2.3.</span> <span class="toc-text">supervisor配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http升级https"><span class="toc-number">4.3.</span> <span class="toc-text">http升级https</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">5.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

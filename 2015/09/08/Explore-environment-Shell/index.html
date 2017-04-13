@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,154 +23,117 @@
     
     <title>shell运行环境之环境变量 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        shell运行环境之环境变量
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            shell运行环境之环境变量
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Explore-environment-Shell">  
+    
+    <div class="article-meta">
+        <a href="/2015/09/08/Explore-environment-Shell/" class="article-data">
+      <time datetime="2015-09-07T16:00:00.000Z" itemprop="datePublished">2015-09-08</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2015/09/08/Explore-environment-Shell/" class="article-data">
+      <time datetime="2015-09-07T16:00:00.000Z" itemprop="datePublished">2015-09-08</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>shell运行环境之环境变量</title>
-</head>
-<body>
-shell运行环境之环境变量
-<hr>
-<p>在windows系统中，我们经常需要设置环境变量，特别是安装玩JAVA JDk之后。而在linux里面也是需要对一些环境变量进行设置，比如PATH（执行文件的路径），http_proxy（http代理）等。本篇博文主要介绍三种环境变量–临时变量，用户变量和系统变量，并对其作用的先后做一点验证。<br><a id="more"></a></p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      shell运行环境之环境变量
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>在windows系统中，我们经常需要设置环境变量，特别是安装玩JAVA JDk之后。而在linux里面也是需要对一些环境变量进行设置，比如PATH（执行文件的路径），http_proxy（http代理）等。本篇博文主要介绍三种环境变量–临时变量，用户变量和系统变量，并对其作用的先后做一点验证。<br><a id="more"></a></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="http://baike.baidu.com/link?url=3Gg85PddfEhNPdztYJ_eXTlskslQrMUiD3rgR707cgNQtc9TEQhNksaqD-pX-kd0s2xN4nSS4Y6_CVynCguHLK" target="_blank" rel="external">环境变量</a>一般是指在操作系统中用来指定操作系统运行环境的一些参数，如：临时文件夹位置和系统文件夹位置等。它相当于给系统或用户应用程序设置的一些参数，具体起什么作用这和具体的环境变量相关。</p>
 <p>在windows系统里面，经常会遇到<a href="https://www.java.com/zh_CN/download/help/path.xml" target="_blank" rel="external">设置环境变量</a>的问题，特别是安装完Java JDK之后。我们很少在黑漆漆的命令行窗口中执行命令<code>set path=%path%;D:\jdk\bin</code>,因为这样设置的变量是临时环境变量，它只能在这个命令窗口中被识别，知道<code>java</code>命令在D:\jdk\bin目录里，但当重新打开一个命令窗口（shell外壳）后那个窗口将无法识别。也就是说该path只对执行那个命令的shell有效。还有两种方法是设置用户变量或系统变量。二者的区别就在于系统变量对所有用户有效，而用户变量只对当前用户有效。经试验，win8系统中二者都无需重启就可以起作用。</p>
 <h2 id="Linux-环境变量设置"><a href="#Linux-环境变量设置" class="headerlink" title="Linux 环境变量设置"></a>Linux 环境变量设置</h2><p>其实，linux里面对环境变量的设置和windows是共通的。它也有三种方式  </p>
@@ -202,13 +166,13 @@ shell运行环境之环境变量
 <li><p>试验步骤  </p>
 <ol>
 <li><p>在/etc/profile文件中加入如下变量：</p>
- <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> eprofile=‘I am <span class="keyword">in</span> /etc/profile’</span><br><span class="line"><span class="built_in">export</span> epro_env=‘I am <span class="keyword">in</span> /etc/profile’</span><br><span class="line"><span class="built_in">export</span> epro_pro=‘I am <span class="keyword">in</span> /etc/profile’</span><br></pre></td></tr></table></figure>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> eprofile=‘I am <span class="keyword">in</span> /etc/profile’</div><div class="line"><span class="built_in">export</span> epro_env=‘I am <span class="keyword">in</span> /etc/profile’</div><div class="line"><span class="built_in">export</span> epro_pro=‘I am <span class="keyword">in</span> /etc/profile’</div></pre></td></tr></table></figure>
 </li>
 <li><p>在/etc/environment文件中加入如下变量：</p>
- <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">environment=‘I am <span class="keyword">in</span> /etc/environment’</span><br><span class="line">epro_env=‘I am <span class="keyword">in</span> /etc/environment’</span><br><span class="line">env_pro=‘I am <span class="keyword">in</span> /etc/environment’</span><br></pre></td></tr></table></figure>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">environment=‘I am <span class="keyword">in</span> /etc/environment’</div><div class="line">epro_env=‘I am <span class="keyword">in</span> /etc/environment’</div><div class="line">env_pro=‘I am <span class="keyword">in</span> /etc/environment’</div></pre></td></tr></table></figure>
 </li>
 <li><p>在~/.profile文件中加入如下变量：</p>
- <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> profile=‘I am <span class="keyword">in</span> ~/.profile’</span><br><span class="line"><span class="built_in">export</span> epro_pro=‘I am <span class="keyword">in</span> ~/.profile’</span><br><span class="line"><span class="built_in">export</span> env_pro=‘I am <span class="keyword">in</span> ~/.profile’</span><br></pre></td></tr></table></figure>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> profile=‘I am <span class="keyword">in</span> ~/.profile’</div><div class="line"><span class="built_in">export</span> epro_pro=‘I am <span class="keyword">in</span> ~/.profile’</div><div class="line"><span class="built_in">export</span> env_pro=‘I am <span class="keyword">in</span> ~/.profile’</div></pre></td></tr></table></figure>
 </li>
 <li><p>重启系统后查看profile，environment，homepro，pro_env,pro_env_pro这五个变量的值，结果如下图所示：<br> <img src="!--￼9--&gt;/assets/images/login.jpg" alt="login">  </p>
 </li>
@@ -238,16 +202,35 @@ shell运行环境之环境变量
 <li><a href="http://wiki.ubuntu.org.cn/%E4%BF%AE%E6%94%B9locale" target="_blank" rel="external">wiki locale</a></li>
 </ol>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-环境变量设置"><span class="toc-number">2.</span> <span class="toc-text">Linux 环境变量设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证作用域"><span class="toc-number">3.</span> <span class="toc-text">验证作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题讨论"><span class="toc-number">4.</span> <span class="toc-text">问题讨论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">5.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -257,13 +240,33 @@ shell运行环境之环境变量
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>

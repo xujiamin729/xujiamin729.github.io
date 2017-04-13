@@ -10,6 +10,7 @@
 
     <!-- 载入css文件 -->
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
     <link rel="stylesheet" href="/css/hjy-bootstrap.css">
     <link rel="stylesheet" href="/css/docs.min.css">
 
@@ -22,155 +23,118 @@
     
     <title>ACM解题报告之最长回文子串 | 禹过留声</title>
 
-    
+
 
 </head>
 
 <body>
-    <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
-    <a class="sr-only sr-only-focusable" href="#content">
-        <div class="container">
-            <span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
-    <!-- 置顶导航栏 -->
-    <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">
-                    
-                        ACM解题报告之最长回文子串
-                    
-                </a>
-            </div>
-            <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
-                <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
-            </form>
-            <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                    <li>
-                        <a class="main-nav-link" href="/">首页</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/archives/">文章归档</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/skills/">技能图谱</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/reading/">读书</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/about/">关于我</a>
-                    </li>
-                    
-                    <li>
-                        <a class="main-nav-link" href="/links/">友情链接</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-    <div id="content" class="container">
-        <div class="row">
-            <!--左边导航栏-->
-            <div class="col-md-3" role="complementary">
-                <div class="hidden-print hidden-xs hidden-sm affix left-col" >
-                <div class="introduce">
-    <header id="header" class="inner">
-        <!-- 头像 -->
-        <a href="/" >
-            <img src="/img/avatar.png" class="avatar">
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            ACM解题报告之最长回文子串
+          
         </a>
-        <h2><a href="/">David</a></h2>
-
-        
-        <p class="header-subtitle">专注coding一百年</p>
-        
-
-        <ul class="nav nav-pills nav-justified">
-            <li>
-                <a href="">
-                    <span class="item-state">64</span>
-                    <span class="item-state">文章</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">3</span>
-                    <span class="item-state">标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <span class="item-state">18</span>
-                    <span class="item-state">读书</span>
-                </a>
-            </li>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
         </ul>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 社交图标 -->
-        <ul class="list-inline">
-            
-            <li>
-                <a href="mailto:haojunyu2012@gmail.com" title="envelope" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="/sina weibo" title="Weibo" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-Weibo fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-            <li>
-                <a href="https://github.com/haojunyu" title="GitHub" target="_blank">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-GitHub fa-stack-1x fa-inverse" aria-hidden="true"></i>
-                </a>
-            
-        </ul>
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Solve-longestPalindrome-ACM">  
+    
+    <div class="article-meta">
+        <a href="/2015/08/25/Solve-longestPalindrome-ACM/" class="article-data">
+      <time datetime="2015-08-24T16:00:00.000Z" itemprop="datePublished">2015-08-25</time>
+</a>
 
-        <hr>
-        <!-- 研究涉及领域 -->
+
+<a href="/2015/08/25/Solve-longestPalindrome-ACM/" class="article-data">
+      <time datetime="2015-08-24T16:00:00.000Z" itemprop="datePublished">2015-08-25</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
         
-            显示目录
-        
-
-    </header>
-</div>
-
-            </div>
-            </div>
-            <!--主要内容显示-->
-            <div class="col-md-9" role="main">
+        <header id="article-header">
             
-            <div class="body-wrap"><head>
-    <title>ACM解题报告之最长回文子串</title>
-</head>
-<body>
-ACM解题报告之最长回文子串
-<hr>
-<p>题目很简单，就是求解一个字符串中最长的回文子串，回文字符串是指颠倒之后的字符串和原来的字符串完全一样。网上很多人的博文，像<a href="http://blog.csdn.net/kangroger/article/details/37742639" target="_blank" rel="external">kangroger</a>,还有把最牛b的Manacher算法说得很清晰的<a href="http://blog.csdn.net/pi9nc/article/details/9251455" target="_blank" rel="external">pi9nc</a>和<a href="http://blog.csdn.net/yzl_rex/article/details/7908259" target="_blank" rel="external">yzl_rex</a>，介绍了四种解法：分别是暴力法（$O(n^3)$），动态规划（$O(n^2)$），中心扩展（$O(n^2)$）和Manache法（$O(n)$）。本博文只是对这四种方法的自我实现。<br><a id="more"></a></p>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>题目来自HihoCoder上第一周的题目<a href="http://hihocoder.com/contest/hiho1/problem/1" target="_blank" rel="external">最长回文子串</a>，题目大意是：</p>
+  
+    
+    <h2 class="article-title" itemprop="name">
+      ACM解题报告之最长回文子串
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HiHoCoder/">HiHoCoder</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Report/">Report</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>题目很简单，就是求解一个字符串中最长的回文子串，回文字符串是指颠倒之后的字符串和原来的字符串完全一样。网上很多人的博文，像<a href="http://blog.csdn.net/kangroger/article/details/37742639" target="_blank" rel="external">kangroger</a>,还有把最牛b的Manacher算法说得很清晰的<a href="http://blog.csdn.net/pi9nc/article/details/9251455" target="_blank" rel="external">pi9nc</a>和<a href="http://blog.csdn.net/yzl_rex/article/details/7908259" target="_blank" rel="external">yzl_rex</a>，介绍了四种解法：分别是暴力法（$O(n^3)$），动态规划（$O(n^2)$），中心扩展（$O(n^2)$）和Manache法（$O(n)$）。本博文只是对这四种方法的自我实现。<br><a id="more"></a></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>题目来自HiHoCoder上第一周的题目<a href="http://hihocoder.com/contest/hiho1/problem/1" target="_blank" rel="external">最长回文子串</a>，题目大意是：</p>
 <blockquote>
 <p>给定一个字符串，求解这个字符串中最长的回文子串。而回文字符串是指颠倒之后的字符串和原来的字符串完全一样。</p>
 </blockquote>
@@ -196,7 +160,7 @@ ACM解题报告之最长回文子串
 </ol>
 </li>
 <li><p>代码演示</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 动态申请二位数组并初始化</span></span><br><span class="line"><span class="keyword">int</span> **dp = (<span class="keyword">int</span> **)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span> *) * len);</span><br><span class="line">dp[<span class="number">0</span>] = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * len * len);</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;len; i++)</span><br><span class="line">    dp[i] = dp[i<span class="number">-1</span>] + len;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 释放申请的二位数组</span></span><br><span class="line"><span class="built_in">free</span>(dp[<span class="number">0</span>]);</span><br><span class="line"><span class="built_in">free</span>(dp);</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 动态申请二位数组并初始化</span></div><div class="line"><span class="keyword">int</span> **dp = (<span class="keyword">int</span> **)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span> *) * len);</div><div class="line">dp[<span class="number">0</span>] = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * len * len);</div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;len; i++)</div><div class="line">    dp[i] = dp[i<span class="number">-1</span>] + len;</div><div class="line"></div><div class="line"><span class="comment">// 释放申请的二位数组</span></div><div class="line"><span class="built_in">free</span>(dp[<span class="number">0</span>]);</div><div class="line"><span class="built_in">free</span>(dp);</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h3 id="Mancher算法"><a href="#Mancher算法" class="headerlink" title="Mancher算法"></a>Mancher算法</h3><ol>
@@ -215,38 +179,57 @@ ACM解题报告之最长回文子串
 <li><p>分情况讨论  </p>
 <ol>
 <li><p>==$ mx &lt; i$==<br>此时radius的前i个值不起任何作用，就像初始时根据radius[0]=0求解radius[1]，此时id=0,mx=0。</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(mx&lt;i)&#123;</span><br><span class="line">    k=<span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 以i为中心，回文子串的半径</span></span><br><span class="line">    <span class="keyword">while</span>(newbuf[i-k]==newbuf[i+k]&amp;&amp;i-k&gt;=<span class="number">0</span>&amp;&amp;i+k&lt;len)</span><br><span class="line">        k++;</span><br><span class="line">    radius[i]=k<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(mx&lt;i)&#123;</div><div class="line">    k=<span class="number">1</span>;</div><div class="line">    <span class="comment">// 以i为中心，回文子串的半径</span></div><div class="line">    <span class="keyword">while</span>(newbuf[i-k]==newbuf[i+k]&amp;&amp;i-k&gt;=<span class="number">0</span>&amp;&amp;i+k&lt;len)</div><div class="line">        k++;</div><div class="line">    radius[i]=k<span class="number">-1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>==$ mx &gt; i $==  </p>
 <ol>
 <li><p>==$ mx-i &gt;= radius[j] $==<br>$mx-i$代表i到mx的距离，而radius[j]就是图中绿线的一半距离。如果$mx-i &gt; radius[j]$说明$radius[i]=radius[j]$，因为$[2*id-mx,mx]是关于id对称的，而i和j也是关于id对称的。</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(mx-i &gt;= radius[j])</span><br><span class="line">    radius[i]=radius[j];</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(mx-i &gt;= radius[j])</div><div class="line">    radius[i]=radius[j];</div></pre></td></tr></table></figure>
 </li>
 <li><p>==$ mx-i &lt; radius[j]$==<br>此时我们根据对称性，能够获得$radius[i]&gt;=radius[j]$的。所以我们直接从mx+1开始判断$buf[mx+t]\==buf[2*i-mx-t],t=1,2,\cdots$。</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(mx-i&lt;radius[j])&#123;</span><br><span class="line">    k=mx-i+<span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 以i为中心，回文子串的半径从mx-i+1开始验证</span></span><br><span class="line">    <span class="keyword">while</span>(newbuf[i-k]==newbuf[i+k]&amp;&amp;i-k&gt;=<span class="number">0</span>&amp;&amp;i+k&lt;len)</span><br><span class="line">        k++;</span><br><span class="line">    radius[i]=k<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(mx-i&lt;radius[j])&#123;</div><div class="line">    k=mx-i+<span class="number">1</span>;</div><div class="line">    <span class="comment">// 以i为中心，回文子串的半径从mx-i+1开始验证</span></div><div class="line">    <span class="keyword">while</span>(newbuf[i-k]==newbuf[i+k]&amp;&amp;i-k&gt;=<span class="number">0</span>&amp;&amp;i+k&lt;len)</div><div class="line">        k++;</div><div class="line">    radius[i]=k<span class="number">-1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
 </ol>
 </li>
 <li><p>情况融合<br>仔细思考一下，发现第二种情况里面的两种情况可以融合，说白点就是取图中i到mx的距离和图中一半绿线距离中的最小值，即$radius[i]=min(radius[j],mx-i)$。然后再进行向外扩展，看radius[i]能否更大。</p>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">radius[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;len; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(mx&gt;i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(radius[j]&lt;mx-i)</span><br><span class="line">            radius[i]=radius[j];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            radius[i]=mx-i;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        radius[i]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(;newbuf[i+radius[i]]==newbuf[i-radius[i]]&amp;&amp;i+radius[i]&lt;len&amp;&amp;i-radius[i]&gt;=<span class="number">0</span>;radius[i]++);</span><br><span class="line">    <span class="comment">// 更新id，mx</span></span><br><span class="line">    <span class="keyword">if</span>(radius[i]+i&gt;mx)&#123;</span><br><span class="line">        id=i;</span><br><span class="line">        mx=radius[i]+i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">radius[<span class="number">0</span>]=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;len; i++)&#123;</div><div class="line">    <span class="keyword">if</span>(mx&gt;i)&#123;</div><div class="line">        <span class="keyword">if</span>(radius[j]&lt;mx-i)</div><div class="line">            radius[i]=radius[j];</div><div class="line">        <span class="keyword">else</span></div><div class="line">            radius[i]=mx-i;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        radius[i]=<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(;newbuf[i+radius[i]]==newbuf[i-radius[i]]&amp;&amp;i+radius[i]&lt;len&amp;&amp;i-radius[i]&gt;=<span class="number">0</span>;radius[i]++);</div><div class="line">    <span class="comment">// 更新id，mx</span></div><div class="line">    <span class="keyword">if</span>(radius[i]+i&gt;mx)&#123;</div><div class="line">        id=i;</div><div class="line">        mx=radius[i]+i;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p><a href="!--￼6--&gt;/assets/attachs/1032.c.txt">完整代码</a></p>
 </li>
 </ol>
 <h2 id="举一反三"><a href="#举一反三" class="headerlink" title="举一反三"></a>举一反三</h2><p>无</p>
 
-</body>
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法说明"><span class="toc-number">3.</span> <span class="toc-text">算法说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动态规划算法"><span class="toc-number">3.1.</span> <span class="toc-text">动态规划算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mancher算法"><span class="toc-number">3.2.</span> <span class="toc-text">Mancher算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#举一反三"><span class="toc-number">4.</span> <span class="toc-text">举一反三</span></a></li></ol>
+    </div>
 </div>
-            <footer id="footer">
-    <div class="outer">
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
         <div id="footer-info">
             <i class="fa fa-copyright"></i>
-            2013-2016 David |
+            2013-2017 David |
             <span id="busuanzi_container_page_pv">
               本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-             </span> | 
+             </span> |
             Powered by
                 <a href="http://hexo.io/" target="_blank">Hexo</a>,
                 <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
@@ -256,13 +239,33 @@ ACM解题报告之最长回文子串
     </div>
 </footer>
 
-            </div>
-        </div>
-        <!-- 载入JavaScript文件 -->
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-    </div>
 </body>
 </html>
