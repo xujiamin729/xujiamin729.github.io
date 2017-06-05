@@ -1,0 +1,245 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>ACM解题报告之格雷码 | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            ACM解题报告之格雷码
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Solve-gray-ACM">  
+    
+    <div class="article-meta">
+        <a href="/2015/09/07/Solve-gray-ACM/" class="article-data">
+      <time datetime="2015-09-06T16:00:00.000Z" itemprop="datePublished">2015-09-07</time>
+</a>
+
+
+<a href="/2015/09/07/Solve-gray-ACM/" class="article-data">
+      <time datetime="2015-09-06T16:00:00.000Z" itemprop="datePublished">2015-09-07</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      ACM解题报告之格雷码
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Report/">Report</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p><strong>格雷码</strong>（Gray Code）是指在一组数的编码中，任意两个相邻的代码只有一位二进制数不同，则称这种代码为格雷码。另外由于最大数和最小数之间也仅有一位数不同，即“首尾相连”，因此又称为<strong>循环码</strong><em>或</em><strong>反射码</strong>。这篇博文主要介绍怎样用递归的方式构造格雷码以及格雷码与8421码之间的转换。 <a id="more"></a></p>
+<h2 id="简介">简介</h2>
+<p>在数字系统中，通常要求代码按一定顺序变化。例如，按自然数递增计数，若采用8421码，则数0111变到1000时四位均需要变化，而在实际电路中，四位的变化不可能绝对同时发生，则计数中可能出现短暂的其他编码（1100,1111等），在特定情况下可能导致电路状态或输出错误。而使用格雷码可以避免这种错误。这也是<strong>格雷码</strong>叫<strong>循环码</strong>的原因。而叫它<strong>反射码</strong>的原因在于常见的编码生成方式是反射或镜像。</p>
+<h2 id="题目">题目</h2>
+<p>题目的来源有两个，一个是最近腾讯笔试的编程题：给定一个编码位数n，用递归的方式输出这串n位格雷码，而另一题目是<a href="https://leetcode.com/problems/gray-code/" target="_blank" rel="external">LeetCode</a>上的第87题，就是给出一个编码位数n，以十进制的方式输出这串n位格雷码。</p>
+<h2 id="思路">思路</h2>
+<ol style="list-style-type: decimal">
+<li>反射或镜像 之所以称<strong>格雷码</strong>叫<strong>反射码</strong>，是因为通过反射可以构造<strong>格雷码</strong>。下面这附图通过n的增大来体现何为<strong>反射码</strong>. [gray.png](/assets/images/gray.png)</li>
+</ol>
+<p>图中的虚线就是反射的反射面，也是镜像的镜面。而由n变化到n+1,只需将n的格雷码镜像翻转后，上面的镜像前面添0,下面的镜像前面添1。除此之外，还可以发现以下的规律：</p>
+<pre><code>&gt; 假定正常顺序是先出现0再出现1，那么：
+&gt; 如果第i位前面出现偶数个1,那么第i位就是正常顺序;
+&gt; 如果第i位前面出现奇数个1,那么第i位就是不正常顺序。</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>格雷码和8421码的转换 其实格雷码和我们经常使用的8421码之间是可以直接转换的，也就是说给定一个数值为k的8421码可以直接得出第k个格雷码。当然给定一个格雷码也可以直接获得这个格雷码对应的8421码。那么这就需要知道格雷码和8421码之间的对应关系。下图将给个详细的解释。 [8421.png](/assets/images/8421.png)</li>
+</ol>
+<p>图中第一个矩形表示的是格雷码和8421码的对应关系。</p>
+<pre><code>&gt; **Tips:**  
+&gt; 对于格雷码的序列有多种，这里采用的是最常见的一种方式。</code></pre>
+<p>图中第二个矩形表示的是格雷码和8421码之间的转换关系。由图中可以看出由格雷码转换到8421码时，有如下的对应关系： <span class="math display">\[
+    8421[0]=Gray[0];            i=0
+\]</span><span class="math display">\[
+    8421[i]=Gray[i] \wedge Gray[i-1];  i&gt;0
+\]</span> 同理我们可以得到8421码到格雷码的转换，转换关系如下： <span class="math display">\[
+    Gray[0]=8421[0];            i=0
+\]</span><span class="math display">\[
+    Gray[i]=\backsim (8421[i] \wedge 8421[i-1]);  i&gt;0
+\]</span></p>
+<h2 id="算法说明">算法说明</h2>
+<ol style="list-style-type: decimal">
+<li><p>通过递归的方式构造格雷码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// bin[]    存放二进制编码</span></div><div class="line"><span class="comment">// ind      确定第ind的编码</span></div><div class="line"><span class="comment">// sum      前ind位有多少个1</span></div><div class="line"><span class="comment">// num      编码的位数</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">GrayCode</span><span class="params">(<span class="keyword">int</span> bin[], <span class="keyword">int</span> ind, <span class="keyword">int</span> sum, <span class="keyword">int</span> num)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> i;</div><div class="line">    <span class="keyword">if</span>(ind==num)&#123;</div><div class="line">        <span class="comment">// 输出显示</span></div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;num; i++)</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>,bin[i]);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">if</span>(sum%<span class="number">2</span>==<span class="number">0</span>)&#123;</div><div class="line">            <span class="comment">// 前ind位有偶数个1，正常顺序</span></div><div class="line">            bin[ind]=<span class="number">0</span>;</div><div class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum,num);</div><div class="line">            bin[ind]=<span class="number">1</span>;</div><div class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum+<span class="number">1</span>,num);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">// 前ind位有奇数个1,不正常顺序</span></div><div class="line">            bin[ind]=<span class="number">1</span>;</div><div class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum+<span class="number">1</span>,num);</div><div class="line">            bin[ind]=<span class="number">0</span>;</div><div class="line">            GrayCode(bin,ind+<span class="number">1</span>,sum,num);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+[源码](/assets/attachs/gray.c.txt)</li>
+<li><p>8421码转换到格雷码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// n        编码位数</span></div><div class="line"><span class="comment">// returnSize   存放返回8421码数组的长度</span></div><div class="line"><span class="comment">// return   8421码数组</span></div><div class="line"><span class="function"><span class="keyword">int</span>* <span class="title">GrayCode</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>* returnSize)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> i;</div><div class="line">    <span class="comment">// 数组长度</span></div><div class="line">    *returnSize = <span class="number">1</span>&lt;&lt;n;</div><div class="line">    <span class="keyword">int</span>* gray=<span class="built_in">malloc</span>((*returnSize)*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;*returnSize; i++)&#123;</div><div class="line">        <span class="comment">// 格雷码转换为8421码，一步到位</span></div><div class="line">        gray[i]=i^(i&gt;&gt;<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> gray;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>[源码](/assets/attachs/89.c.txt)</p></li>
+</ol>
+<h2 id="举一反三">举一反三</h2>
+<p>格雷码转换到8421码也可以用位运算一步解决： <span class="math display">\[
+    8421=～(Gray \wedge (Gray&gt;&gt;1));
+\]</span></p>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">2.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">3.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法说明"><span class="toc-number">4.</span> <span class="toc-text">算法说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#举一反三"><span class="toc-number">5.</span> <span class="toc-text">举一反三</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

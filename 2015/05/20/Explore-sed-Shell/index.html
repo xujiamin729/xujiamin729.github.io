@@ -1,0 +1,240 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>shell编程之文本处理工具sed | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            shell编程之文本处理工具sed
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Explore-sed-Shell">  
+    
+    <div class="article-meta">
+        <a href="/2015/05/20/Explore-sed-Shell/" class="article-data">
+      <time datetime="2015-05-19T16:00:00.000Z" itemprop="datePublished">2015-05-20</time>
+</a>
+
+
+<a href="/2015/05/20/Explore-sed-Shell/" class="article-data">
+      <time datetime="2015-05-19T16:00:00.000Z" itemprop="datePublished">2015-05-20</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      shell编程之文本处理工具sed
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>SED命令的功能同awk类似，差别在于，sed简单，对列处理的功能要差一些，awk的功能复杂，对列处理的功能比较强大，sed全称是：Stream EDitor.它主要是<strong>以行为单位</strong>进行处理，可以将数据行进行<em>替换</em>、<em>删除</em>、<em>新增</em>、<em>选取</em>等特定工作.特别强调一点,==sed的操作对源文件不作修改==.</p>
+<h2 id="使用方法">使用方法</h2>
+<ul>
+<li><p>基本用法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed [-nei] <span class="string">'command'</span> filename</div></pre></td></tr></table></figure></li>
+<li>参数说明
+<ul>
+<li><code>-n</code> 使用安静模式.只有经过处理的那一行才会被列出来.[一般情况,所有内容都会被列到屏幕上]</li>
+<li><code>-e</code> 直接在指令列模式上进行sed的动作编辑</li>
+<li><code>-i</code> 直接修改读取的档案内容,而不是有屏幕输出</li>
+</ul></li>
+<li>核心命令
+<ul>
+<li><code>a</code> <strong>新增</strong>,a后面可以接字符串,而这些字符串会在新的一行出现(目前的下一行)</li>
+<li><code>c</code> <strong>取代</strong>,c后面可以接字符串,这些字符串可以取代n1,n2之间的行</li>
+<li><code>d</code> <strong>删除</strong>,d后面不接任何字符串.</li>
+<li><code>i</code> <strong>插入</strong>,i后面可以接字符串,而这些字符串会在新的一行出现(目前的上一行)</li>
+<li><code>p</code> <strong>打印</strong>,通常会和sed -n 一起使用</li>
+<li><code>s</code> <strong>取代</strong>,通常这个s动作可以搭配正则表达式一起使用.</li>
+<li><code>n</code> 读取下一行</li>
+<li><code>y</code> 指定<strong>替换</strong>[sed ‘y/abc/ABC’ file – a换成A,b换成B,c换成C]</li>
+<li><code>q</code> <strong>退出</strong></li>
+</ul></li>
+</ul>
+<h2 id="样例演示">样例演示</h2>
+<ul>
+<li><p>显示第40行到最后一行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed -n <span class="string">'40,$p'</span> /etc/passwd</div></pre></td></tr></table></figure></li>
+</ul>
+<p>[sed-n](/assets/images/sed-n.png) * 在第40行到最后一行后面添加字符串“===I am here===”</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed <span class="string">'40,$a ===I am here==='</span> /etc/passwd</div></pre></td></tr></table></figure></code></pre>
+<p>[sed-a]({{ site.baseurl }}/assets/images/sed-a.png) * 使用模式进行查询sys字符</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed -n <span class="string">'/sys/p'</span> /etc/passwd</div></pre></td></tr></table></figure></code></pre>
+<p>[sed-ns](/assets/images/sed-ns.png) * 替换一行中的某部分</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed -n <span class="string">'s/sys/replace/p'</span> /etc/passwd</div></pre></td></tr></table></figure></code></pre>
+<p>[sed-rep](/assets/images/sed-rep.png)</p>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">1.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#样例演示"><span class="toc-number">2.</span> <span class="toc-text">样例演示</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

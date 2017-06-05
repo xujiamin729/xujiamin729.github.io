@@ -1,0 +1,238 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>高效排序之交换 | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            高效排序之交换
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Research-swap">  
+    
+    <div class="article-meta">
+        <a href="/2017/04/14/Research-swap/" class="article-data">
+      <time datetime="2017-04-14T02:29:51.000Z" itemprop="datePublished">2017-04-14</time>
+</a>
+
+
+<a href="/2017/04/14/Research-swap/" class="article-data">
+      <time datetime="2017-04-14T02:29:51.000Z" itemprop="datePublished">2017-04-14</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      高效排序之交换
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Research/">Research</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>在很多排序算法中都会使用到交换函数<code>Swap</code>，而且还是使用频率最高的函数，该函数的时间和空间复杂度完全可以决定整个排序算法的时间和空间复杂度，所以对于交换函数效率的研究还是非常重要的。而本文主要是根据贝尔实验室的JON L.BENTLEY和M.DOUGLAS McILROY发表的论文《<a href="http://cs.fit.edu/~pkc/classes/writing/samples/bentley93engineering.pdf" target="_blank" rel="external">Engineering a Sort Function</a>》。 <a id="more"></a></p>
+<h2 id="理论准备">理论准备</h2>
+<h3 id="字节序">字节序</h3>
+<ul>
+<li>标题<code>title</code></li>
+</ul>
+<h2 id="程序实践">程序实践</h2>
+<h3 id="计时函数选择">计时函数选择</h3>
+<p>要研究交换函数的效率，首先要有衡量效率的尺。这里就直接用函数运行的时间来比较实现相同功能的函数间的效率。而对于计时函数的选择我们分别对<code>time()</code>，<code>clock()</code>，<code>clock_gettime()</code>进行了试验，最终选择<code>clock()</code>函数作为计时函数。 #### 函数<code>time</code> 1. 定义 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="keyword">time_t</span> time(<span class="keyword">time_t</span> *arg);</div></pre></td></tr></table></figure></p>
+<ol start="2" style="list-style-type: decimal">
+<li>功能 获取当前日历时间（距离1970年1月1号00:00:00所经过的秒数），并返回到time_t对象中，如果arg是非空指针，则当前时间也会存储到*arg对象中。单位为秒。</li>
+<li>注意点
+<ul>
+<li>time_t类型被宏定义为long int &gt; <strong>Tips:</strong> &gt; <code>time()</code>函数在<a href="http://ftp.gnu.org/gnu/libc/glibc-2.22.tar.xz" target="_blank" rel="external">glibc-2.22源码</a>中实现的方式（sysdeps/unix/sysv/linux/time.c）是调用内核函数<code>INTERNAL_SYSCALL(time, err, 1, NULL)</code>实现的。</li>
+</ul></li>
+</ol>
+<h4 id="函数clock">函数<code>clock</code></h4>
+<ol style="list-style-type: decimal">
+<li>定义 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="keyword">clock_t</span> clock(<span class="keyword">void</span>);</div></pre></td></tr></table></figure></li>
+</ol>
+<p>2.功能 获取该程序从启动到本函数被调用所占用的额CPU时间，该时间是用户CPU时间和系统CPU时间之和。单位为微秒 3. 注意点 * clock_t类型被宏定义为long int * 在单核处理器上，实际时间大于CPU时间 * 一般CLOCKS_PER_SEC=1000000，所以时间单位为微秒</p>
+<h4 id="函数clock_gettime">函数<code>clock_gettime</code></h4>
+<ol style="list-style-type: decimal">
+<li>定义 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">clock_gettime</span><span class="params">(<span class="keyword">clockid_t</span> clk_id, <span class="keyword">struct</span> timespec *tp)</span></span>;</div><div class="line"><span class="comment">// timespec定义</span></div><div class="line"><span class="keyword">struct</span> timespec&#123;</div><div class="line">	<span class="keyword">time_t</span> tv_sec;     <span class="comment">//秒</span></div><div class="line">	<span class="keyword">long</span> <span class="keyword">int</span> tv_nsec;  <span class="comment">//纳秒</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ol>
+<p>2.功能 通过clk_id来决定获取CPU时间[CLOCK_PROCESS_CPUTIME_ID]，实际运行时间[CLOCK_MONOTOTIC]等时间，单位为纳秒 3. 注意点 * clockid_t类型被宏定义为int * 虽然tv_nsec的单位是纳秒，但是基本后三位为0，所以精度还是微秒</p>
+<h3 id="操作的耗时">操作的耗时</h3>
+<h2 id="参考文献">参考文献</h2>
+<ol style="list-style-type: decimal">
+<li><a href="http://cs.fit.edu/~pkc/classes/writing/samples/bentley93engineering.pdf" target="_blank" rel="external">Engineering a Sort Function</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%AD%97%E8%8A%82%E5%BA%8F" target="_blank" rel="external">字节序</a></li>
+<li><a href="http://stackoverflow.com/questions/21449/types-of-endianness" target="_blank" rel="external">字节序的类别</a></li>
+<li><a href="http://ftp.gnu.org/gnu/libc/glibc-2.22.tar.xz" target="_blank" rel="external">glibc-2.22源码</a></li>
+</ol>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#理论准备"><span class="toc-number">1.</span> <span class="toc-text">理论准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#字节序"><span class="toc-number">1.1.</span> <span class="toc-text">字节序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序实践"><span class="toc-number">2.</span> <span class="toc-text">程序实践</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#计时函数选择"><span class="toc-number">2.1.</span> <span class="toc-text">计时函数选择</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数clock"><span class="toc-number">2.1.1.</span> <span class="toc-text">函数clock</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数clock_gettime"><span class="toc-number">2.1.2.</span> <span class="toc-text">函数clock_gettime</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作的耗时"><span class="toc-number">2.2.</span> <span class="toc-text">操作的耗时</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">3.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

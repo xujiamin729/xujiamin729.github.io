@@ -1,0 +1,234 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>python基础篇之基本概念 | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            python基础篇之基本概念
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Study-basicConcept-Python">  
+    
+    <div class="article-meta">
+        <a href="/2014/12/04/Study-basicConcept-Python/" class="article-data">
+      <time datetime="2014-12-03T16:00:00.000Z" itemprop="datePublished">2014-12-04</time>
+</a>
+
+
+<a href="/2014/12/04/Study-basicConcept-Python/" class="article-data">
+      <time datetime="2014-12-03T16:00:00.000Z" itemprop="datePublished">2014-12-04</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      python基础篇之基本概念
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>python里面有一些基本的概念,像模块,函数之类的,理解这些基本概念有利于对python程序的理解和编写. <a id="more"></a></p>
+<h2 id="模块">模块</h2>
+<ul>
+<li>定义 模块（类比java中包里面的类）是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用python标准库的方法。</li>
+<li>代码示例
+<ul>
+<li><p>自己定义的模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding=utf-8</span></div><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># Filename: mymodule.py</span></div><div class="line"></div><div class="line"><span class="comment"># 模块中定义的函数</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sayhi</span><span class="params">()</span>:</span>   </div><div class="line">	<span class="keyword">print</span> <span class="string">'模块就是这样建造的.'</span></div><div class="line"></div><div class="line"><span class="comment"># 模块中定义的变量</span></div><div class="line">version = <span class="string">'0.1'</span></div></pre></td></tr></table></figure></li>
+<li><p>引用自己定义好的模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding=utf-8</span></div><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># Filename: mymodule_demo.py</span></div><div class="line"></div><div class="line"><span class="comment"># 导入所写模块</span></div><div class="line"><span class="keyword">import</span> mymodule</div><div class="line"></div><div class="line"><span class="comment"># 代码写在main()里面</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">	<span class="comment"># 显示mymodule中定义的函数和变量</span></div><div class="line">	<span class="keyword">print</span> <span class="string">"mymodule中定义的函数和变量："</span> + <span class="string">"  "</span>.join(dir(mymodule))</div><div class="line"></div><div class="line">	<span class="comment"># 显示当前main函数中定义的函数的变量</span></div><div class="line">	<span class="keyword">print</span> <span class="string">"main函数中定义的函数和变量："</span> + <span class="string">"  "</span>.join(dir())</div><div class="line"></div><div class="line">	<span class="comment"># 显示__name__的值</span></div><div class="line">	<span class="keyword">print</span> <span class="string">"main函数中__name__变量的值："</span> + __name__</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 调用main()函数来启动程序的样板</span></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">	main()</div><div class="line"></div><div class="line">	<span class="comment"># 显示当前模块中定义的函数的变量</span></div><div class="line">	<span class="keyword">print</span> <span class="string">"当前模块中定义的函数和变量："</span> + <span class="string">"  "</span>.join(dir())</div><div class="line"></div><div class="line">	<span class="comment"># 显示__name__的值</span></div><div class="line">	<span class="keyword">print</span> <span class="string">"当前模块中__name__变量的值："</span> + __name__</div></pre></td></tr></table></figure></li>
+</ul></li>
+</ul>
+<h2 id="函数">函数</h2>
+<ul>
+<li>定义<br>
+函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。函数定义注意点
+<ol style="list-style-type: decimal">
+<li>以def关键字开头，后面接函数名称和参数以及冒号</li>
+<li>以return [expression]结束函数</li>
+<li>参数类型有多个
+<ul>
+<li>必备参数–一般定义的参数</li>
+<li>命名参数–复制语句作为参数</li>
+<li>缺省参数–参数有默认值</li>
+<li>不定长参数–用*标记，类似指针</li>
+</ul></li>
+</ol></li>
+<li><p>代码示例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># coding=utf-8</span></div><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment"># Filename: function_demo.py</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 导入所写模块</span></div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"><span class="comment"># 自定义函数</span></div><div class="line"><span class="comment"># 打印输入的参数和本函数名</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">printStr</span><span class="params">( str )</span>:</span></div><div class="line">	<span class="comment"># sys._getframe().f_code.co_name 能够获得当前函数的名称</span></div><div class="line">	<span class="keyword">print</span> sys._getframe().f_code.co_name , <span class="string">":"</span> , str</div><div class="line">	<span class="keyword">return</span></div><div class="line"></div><div class="line"><span class="comment"># 打印输入的不定长参数和本函数名</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">printChangePar</span><span class="params">( argc, *argv )</span>:</span></div><div class="line">	<span class="keyword">print</span> sys._getframe().f_code.co_name , <span class="string">":"</span> , argc</div><div class="line">	vars =<span class="string">""</span></div><div class="line">	<span class="keyword">for</span> var <span class="keyword">in</span> argv:</div><div class="line">		vars = vars + var + <span class="string">" "</span></div><div class="line">		<span class="keyword">return</span> vars</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 代码写在main()里面</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">	<span class="comment"># 传入命名参数</span></div><div class="line">	printStr( str = <span class="string">"I am here ."</span> )</div><div class="line"></div><div class="line">	<span class="comment"># 传入不定长参数</span></div><div class="line">	<span class="keyword">print</span> printChangePar(<span class="number">4</span>,<span class="string">"I"</span>,<span class="string">"am"</span>,<span class="string">"here"</span>,<span class="string">"."</span>)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># 调用main()函数来启动程序的样板</span></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">	main()</div></pre></td></tr></table></figure></li>
+</ul>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模块"><span class="toc-number">1.</span> <span class="toc-text">模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">2.</span> <span class="toc-text">函数</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

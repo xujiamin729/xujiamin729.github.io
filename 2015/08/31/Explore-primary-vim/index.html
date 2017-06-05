@@ -1,0 +1,320 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>Vim配置之入门篇 | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            Vim配置之入门篇
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Explore-primary-vim">  
+    
+    <div class="article-meta">
+        <a href="/2015/08/31/Explore-primary-vim/" class="article-data">
+      <time datetime="2015-08-30T16:00:00.000Z" itemprop="datePublished">2015-08-31</time>
+</a>
+
+
+<a href="/2015/08/31/Explore-primary-vim/" class="article-data">
+      <time datetime="2015-08-30T16:00:00.000Z" itemprop="datePublished">2015-08-31</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      Vim配置之入门篇
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>正所谓“工欲善其事，必先利其器”，而作为一个专业的码农，怎么能不好好对待自己编程的利器–VIM编辑器呢！可能读者会说编程的利器不应该是各种语言的集成工具么？像编写C/C++程序的VS，Codeblock（跨平台）软件，像编写Java程序的Eclipse（现在已经有支持C/C++/Python的插件），像编写Python程序的PyCharm等。这些人性化的开发集成环境功能强大，使用方便。不过成也在此，败也在此。本文将详细介绍Vim编辑器以及其基本入门级配置。 <a id="more"></a></p>
+<h2 id="简介">简介</h2>
+<p>正所谓“工欲善其事，必先利其器”，而作为一个专业的码农，怎么能不好好对待自己的编程利器–VIM编辑器呢！可能读者会说编程的利器不应该是各种语言的集成工具么？像编写C/C++程序的VS，Codeblock（跨平台）软件，像编写Java程序的Eclipse（现在已经有支持C/C++/Python的插件），像编写Python程序的PyCharm等。这些人性化的开发集成环境功能强大，使用方便。不过我觉得成也在此，败也在此。</p>
+<ol style="list-style-type: decimal">
+<li>功能冗余<br>
+现在编程的集成环境工具非常强大，但是很多功能我们都用不到，反而每次开启都花费很长时间。所以集成环境并不适合专业的码农。我们经常说适合自己的才是最好的，编程利器更是如此，毕竟它每天不离手。</li>
+<li>定制化太低<br>
+基本上每个集成开发工具都没有留太多的定制空间给用户，而用户只能习惯软件供应商提供的大众化用法。对于熟悉多种语言的用户而言，它得掌握多种开发集成环境，还不如用Vim解决所有。</li>
+<li>鼠标和键盘的混合使用<br>
+其实这一点仁者见仁，智者见智吧。个人觉得高效编程还是需要手不离键盘的，要熟练掌握一些基本的快捷键的使用。</li>
+</ol>
+<p>基本的Vim说白了就是一个文本编辑器，不过它的强大之处在于它庞大的插件。这些插件可以让Vim能够干很多牛x的事，这跟google浏览器有点像。像代码补全，错误跳转，高亮显示等等，Vim都有相应的插件来处理，用户可以自行了解，自由组合。所以Vim的入门门坎还是蛮高的，主要是开始学得命令比较多，这里有推荐个<a href="http://vim-adventures.com/" target="_blank" rel="external">玩游戏记命令的网址</a>以及<a href="http://www.oschina.net/translate/learn-vim-progressively" target="_blank" rel="external">Vim学习指南</a>。此外打造一个适合自己的vim环境将会大大节约时间，是磨刀不误砍柴工的。下面就来看看基础入门级的<a href="http://my.oschina.net/swuly302/blog/156784" target="_blank" rel="external">Vim插件配置</a>。</p>
+<h2 id="基本配置">基本配置</h2>
+<ol style="list-style-type: decimal">
+<li><p>安装vim,scripts,doc</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vim vim-scripts vim-doc</div></pre></td></tr></table></figure>
+<blockquote>
+<strong>Tips:</strong>
+<ul>
+<li>vim vim软件，安装目录是/usr/share/vim</li>
+<li>vim-scripts vim的基本插件，包括语法高亮等，安装目录是/usr/share/vim-scripts</li>
+<li>vim-doc vim帮助文件，不过是英文版本的</li>
+</ul>
+</blockquote></li>
+<li>中文帮助文档
+<ol style="list-style-type: decimal">
+<li>下载<a href="http://sourceforge.net/projects/vimcdoc/files/vimcdoc/" target="_blank" rel="external">最新版本</a>的vim中文帮助文档</li>
+<li>解压doc文件夹到~/.vim目录下</li>
+</ol></li>
+<li><p>配置~/.vimrc文件</p>
+<p>配置个性化的<a href=".vimrc" class="uri">.vimrc</a>（不懂的命令可以用<code>:help command</code>查看中文帮助文档）</p></li>
+</ol>
+<h2 id="实用插件">实用插件</h2>
+<p>vim的插件很多，而且功能很强大，非常强大。官网的插件地址在<a href="http://www.vim.org/scripts/script_search_results.php?order_by=creation_date&amp;direction=descending" target="_blank" rel="external">这里</a>，不过它的很多<a href="http://vim-scripts.org/vim/scripts.html" target="_blank" rel="external">插件</a>都转移到github上。</p>
+<ul>
+<li>ctags<br>
+ctags可以建立源码树的标签索引（标签就是一个标识符被定义的地方，如函数定义），使程序员在编程时能迅速定位函数、变量、宏定义等位置去查看原形。
+<ol style="list-style-type: decimal">
+<li><p>安装exuberant-ctags工具</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install exuberant-ctags</div></pre></td></tr></table></figure></li>
+<li>创建C++代码库索引
+<ol style="list-style-type: decimal">
+<li>下载<a href="http://www.vim.org/scripts/download_script.php?src_id=9178" target="_blank" rel="external">libstdc++</a>头文件,包含c++中STL，streams等。</li>
+<li><p>解压到~/.vim/tags目录后执行ctags命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ cpp_src</div><div class="line">mv tags ~/.vim/tags/cpptag</div></pre></td></tr></table></figure></li>
+<li><p>在.vimrc中设置</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">set</span> <span class="keyword">tags</span>+=~/.<span class="keyword">vim</span>/<span class="keyword">tags</span>/cpptag</div></pre></td></tr></table></figure></li>
+</ol></li>
+<li>创建gcc代码库索引
+<ol style="list-style-type: decimal">
+<li><p>ubuntu中安装完build-essential后，会在/usr/include/c++目录下有C/C++的头文件。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential</div></pre></td></tr></table></figure></li>
+<li><p>拷贝/usr/include/c++/4.8里的文件到~/.vim/tags/gcc文件夹里后执行ctags命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cp -R /usr/include/c++/4.8 ~/.vim/tags/gcc</div><div class="line">ctags -R --c++-kinds=+p --fields=+iaS --extra=+q gcc</div><div class="line">mv tags ~/.vim/tags/gcctag</div></pre></td></tr></table></figure></li>
+<li><p>在.vimrc中设置</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">set</span> <span class="keyword">tags</span>+=~/.<span class="keyword">vim</span>/<span class="keyword">tags</span>/gcctag</div></pre></td></tr></table></figure></li>
+</ol></li>
+</ol></li>
+<li>taglist<br>
+在屏幕右侧出现的就是taglist窗口，从中可以看到文件中定义的所有tag：宏、定义、变量、函数等；通过单击某个tag，可以跳到该tag定义的位置；也可以把某一类的tag折叠起来，方便查看。
+<ol style="list-style-type: decimal">
+<li><p>安装taglist</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim-addon-manager install taglist</div></pre></td></tr></table></figure></li>
+<li><p>在.vimrc中配置</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">      <span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="comment">" 标签列表的设置</span></div><div class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="comment">" 启动vim后，自动打开taglist窗口</span></div><div class="line"><span class="keyword">let</span> Tlist_Auto_Open=<span class="number">1</span>  </div><div class="line"><span class="comment">" 高亮显示当前标签列表中的标签</span></div><div class="line"><span class="keyword">let</span> Tlist_Auto_Highlight_Tag=<span class="number">1</span></div><div class="line"><span class="comment">" 添加新文件后，标签列表将自动更新</span></div><div class="line"><span class="keyword">let</span> Tlist_Auto_Update=<span class="number">1</span></div><div class="line"><span class="comment">" 显示标签域--类</span></div><div class="line"><span class="keyword">let</span> Tlist_Display_Tag_Scope=<span class="number">1</span></div><div class="line"><span class="comment">" 如果taglist窗口是最后一个窗口，则退出vim</span></div><div class="line"><span class="keyword">let</span> Tlist_Exit_OnlyWindow=<span class="number">1</span></div><div class="line"><span class="comment">" Taglist窗口里可折叠</span></div><div class="line"><span class="keyword">let</span> Tlist_Enable_Fold_Column=<span class="number">1</span></div><div class="line"><span class="comment">" 只显示当前文件的标签，折叠其他文件的标签</span></div><div class="line"><span class="keyword">let</span> Tlist_File_Fold_Auto_Close=<span class="number">1</span></div><div class="line"><span class="comment">" 多个文件间切换时，标签列表也更新为当前文件</span></div><div class="line"><span class="keyword">let</span> Tlist_Show_One_File=<span class="number">1</span></div><div class="line"><span class="comment">" 标签列表显示在Buffer区的右边</span></div><div class="line"><span class="comment">"let Tlist_Use_Right_Window=1</span></div><div class="line"><span class="comment">" 单击标签列表中的标签将定位到标签定义处</span></div><div class="line"><span class="keyword">let</span> Tlist_Use_SingleClick=<span class="number">1</span></div></pre></td></tr></table></figure></li>
+<li>自定义快捷键说明
+<ul>
+<li><code>&lt;F10&gt;</code> 打开/关闭标签列表</li>
+</ul></li>
+</ol></li>
+<li>winmanager<br>
+WinManager用于管理文件浏览器和缓冲区（buffer）。2.0以上版本的WinManager还可以管理其他IDE类型插件，不过要用户在插件中增加一些辅助变量和hook来支持WinManager（帮助文档有相关说明）。
+<ol style="list-style-type: decimal">
+<li><p>安装winmanager</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim-addon-manager install winmanager</div></pre></td></tr></table></figure></li>
+<li><p>在.vimrc中配置</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="comment">" 文件管理器</span></div><div class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="comment">" 进入vim后自动打开winmanager</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:AutoOpenWinManager</span> =<span class="number">1</span></div><div class="line"><span class="comment">" 设置要管理的插件</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:winManagerWindowLayout</span>=<span class="string">'FileExplorer|TagList'</span></div><div class="line"><span class="comment">" 如果所有编辑文件都关闭了，退出vim</span></div><div class="line"><span class="comment">"let g:persistentBehaviour=0</span></div><div class="line"><span class="comment">" &lt;F9&gt;打开/关闭文件管理器</span></div><div class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;F9&gt;</span> :WMToggle<span class="symbol">&lt;CR&gt;</span></div></pre></td></tr></table></figure></li>
+<li>自定义快捷键说明
+<ul>
+<li><code>&lt;F9&gt;</code> 打开/关闭文件浏览器</li>
+</ul></li>
+</ol></li>
+<li>minibufexplorer<br>
+MiniBufferExplorer用于浏览和管理buffer，如果只打开一个文件，是不会显示在屏幕上的，而打开多个文件之后，会自动出现在屏幕上。vim也有自带的buffer管理工具，不过只有:ls, :bnext, :bdelete 等的命令, 既不好用, 又不直观.
+<ol style="list-style-type: decimal">
+<li><p>安装minibufexplorer</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim-addon-manager install minibufexplorer</div></pre></td></tr></table></figure></li>
+<li><p>在.vimrc中配置</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="comment">" 缓冲区管理</span></div><div class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="comment">" 用&lt;C-h/j/k/l&gt;切换到上下左右窗口</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:miniBufExplMapWindowNavVim</span> = <span class="number">1</span></div><div class="line"><span class="comment">" 用Ctrl+箭头切换到上下左右窗口</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:miniBufExplMapWindowNavArrows</span> = <span class="number">1</span></div><div class="line"><span class="comment">"let g:bufExplorerMaxHeight=30</span></div><div class="line"><span class="comment">" 只有一个buffer，MiniBufExplorer这栏也会出现</span></div><div class="line"><span class="comment">"let g:miniBufExplorerMoreThanOne=0</span></div><div class="line"><span class="comment">" normal模式下&lt;Tab&gt;移动到下一个buffer，&lt;C-Tab&gt;上一个</span></div><div class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;Tab&gt;</span> :<span class="keyword">bn</span><span class="symbol">&lt;CR&gt;</span></div><div class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;silent&gt;</span> <span class="symbol">&lt;C-Tab&gt;</span> :<span class="keyword">bp</span><span class="symbol">&lt;CR&gt;</span></div><div class="line"><span class="comment">" 不要在不可编辑内容的窗口（如TagList）中打开选中的buffer</span></div><div class="line"><span class="keyword">let</span> <span class="variable">g:miniBufExplModSelTarget</span> = <span class="number">1</span><span class="comment">"</span></div></pre></td></tr></table></figure></li>
+<li>自定义快捷键说明
+<ul>
+<li><code>&lt;Tab&gt;</code> 移动到下一个buffer</li>
+<li><code>&lt;C-Tab&gt;</code> 移动到上一个buffer</li>
+</ul></li>
+</ol></li>
+<li>quickfix<br>
+通过quickfix命令集，你可在 Vim 内编译程序并直接跳转到出错位置进行修正。你可以接着重新编译并做修正，直到不再出错为止。因为quickfix已经在vim里集成了，只要配置就好了。
+<ol style="list-style-type: decimal">
+<li><p>在.vimrc中配置</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="comment">" QuickFix设置</span></div><div class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="comment">" 按下&lt;F2&gt;，执行make</span></div><div class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;F2&gt;</span> :TlistToggle<span class="symbol">&lt;CR&gt;</span> :<span class="keyword">make</span><span class="symbol">&lt;CR&gt;</span><span class="symbol">&lt;CR&gt;</span><span class="symbol">&lt;CR&gt;</span> :<span class="keyword">copen</span><span class="symbol">&lt;CR&gt;</span> :TlistToggle<span class="symbol">&lt;CR&gt;</span></div><div class="line"><span class="comment">" 按下&lt;F12&gt;，执行make clean</span></div><div class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;F12&gt;</span> :<span class="keyword">make</span> clean<span class="symbol">&lt;CR&gt;</span><span class="symbol">&lt;CR&gt;</span><span class="symbol">&lt;CR&gt;</span> :<span class="keyword">cclose</span><span class="symbol">&lt;CR&gt;</span></div><div class="line"><span class="comment">" 按下&lt;F3&gt;，光标移到上一个错误所在的行</span></div><div class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;F3&gt;</span> :<span class="keyword">cp</span><span class="symbol">&lt;CR&gt;</span></div><div class="line"><span class="comment">" 按下&lt;F4&gt;，光标移到下一个错误所在的行</span></div><div class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;F4&gt;</span> :<span class="keyword">cn</span><span class="symbol">&lt;CR&gt;</span></div></pre></td></tr></table></figure></li>
+<li>自定义快捷键说明
+<ul>
+<li><code>&lt;F2&gt;</code> make当前程序</li>
+<li><code>&lt;F10&gt;</code> make clean当前程序</li>
+<li><code>&lt;F3&gt;</code> 光标移动到上一个错误所在行</li>
+<li><code>&lt;F4&gt;</code> 光标移动到下一个错误所在行</li>
+</ul></li>
+</ol></li>
+</ul>
+<h2 id="参考文献">参考文献</h2>
+<ol style="list-style-type: decimal">
+<li><a href="http://vim-adventures.com/" target="_blank" rel="external">有趣的vim游戏</a></li>
+<li><a href="http://www.oschina.net/translate/learn-vim-progressively" target="_blank" rel="external">Vim学习指南</a></li>
+<li><a href="http://my.oschina.net/swuly302/blog/156784" target="_blank" rel="external">vim plugin</a></li>
+<li><a href="http://vim-scripts.org/vim/scripts.html" target="_blank" rel="external">Vim Script</a></li>
+</ol>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本配置"><span class="toc-number">2.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实用插件"><span class="toc-number">3.</span> <span class="toc-text">实用插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">4.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

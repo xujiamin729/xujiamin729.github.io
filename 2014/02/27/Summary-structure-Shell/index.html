@@ -1,0 +1,235 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>shell编程之语法结构 | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            shell编程之语法结构
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Summary-structure-Shell">  
+    
+    <div class="article-meta">
+        <a href="/2014/02/27/Summary-structure-Shell/" class="article-data">
+      <time datetime="2014-02-26T16:00:00.000Z" itemprop="datePublished">2014-02-27</time>
+</a>
+
+
+<a href="/2014/02/27/Summary-structure-Shell/" class="article-data">
+      <time datetime="2014-02-26T16:00:00.000Z" itemprop="datePublished">2014-02-27</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      shell编程之语法结构
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>前一篇博文介绍了shell编程的基本内容,主要介绍了变量,数值计算以及字符串.这些相当于食材,而本文介绍的语法结构就相当于食谱,二者组合方能做出美食. <a id="more"></a></p>
+<h2 id="判断语句">判断语句</h2>
+<ul>
+<li><p>条件判断</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">test</span> expression</div><div class="line">[ expression ]</div></pre></td></tr></table></figure></li>
+<li>条件表达式中常用的判断
+<ol style="list-style-type: decimal">
+<li>数值 <code>-eq</code> <code>-ne</code> <code>-gt</code> <code>-lt</code> <code>-ge</code> <code>-le</code> [<strong>e</strong>qual <strong>n</strong>ot <strong>g</strong>reater <strong>t</strong>han <strong>l</strong>ess]</li>
+<li>字符串 <code>=:</code> <code>!=</code> <code>-z</code> <code>-n</code> [<strong>z</strong>ero <strong>n</strong>ozero]</li>
+<li>文件 <code>-e</code> <code>-r</code> <code>-w</code> <code>-x</code> <code>-s</code> <code>-d</code> <code>-f</code> <code>-c</code> <code>-b</code> [<strong>e</strong>xist <strong>r</strong>ead <strong>w</strong>rite <strong>e</strong>xecute <strong>s</strong>ize <strong>d</strong>irectory <strong>f</strong>ile <strong>c</strong>har <strong>b</strong>lock]</li>
+</ol></li>
+<li><p>语句结构</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> [ <span class="variable">$mark</span> -le 80 ]</div><div class="line"><span class="keyword">then</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Your Grade is Average."</span></div><div class="line"><span class="keyword">elif</span> [ <span class="variable">$mark</span> <span class="_">-gt</span> 80 <span class="_">-a</span> <span class="variable">$mark</span> -le 90 ]</div><div class="line"><span class="built_in">echo</span> <span class="string">"Your Grade is Good."</span></div><div class="line"><span class="keyword">else</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Your Grade is Outstanding."</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="case分支">case分支</h2>
+<ul>
+<li><p>语句结构</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> <span class="variable">$choice</span> <span class="keyword">in</span></div><div class="line">1) <span class="built_in">echo</span> <span class="string">"choice1"</span>;;</div><div class="line">2) <span class="built_in">echo</span> <span class="string">"choice2"</span>;;</div><div class="line">*) <span class="built_in">echo</span> <span class="string">"out of choice"</span></div></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="循环语句">循环语句</h2>
+<ul>
+<li><p>for循环语句结构</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> val <span class="keyword">in</span> vals</div><div class="line"><span class="keyword">do</span></div><div class="line">...</div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure></li>
+<li><p>while循环语句结构</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">i=</span>0
+<span class="kw">while</span><span class="bu"> [</span> <span class="va">$i</span> <span class="ot">-le</span> 100<span class="bu"> ]</span>
+<span class="kw">do</span>
+<span class="ex">...</span>
+<span class="kw">((</span>i=<span class="va">$i</span>+1<span class="kw">))</span>
+<span class="kw">done</span></code></pre></div></li>
+</ul>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#判断语句"><span class="toc-number">1.</span> <span class="toc-text">判断语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#case分支"><span class="toc-number">2.</span> <span class="toc-text">case分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环语句"><span class="toc-number">3.</span> <span class="toc-text">循环语句</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

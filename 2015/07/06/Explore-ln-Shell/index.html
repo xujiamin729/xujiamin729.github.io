@@ -1,0 +1,227 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>shell编程之软硬链接ln | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            shell编程之软硬链接ln
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Explore-ln-Shell">  
+    
+    <div class="article-meta">
+        <a href="/2015/07/06/Explore-ln-Shell/" class="article-data">
+      <time datetime="2015-07-05T16:00:00.000Z" itemprop="datePublished">2015-07-06</time>
+</a>
+
+
+<a href="/2015/07/06/Explore-ln-Shell/" class="article-data">
+      <time datetime="2015-07-05T16:00:00.000Z" itemprop="datePublished">2015-07-06</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      shell编程之软硬链接ln
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>在windows里面我们经常通过快捷方式来创建链接以方便我们使用电脑。而linux中有两种方式创建链接，分别为软链接和硬链接。下面我们就来详细说下二者的区别。 <a id="more"></a></p>
+<h2 id="定义">定义</h2>
+<p><code>ln</code>命令是为某个文件在另外一个位置建立一个同步链接，当我们需要在不同的目录用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，此时只需用<code>ln</code>创建对应文件的链接，不必重复的占用磁盘空间。</p>
+<ul>
+<li><p>命令格式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 硬链接</span></div><div class="line">ln <span class="built_in">source</span> target</div><div class="line"><span class="comment"># 软链接</span></div><div class="line">ln <span class="_">-s</span> <span class="built_in">source</span> target</div></pre></td></tr></table></figure></li>
+<li><p>软链接</p>
+软链接跟windows里面的快捷方式等价。它的内容是指向另一个文件的位置。所以可以创建某个目录的软链接，也可以对一个不存在的文件进行链接。除此之外，它可以跨文件系统。这三点硬链接都无法实现。</li>
+<li><p>硬链接</p>
+<p>硬链接可以理解为文件的别名，而且别名可以有多个。</p></li>
+</ul>
+<h2 id="原理">原理</h2>
+<p>对于linux而言，文件的结构与windows有点类似，由文件名，inode（类似于windows下的FCB文件控制块，保存文件的一些信息）和数据组成。比如创建origin文件，会得到下面的信息。 [origin](/assets/images/origin.png)</p>
+<p>注意Inode和硬链接，下面创建origin的硬链接hardlink。 [hardlink](/assets/images/hardlink.png)</p>
+<p>比对发现，创建硬链接的文件hardlink与原文件origin之间除了名称不同之外其他完全相同，就像同一个人它有个正式的名称也可能会有小名。它们的数据显然完全一样。</p>
+<p>接下来，我们创建origin的软链接softlink。 [softlink](/assets/images/softlink.png)</p>
+<p>对比发现，origin和softlink是完全不同的文件，有着不同的size，不同的块，不同的Inode，不同的type。唯一的联系是softlink文件指向origin文件。</p>
+<h2 id="用例">用例</h2>
+<ul>
+<li><p>删除源文件对软硬链接的影响 [rmorigin](/assets/images/rmorigin.png)</p>
+<p>由上图可以看出hardlink中硬链接的个数少了一个，而softlink还是安然无恙的存在着。接着我们通过两个链接来打开文件。 [linkshow](/assets/images/linkshow.png)</p>
+<p>由上图发觉，hardlink依旧能打开文件，而软链接却无法查看原文件。</p></li>
+</ul>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义"><span class="toc-number">1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-number">2.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用例"><span class="toc-number">3.</span> <span class="toc-text">用例</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

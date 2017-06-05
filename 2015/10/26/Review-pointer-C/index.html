@@ -1,0 +1,253 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>Category: C,Coding | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            C语言编程之指针
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Review-pointer-C">  
+    
+    <div class="article-meta">
+        <a href="/2015/10/26/Review-pointer-C/" class="article-data">
+      <time datetime="2015-10-25T16:00:00.000Z" itemprop="datePublished">2015-10-26</time>
+</a>
+
+
+<a href="/2015/10/26/Review-pointer-C/" class="article-data">
+      <time datetime="2015-10-25T16:00:00.000Z" itemprop="datePublished">2015-10-26</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      C语言编程之指针
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Coding/">Coding</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>c语言之所以强大，以及其自由性，很大部分体现在其灵活的指针运用上。因此，说指针是c语言的灵魂，一点都不为过。同时，这种说法也让很多人产生误解，似乎只有C语言的指针才能算指针。basic不支持指针，在此不论。其实，pascal语言本身也是支持指针的。从最初的pascal发展至今的object pascal，可以说在指针运用上，丝毫不会逊色于c语言的指针。还有Java语言，虽然任何教程都没有提及指针，但是在我看来任何类对象（基本数据类型不确定）的创建都使用了指针。所以对指针的理解决定了你对编程语言的理解。 <a id="more"></a></p>
+<h2 id="指针基础">指针基础</h2>
+<p>[指针][baike_pointer]（Pointer）是编程语言中的一个对象，它的值直接指向（points to）存在电脑存储器中另一个地方的值。这里先介绍一下变量的三要素：变量名，存储地址和存储内容。在下图的内存分配表中，<strong>存储变量(b)的地址(1008)</strong>称为指向变量(b)的指针，意思是通过它(1008)能找到以它为地址的内存单元(b)。而<strong>存储这个指针(1008)的变量(a)</strong>叫做指针变量，又因为这个指针是指向b变量的，所以又叫它为指向变量b的指针变量。<br>
+[pointer](/assets/images/pointers.png)</p>
+<p>对于指针变量，我们只要抓在两点就可以了，第一个是它指向的地址是多少，第二是它的基类型是啥。对于指针的基类型，在指针的定义中或者malloc/new申请内存时很容易获得。指向基本数据类型指针的基类型就是基本数据类型，而数组指针基类型的识别有点难，但其实只要抓住一点就能解决了，即去掉定义中的一个*和变量名，剩下的就是指针的基类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> *a;     <span class="comment">// 基类型为int，它是管辖范围是一个变量</span></div><div class="line"><span class="keyword">int</span> **b;  <span class="comment">// 基类型为int *，它是管辖范围是一个一维数组</span></div><div class="line">b = (<span class="keyword">int</span> **)row*<span class="keyword">sizeof</span>(<span class="keyword">int</span>*);   <span class="comment">// b的类型是int **，其基类型为int*，管辖范围包含row个int*变量的一维数组[C]</span></div><div class="line">b = <span class="keyword">new</span> <span class="keyword">int</span>*[row];      <span class="comment">// b的类型是int **，其基类型为int*，管辖范围是包含row个int*变量的一维数组[C++]</span></div></pre></td></tr></table></figure>
+<h2 id="操作符-操作符叫取址操作符其后面常跟变量用来获取变量的地址的操作符">操作符&amp;* 操作符&amp;叫取址操作符，其后面常跟变量，用来获取变量的地址的操作符。</h2>
+<p>操作符*叫取值操作符，其后面常跟地址，用来获取地址所定位内存空间里的值。如*point 是point所指向的存储单元的内容，而对于这个内容的理解有两种，一个是变量本身，另一个是具体的存储内容，特别声明这里的内容是变量本身。换句话说就是存储内容的变化也会导致*point值的变化。对于指针还有另外一点，就是指针的增加point+i，这里指针实际移动的距离是i*sizeof(指针的基类型)。下面来说一下这个经典案例*point++，该操作首先考虑优先级，因为这三个操作符都是一元同级操作符，所以按照从右往左的顺序操作。即*point++等价于*(point++)。</p>
+<p>这两个操作是一个对立的操作。一个是通过地址获取变量值，另一个是通过变量名获取地址。下面从管辖范围的角度来理解这两个操作。这个管辖范围是对指针基类型在内存上的解读，更物理测量里面的精确度概念类似。其层级为高维数组&gt;一维数组&gt;单个基本数据类型。</p>
+<ul>
+<li>&amp;E 相当于把E的管辖范围上升了一个级别</li>
+<li>*E 相当于把E的管辖范围下降了一个级别</li>
+<li>数组名相当于指向数组第一个元素的指针，但是其管辖范围根据基类型来定。</li>
+</ul>
+<p>样例代码如下所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> a[<span class="number">4</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,a);       <span class="comment">//x</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,a+<span class="number">1</span>);     <span class="comment">//x+4</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,&amp;a);      <span class="comment">//x</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,&amp;a+<span class="number">1</span>);    <span class="comment">//x+16</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,*(&amp;a));   <span class="comment">//x</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,*(&amp;a)+<span class="number">1</span>); <span class="comment">//x+4</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line"></div><div class="line"><span class="keyword">int</span> b[<span class="number">2</span>][<span class="number">3</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;;    <span class="comment">//这里由于jekyll问题，无法在两个一维数组外面添加&#123;&#125;</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,b);       <span class="comment">//x</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,b+<span class="number">1</span>);     <span class="comment">//x+12</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,&amp;b);      <span class="comment">//x</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,&amp;b+<span class="number">1</span>);    <span class="comment">//x+24</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,*(&amp;b));   <span class="comment">//x</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,*(&amp;b)+<span class="number">1</span>); <span class="comment">//x+12</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,b[<span class="number">0</span>]);    <span class="comment">//x</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,b[<span class="number">0</span>]+<span class="number">1</span>);  <span class="comment">//x+4</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,&amp;b[<span class="number">0</span>]);   <span class="comment">//x</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,&amp;b[<span class="number">0</span>]+<span class="number">1</span>); <span class="comment">//x+12</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,*(&amp;b[<span class="number">0</span>]));    <span class="comment">//x</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%p\n"</span>,*(&amp;b[<span class="number">0</span>])+<span class="number">1</span>);  <span class="comment">//x+4</span></div></pre></td></tr></table></figure>
+<p>代码中的一维数组a和二维数组b在内存中的表示情况如下图所示，其中红色的弧/圈表示指针的管辖范围（精确度）。 [pointer](/assets/images/pointer_array.png)</p>
+<h2 id="数组和指针">数组和指针</h2>
+<p>通常在函数调用中，我们会将数组名当作参数传递给函数，而函数中定义形参却通常定义为常量指针（const int* arr）。对于这二者还是有很多相识点的。</p>
+<ul>
+<li>最重要的点：==数组名代表的就是数组首元素的地址==。</li>
+<li>数组名这样的操作(arr++)是不对的,而p却可以（p=arr，p++），因为arr是常量类型。</li>
+<li>数组中的移位记住这样一个等式 *(point+i )= point[i]</li>
+</ul>
+<p>这里稍微提一下二维数组的定义。比如</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> arr[<span class="number">2</span>][<span class="number">3</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;;</div><div class="line"><span class="keyword">int</span> (*p)[<span class="number">3</span>]=arr;</div></pre></td></tr></table></figure>
+<p>这里的二维数组指针p是代表包含3个int型元素的一维数组。</p>
+<h2 id="指针和字符串">指针和字符串</h2>
+<p>指针和字符串的区别与指针和数组的区别很类似。因为C语言中没有字符型变量，只能用字符数组来存储，唯一的区别是字符串必须以’’结尾。不过在面试的时候经常会问这样的一个问题：下面两种定义有什么区别。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> p[<span class="number">10</span>]=<span class="string">"hello"</span>;</div><div class="line"><span class="keyword">char</span> *cp=<span class="string">"hello"</span>;</div></pre></td></tr></table></figure>
+<p>对于这个问题，我们得了解这个定义，首先p是字符数组，虽然长度为5,但p[5]一定为’’;而cp是这字符指针，是个<strong>常量指针</strong>，二者存储/指向的内容都为“hello”字符串。最关键的一点是两者在内存中存储区不一样。字符数组p是存储在栈区，而常量指针本身也是存储在栈区，但是它指向的字符串“hello”是存储在一个专门放常量的地方，在程序结束后释放。关于程序存储区的详细讨论将在另一片博文[程序中的存储区][memory]中讨论。</p>
+<h2 id="常量指针">常量&amp;指针</h2>
+<p>常量比较常用来保护实参，限制形参，保证实参在被调函数中的不可改变的特性（const int *）。还有另外一个类似宏定义的功能，又因为常量会被存放在常量区，所以可以节省空间（const int max=100）。不过常量指针（const int *arr）和指针常量（int *const p）是两个非常容易混的概念，这里做一些总结吧。</p>
+<p>对于二者的区分，只要记住三句话</p>
+<ol style="list-style-type: decimal">
+<li>*（指针）和const（常量）谁在前先读谁</li>
+<li>*（指针）象征着地址，而const（常量）象征着内容</li>
+<li>谁在前面谁就不允许改变。</li>
+</ol>
+<p>常量指针（const int *p）是指向常量的指针，所以指向的内容是不能改变的，但是这个指针可以指向其他常量。指针常量（int *const p）是指向变量的地址为常量，而指向的内容可以改变，所以<strong>指针常量在声明的时候一定要初始化，不能被再赋值，指向别的地址</strong>。</p>
+<p>结合最开始的那幅指针图片来说，对于两个变量a和b，其中b是正常的变量，a是指针变量。如果a是常量（就是1008值不能改变），则a是指针常量;如果指向的b是常量（就是地址为1008里的内容不能改变），则a是常量指针。</p>
+<h2 id="参考文献">参考文献</h2>
+<ol style="list-style-type: decimal">
+<li>[wiki指针][wiki_pointer]</li>
+<li>[baike][baike_pointer]</li>
+<li>[程序如何使用内存区][c_mem]</li>
+<li>[程序中的存储区][memory]</li>
+<li>[常量指针和指针常量的区别详解][const_point] [wiki_pointer]: https://en.wikipedia.org/wiki/Pointer_(computer_programming) [baike_pointer]: http://baike.baidu.com/link?url=<em>XybsUjdWr-YTN7SUA8q92EpiskSmO4EvROZLZmJbGals1NhK2sHZSRrsW80vuS-2hcie9Qk5IfP42sXOoC0h</em> [c_mem]: http://www.cnblogs.com/JCSU/articles/1051579.html [memory]: /2015/11/22/程序中的存储区.html [const_point]: http://blog.csdn.net/beyond0525/article/details/7409305</li>
+</ol>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#指针基础"><span class="toc-number">1.</span> <span class="toc-text">指针基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作符-操作符叫取址操作符其后面常跟变量用来获取变量的地址的操作符"><span class="toc-number">2.</span> <span class="toc-text">操作符&* 操作符&叫取址操作符，其后面常跟变量，用来获取变量的地址的操作符。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组和指针"><span class="toc-number">3.</span> <span class="toc-text">数组和指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指针和字符串"><span class="toc-number">4.</span> <span class="toc-text">指针和字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常量指针"><span class="toc-number">5.</span> <span class="toc-text">常量&指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>

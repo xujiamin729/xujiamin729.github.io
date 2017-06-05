@@ -1,0 +1,258 @@
+<!-- 网页的布局配置 -->
+<!-- hjy博客的布局头信息 -->
+<!DOCTYPE>
+<html lang="zh-CN"  >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport"  content="width=device-width,initial-scale=1">
+    <meta name="author" content="David">
+
+    <!-- 载入css文件 -->
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/avatar.png" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/hjy-bootstrap.css">
+    <link rel="stylesheet" href="/css/docs.min.css">
+
+    <!--
+    <link rel="stylesheet" href="/css/style.css">
+    -->
+
+
+    <!-- 设置不同页面的页面标题 -->
+    
+    <title>shell运行环境之sudo的环境 | 禹过留声</title>
+
+
+
+</head>
+
+<body>
+  <!-- 针对屏幕阅读器，元素在有焦点时显示 -->
+  <a class="sr-only sr-only-focusable" href="#content">
+    <div class="container">
+      <span class="skiplink-text">Skip to main content</span>
+    </div>
+  </a>
+  <!-- 置顶导航栏 -->
+  <header class="navbar navbar-fixed-top bs-docs-nav" id="topnav" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">
+          
+            shell运行环境之sudo的环境
+          
+        </a>
+      </div>
+      <form class="navbar-form navbar-right hidden-print hidden-xs hidden-sm">
+        <input type="text" class="form-control" id="local-search" name="search" placeholder="搜索……" autocomplete="off">
+      </form>
+      <nav class="navbar-collapse collapse" id="navbar-content" aria-expanded="true">
+        <ul class="nav navbar-nav navbar-right">
+          
+          <li>
+            <a class="main-nav-link" href="/">首页</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/archives/">文章归档</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/skills/">技能图谱</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/reading/">读书</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/about/">关于我</a>
+          </li>
+          
+          <li>
+            <a class="main-nav-link" href="/links/">友情链接</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 页面主题部分 -->
+  <div class="container clearfix" id="main">
+    
+<article id="post-Explore-sudo-Shell">  
+    
+    <div class="article-meta">
+        <a href="/2015/09/13/Explore-sudo-Shell/" class="article-data">
+      <time datetime="2015-09-12T16:00:00.000Z" itemprop="datePublished">2015-09-13</time>
+</a>
+
+
+<a href="/2015/09/13/Explore-sudo-Shell/" class="article-data">
+      <time datetime="2015-09-12T16:00:00.000Z" itemprop="datePublished">2015-09-13</time>
+</a>
+
+    </div>
+
+    <div id="article-inner">
+        
+        <header id="article-header">
+            
+  
+    
+    <h2 class="article-title" itemprop="name">
+      shell运行环境之sudo的环境
+    </h2>
+  
+
+
+        </header>
+        
+        <div id="article-info">
+            
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/TECHNOLOGY/">TECHNOLOGY</a>
+    </div>
+
+
+            
+    <div class="article-tag tagcloud">
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+    </div>
+
+
+        </div>
+        
+        <div id="article-entry">
+            
+                <p>上篇[博文](/2015/09/09/shell运行环境之环境配置文件.html)讲解了shell里面四个配置文件的作用域以及shell的四种常用模式。在此基础上，我们进一步探究一下在用户切换过程中，运行环境的变化。在Ubuntu里，我们通常使用<code>sudo</code>来提权，使用<code>su</code>来切换用户，而这两种操作都会对bash运行环境产生影响。搞明白运行环境的变化，你将明白在公司怎样使用代理。 <a id="more"></a></p>
+<h2 id="简介">简介</h2>
+<p>我们经常在终端中使用<code>sudo</code>来提权–以普通用户的身份去行使管理员的权限（前提是知道管理员用户的密码），这样减少了root用户的登录次数和管理时间，也提高了系统的安全性。不过有时候我们会直接用<code>su</code>切换到管理员进行一系列操作。<code>su</code>和<code>sudo</code>虽然不是具有相似功能的命令，但是它们的目的大部分情况是为了获取root权限。</p>
+<ul>
+<li>su命令<br>
+su命令是switch user的简写，是用来切换用户的。当不加任何参数时，它将切换到root用户。它需要你想<strong>切换到的用户</strong>的密码，在输入密码后，你将切换到那个用户的运行环境。</li>
+<li><a href="https://zh.wikipedia.org/zh/Sudo" target="_blank" rel="external">sudo</a>命令<br>
+该命令是superuser do的简写，能够以root的权限取执行命令，但是它需要的是<strong>当前用户</strong>的密码，而不是像su需要的是想要切换到的用户的密码。这样需要执行一些需要root权限的命令时就不需要频繁输入root用户的密码，当然前提是当前用户的信息是存档在特殊的文件（/etc/sudoers）中。默认情况下，系统将记住当前用户的密码一段时间，以方便用户不用经常输入密码。</li>
+</ul>
+<h2 id="运行环境的变化susudo"><a href="http://askubuntu.com/questions/376199/sudo-su-vs-sudo-i-vs-sudo-bin-bash-when-does-it-matter-which-is-used" target="_blank" rel="external">运行环境的变化</a></h2>
+<ul>
+<li>sudo 根据man的说明，sudoers提供了两种方法来限制sudo从用户环境中继承的变量。默认是env_reset变量是enabled，此时将会执行一个新的，最小的环境/etc/environment。另一种是设置env_reset变量是disabled，此时env_check和env_delete充当白列表的作用，因此不建议第二种情况。</li>
+<li>sudo su<br>
+bash将以一个交互非登录模式运行，所以只有两个bashrc文件将被执行。所以当用户切换成root后，我们还在当前的工作的目录，而非/root目录。</li>
+<li>sudo su -<br>
+bash将以登录模式运行的，此时/etc/profile，<sub>/.profile将会被执行，隐形的/etc/bash.bashrc和</sub>/.bashrc也将会被执行。此时，我们的当前目录是/root。</li>
+<li>sudo -i将 -i是–login的简写，所以接近sudo su -的情况</li>
+<li>sudo /bin/bash bash将以非登录模式运行，上面四个文件将不会被执行。</li>
+</ul>
+<h2 id="试验">试验</h2>
+<ul>
+<li><p>问题<br>
+今天在公司准备使用命令行<code>sudo /opt/logstash/bin/plugin install logstash-output-webhdfs</code>给logstash安装logstash-output-webhdfs插件，以实现将logstash收集的日志信息存储到Hadoop文件系统这一目的。但是却一直提示如下错误：</p>
+<blockquote>
+<p>Unable to download data from https://rubygems.org/ - 连接被对端重置 (https://rubygems.global.ssl.fastly.net/latest_specs.4.8.gz)<br>
+ERROR: Installation aborted, verification failed for logstash-output-webhdfs</p>
+</blockquote></li>
+</ul>
+<p>这里公司上网环境是使用了代理。本人在~/.bashrc中添加了<code>export http_proxy=xxx</code>和<code>export https_proxy=xxx</code>。接下来按照网上的解决方法作了如下尝试，均已失败告终。</p>
+<ol style="list-style-type: decimal">
+<li>用Google搜索错误提示<a href="http://www.sjsjw.com/kf_jiagou/article/027841ABA028365.asp" target="_blank" rel="external">Unable to download data from https://rubygems.org</a><br>
+</li>
+<li><a href="https://discuss.elastic.co/t/shield-w-logstash-offline-install/25072" target="_blank" rel="external">手动安装插件logstash-output-webhdfs</a></li>
+</ol>
+<ul>
+<li>解决方案</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://getpocket.com/a/read/149876899" target="_blank" rel="external">设置sudo的运行环境</a> 使用<code>sudo visudo</code>对/etc/sudoers文件进行如下修改：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Defaults env_keep = <span class="string">"http_proxy https_proxy"</span></div><div class="line">Defaults        env_reset</div></pre></td></tr></table></figure></li>
+</ol>
+<p>通过保留当前用户的http_proxy和https_proxy变量，使得sudo情况下也能使用代理。具体参考<a href="http://my.oschina.net/alphajay/blog/28811" target="_blank" rel="external">这里</a>。</p>
+<ol start="2" style="list-style-type: decimal">
+<li>进入root用户，并设定http_proxy和https_proxy代理。</li>
+</ol>
+<h2 id="参考文献">参考文献</h2>
+<ol start="2" style="list-style-type: decimal">
+<li><a href="http://www.sjsjw.com/kf_jiagou/article/027841ABA028365.asp" target="_blank" rel="external">如何更换rubygem镜像的源</a></li>
+<li><a href="https://discuss.elastic.co/t/shield-w-logstash-offline-install/25072" target="_blank" rel="external">如何手动安装logstash插件logstash-output-elasticsearch-shield</a></li>
+<li><a href="https://zh.wikipedia.org/zh/Sudo" target="_blank" rel="external">维基百科sudo</a></li>
+<li><a href="http://askubuntu.com/questions/376199/sudo-su-vs-sudo-i-vs-sudo-bin-bash-when-does-it-matter-which-is-used" target="_blank" rel="external">su和sudo对运行环境的影响</a></li>
+<li><a href="https://getpocket.com/a/read/149876899" target="_blank" rel="external">sudo使用代理</a></li>
+<li><a href="http://my.oschina.net/alphajay/blog/28811" target="_blank" rel="external">sudo环境设置</a></li>
+</ol>
+
+            
+        </div>
+
+    </div>
+</article>
+
+    <div  class="row affix">
+  <div class="col-md-4 col-md-offset-4 hidden-print hidden-xs hidden-sm">
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">toc.title</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行环境的变化susudo"><span class="toc-number">2.</span> <span class="toc-text">运行环境的变化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#试验"><span class="toc-number">3.</span> <span class="toc-text">试验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">4.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!--博客尾注-->
+  <footer id="footer">
+    <div class="container">
+        <div id="footer-info">
+            <i class="fa fa-copyright"></i>
+            2013-2017 David |
+            <span id="busuanzi_container_page_pv">
+              本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+             </span> |
+            Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>,
+                <a href="https://pages.github.com/" target="_blank">Github Pages</a>,
+                <a href="http://wiki.jikexueyuan.com/project/react/getting-started.html" target="_blank">React</a> and
+                <a href="http://haojunyu.duoshuo.com/admin/" target="_blank">多说</a>.
+        </div>
+    </div>
+</footer>
+
+
+  <!-- js一般 -->
+  <!-- 载入JavaScript文件 -->
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"]],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+/*
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+*/
+</script>
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</body>
+</html>
