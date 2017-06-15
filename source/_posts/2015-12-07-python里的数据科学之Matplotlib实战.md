@@ -199,7 +199,18 @@ Matlplotlib是Python的一个可视化模块。该项目是由John D. Hunter发�
     plt.show()
     ```
 
-## section
+## 问题
+1. 查询matplotlib的配置文件目录
+```python
+import matplotlib
+matplotlib.get_configdir()
+# linux ~/.config/matplotlib/matplotlibrc
+# mac ~/.matplotlib/
+```
+
+2. 更新字体缓存
+删除配置文件目录下的fontlist.cache文件。
+
 
 
 
